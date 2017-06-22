@@ -12,9 +12,9 @@ ethminer.exe -F http://eth-eu1.nanopool.org:8888/YOUR_ADDRESS/MINER_NAME/YOUR_EM
 """
 
 def ethereumConfig():
-    address = '0x234567890'
-    miner_name = 'parth'
-    email = 'parth@gmail.com'
+    address = '0x2fc7723d8623eb414abb4fa6d81395d81b87a8f9'
+    miner_name = 'MikeTheMiner'
+    email = 'igalfsg@gmail.com'
     call("setx GPU_FORCE_64BIT_PTR 0", shell=True)
     call("setx GPU_MAX_HEAP_SIZE 100", shell=True)
     call("setx GPU_USE_SYNC_OBJECTS 1", shell=True)
