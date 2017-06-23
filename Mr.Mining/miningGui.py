@@ -20,7 +20,7 @@ def ethereumConfig():
     call("setx GPU_USE_SYNC_OBJECTS 1", shell=True)
     call("setx GPU_SINGLE_ALLOC_PERCENT 100", shell=True)
     call("setx GPU_MAX_ALLOC_PERCENT 100", shell=True)
-    call("echo ethminer.exe -F http://eth-eu1.nanopool.org:8888/"+address+"/"+miner_name+"/"+email+" -U", shell=True)
+    call("ethminer.exe -F http://eth-eu1.nanopool.org:8888/"+address+"/"+miner_name+"/"+email+" -U", shell=True)
 
 
 
