@@ -23,6 +23,8 @@ def ethereumConfig():
     call("ethminer.exe -F http://eth-eu1.nanopool.org:8888/"+address+"/"+miner_name+"/"+email+" -U", shell=True)
 
 
+def setupGeth():
+    pass
 
 if __name__ == '__main__':
     ethereumConfig()
