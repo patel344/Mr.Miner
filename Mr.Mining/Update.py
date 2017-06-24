@@ -2,7 +2,7 @@ import urllib.request
 import os
 import sys
 #get the argument shit sorted out
-#check other comments 
+#check other comments
 version = str(sys.argv)
 with urllib.request.urlopen('http://fitlifeapp.com/MrMiner/test.txt') as response:
    html = response.read()

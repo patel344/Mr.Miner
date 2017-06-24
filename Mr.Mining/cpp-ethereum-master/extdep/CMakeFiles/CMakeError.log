@@ -1,0 +1,232 @@
+Determining if the CL_VERSION_2_0 exist failed with the following output:
+Change Dir: C:/Users/igalf/Downloads/cpp-ethereum-master/extdep/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_6b291.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.1.1012.6693
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 6/23/2017 12:55:35 AM.
+Project "C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\CMakeFiles\CMakeTmp\cmTC_6b291.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_6b291.dir\Debug\".
+  Creating directory "C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_6b291.dir\Debug\cmTC_6b291.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_6b291.dir\Debug\cmTC_6b291.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\bin\HostX86\x64\CL.exe /c /I"C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\install\windows\x64\include" /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_6b291.dir\Debug\\" /Fd"cmTC_6b291.dir\Debug\vc141.pdb" /Gd /TC /errorReport:queue "C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\CMakeFiles\CMakeTmp\CheckSymbolExists.c"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.10.25019 for x64
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /I"C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\install\windows\x64\include" /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_6b291.dir\Debug\\" /Fd"cmTC_6b291.dir\Debug\vc141.pdb" /Gd /TC /errorReport:queue "C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\CMakeFiles\CMakeTmp\CheckSymbolExists.c"
+  CheckSymbolExists.c
+  
+C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\CMakeFiles\CMakeTmp\CheckSymbolExists.c(8): error C2065: 'CL_VERSION_2_0': undeclared identifier [C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\CMakeFiles\CMakeTmp\cmTC_6b291.vcxproj]
+Done Building Project "C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\CMakeFiles\CMakeTmp\cmTC_6b291.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\CMakeFiles\CMakeTmp\cmTC_6b291.vcxproj" (default target) (1) ->
+(ClCompile target) -> 
+  C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\CMakeFiles\CMakeTmp\CheckSymbolExists.c(8): error C2065: 'CL_VERSION_2_0': undeclared identifier [C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\CMakeFiles\CMakeTmp\cmTC_6b291.vcxproj]
+
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:00.49
+
+File C:/Users/igalf/Downloads/cpp-ethereum-master/extdep/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <C:/Users/igalf/Downloads/cpp-ethereum-master/extdep/install/windows/x64/include/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_2_0
+  return ((int*)(&CL_VERSION_2_0))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the include file pthread.h exists failed with the following output:
+Change Dir: C:/Users/igalf/Downloads/cpp-ethereum-master/extdep/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_3c432.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.1.1012.6693
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 6/23/2017 12:55:37 AM.
+Project "C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\CMakeFiles\CMakeTmp\cmTC_3c432.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_3c432.dir\Debug\".
+  Creating directory "C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_3c432.dir\Debug\cmTC_3c432.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_3c432.dir\Debug\cmTC_3c432.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\bin\HostX86\x64\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_3c432.dir\Debug\\" /Fd"cmTC_3c432.dir\Debug\vc141.pdb" /Gd /TC /errorReport:queue "C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\CMakeFiles\CMakeTmp\CheckIncludeFile.c"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.10.25019 for x64
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_3c432.dir\Debug\\" /Fd"cmTC_3c432.dir\Debug\vc141.pdb" /Gd /TC /errorReport:queue "C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\CMakeFiles\CMakeTmp\CheckIncludeFile.c"
+  CheckIncludeFile.c
+  
+C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1): fatal error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\CMakeFiles\CMakeTmp\cmTC_3c432.vcxproj]
+Done Building Project "C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\CMakeFiles\CMakeTmp\cmTC_3c432.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\CMakeFiles\CMakeTmp\cmTC_3c432.vcxproj" (default target) (1) ->
+(ClCompile target) -> 
+  C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1): fatal error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\CMakeFiles\CMakeTmp\cmTC_3c432.vcxproj]
+
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:00.47
+
+
+Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+Compiler:  
+Build flags: 
+Id flags: 
+
+The output was:
+The system cannot find the file specified
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler:  
+Build flags: 
+Id flags: 
+
+The output was:
+The system cannot find the file specified
+
+
+Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+Compiler:  
+Build flags: 
+Id flags: 
+
+The output was:
+The system cannot find the file specified
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler:  
+Build flags: 
+Id flags: 
+
+The output was:
+The system cannot find the file specified
+
+
+Determining if the CL_VERSION_2_0 exist failed with the following output:
+Change Dir: C:/Users/igalf/Downloads/cpp-ethereum-master/extdep/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/12.0/bin/MSBuild.exe" "cmTC_d3f35.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=12.0"
+Microsoft (R) Build Engine version 12.0.40629.0
+[Microsoft .NET Framework, version 4.0.30319.42000]
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 6/23/2017 2:10:20 AM.
+Project "C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\CMakeFiles\CMakeTmp\cmTC_d3f35.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_d3f35.dir\Debug\".
+  Creating directory "C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_d3f35.dir\Debug\cmTC_d3f35.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_d3f35.dir\Debug\cmTC_d3f35.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I"C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\install\windows\x64\include" /Zi /W1 /WX- /Od /Ob0 /D _DEBUG /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_d3f35.dir\Debug\\" /Fd"cmTC_d3f35.dir\Debug\vc120.pdb" /Gd /TC /errorReport:queue "C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\CMakeFiles\CMakeTmp\CheckSymbolExists.c"
+  Microsoft (R) C/C++ Optimizing Compiler Version 18.00.40629 for x64
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /I"C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\install\windows\x64\include" /Zi /W1 /WX- /Od /Ob0 /D _DEBUG /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_d3f35.dir\Debug\\" /Fd"cmTC_d3f35.dir\Debug\vc120.pdb" /Gd /TC /errorReport:queue "C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\CMakeFiles\CMakeTmp\CheckSymbolExists.c"
+  
+  CheckSymbolExists.c
+C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\CMakeFiles\CMakeTmp\CheckSymbolExists.c(8): error C2065: 'CL_VERSION_2_0' : undeclared identifier [C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\CMakeFiles\CMakeTmp\cmTC_d3f35.vcxproj]
+Done Building Project "C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\CMakeFiles\CMakeTmp\cmTC_d3f35.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\CMakeFiles\CMakeTmp\cmTC_d3f35.vcxproj" (default target) (1) ->
+(ClCompile target) -> 
+  C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\CMakeFiles\CMakeTmp\CheckSymbolExists.c(8): error C2065: 'CL_VERSION_2_0' : undeclared identifier [C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\CMakeFiles\CMakeTmp\cmTC_d3f35.vcxproj]
+
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:02.34
+
+File C:/Users/igalf/Downloads/cpp-ethereum-master/extdep/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <C:/Users/igalf/Downloads/cpp-ethereum-master/extdep/install/windows/x64/include/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_2_0
+  return ((int*)(&CL_VERSION_2_0))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the CL_VERSION_2_0 exist failed with the following output:
+Change Dir: C:/Users/igalf/Downloads/cpp-ethereum-master/extdep/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/12.0/bin/MSBuild.exe" "cmTC_52dbe.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=12.0"
+Microsoft (R) Build Engine version 12.0.40629.0
+[Microsoft .NET Framework, version 4.0.30319.42000]
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 6/23/2017 11:22:50 AM.
+Project "C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\CMakeFiles\CMakeTmp\cmTC_52dbe.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_52dbe.dir\Debug\".
+  Creating directory "C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_52dbe.dir\Debug\cmTC_52dbe.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_52dbe.dir\Debug\cmTC_52dbe.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I"C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\install\windows\x64\include" /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D _DEBUG /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_52dbe.dir\Debug\\" /Fd"cmTC_52dbe.dir\Debug\vc120.pdb" /Gd /TC /errorReport:queue "C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\CMakeFiles\CMakeTmp\CheckSymbolExists.c"
+  Microsoft (R) C/C++ Optimizing Compiler Version 18.00.40629 for x64
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /I"C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\install\windows\x64\include" /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D _DEBUG /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_52dbe.dir\Debug\\" /Fd"cmTC_52dbe.dir\Debug\vc120.pdb" /Gd /TC /errorReport:queue "C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\CMakeFiles\CMakeTmp\CheckSymbolExists.c"
+  
+  CheckSymbolExists.c
+C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\CMakeFiles\CMakeTmp\CheckSymbolExists.c(8): error C2065: 'CL_VERSION_2_0' : undeclared identifier [C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\CMakeFiles\CMakeTmp\cmTC_52dbe.vcxproj]
+Done Building Project "C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\CMakeFiles\CMakeTmp\cmTC_52dbe.vcxproj" (default targets) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\CMakeFiles\CMakeTmp\cmTC_52dbe.vcxproj" (default target) (1) ->
+(ClCompile target) -> 
+  C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\CMakeFiles\CMakeTmp\CheckSymbolExists.c(8): error C2065: 'CL_VERSION_2_0' : undeclared identifier [C:\Users\igalf\Downloads\cpp-ethereum-master\extdep\CMakeFiles\CMakeTmp\cmTC_52dbe.vcxproj]
+
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:03.39
+
+File C:/Users/igalf/Downloads/cpp-ethereum-master/extdep/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <C:/Users/igalf/Downloads/cpp-ethereum-master/extdep/install/windows/x64/include/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_2_0
+  return ((int*)(&CL_VERSION_2_0))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
