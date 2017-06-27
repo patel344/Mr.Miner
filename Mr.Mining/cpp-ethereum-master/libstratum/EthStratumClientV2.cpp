@@ -455,7 +455,7 @@ bool EthStratumClientV2::submit(EthashProofOfWork::Solution solution) {
 	string temp_previous_job = m_previousJob;
 	x_current.unlock();
 
-	cnote << "Solution found; Submitting to" << p_active->host << "...";
+	cnote << "Solution found; Submitting to" << p_active->host << "...IGAL " << p_active->user;
 
 	string minernonce;
 	if (m_protocol != STRATUM_PROTOCOL_ETHEREUMSTRATUM)
@@ -473,6 +473,7 @@ bool EthStratumClientV2::submit(EthashProofOfWork::Solution solution) {
 			break;
 		case STRATUM_PROTOCOL_ETHPROXY:
 			json = "{\"id\": 4, \"worker\":\"" + m_worker + "\", \"method\": \"eth_submitWork\", \"params\": [\"0x" + solution.nonce.hex() + "\",\"0x" + tempWork.headerHash.hex() + "\",\"0x" + solution.mixHash.hex() + "\"]}\n";
+			cnote << "pipi1" << json;
 			break;
 		case STRATUM_PROTOCOL_ETHEREUMSTRATUM:
 			json = "{\"id\": 4, \"method\": \"mining.submit\", \"params\": [\"" + p_active->user + "\",\"" + temp_job + "\",\"" + minernonce + "\"]}\n";
@@ -493,6 +494,7 @@ bool EthStratumClientV2::submit(EthashProofOfWork::Solution solution) {
 			break;
 		case STRATUM_PROTOCOL_ETHPROXY:
 			json = "{\"id\": 4, \"worker\":\"" + m_worker + "\", \"method\": \"eth_submitWork\", \"params\": [\"0x" + solution.nonce.hex() + "\",\"0x" + tempPreviousWork.headerHash.hex() + "\",\"0x" + solution.mixHash.hex() + "\"]}\n";
+			cnote << "popo" << json;
 			break;
 		case STRATUM_PROTOCOL_ETHEREUMSTRATUM:
 			json = "{\"id\": 4, \"method\": \"mining.submit\", \"params\": [\"" + p_active->user + "\",\"" + temp_previous_job + "\",\"" + minernonce + "\"]}\n";
