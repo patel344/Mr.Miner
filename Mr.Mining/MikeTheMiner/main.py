@@ -1,9 +1,12 @@
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
-import sys
-import os
+
+import sys, os
 import time
+import subprocess
+import pexpect
+
 from MainPage import Ui_MainPage
 from SetupPage import Ui_SetupPage
 from CreateNewWallet import Ui_CreateNewWallet
@@ -94,8 +97,51 @@ class CreateNewWallet(QDialog, Ui_CreateNewWallet):
 
     def handle_next(self):
         global accountinfo
+        global account
+        global currency_caller
+
         if self.lineEdit_password.text() == self.lineEdit_passwordconfirm.text():
             password = self.lineEdit_password.text()
+            if currency_caller == 'Ethereum':
+                child = pexpect.spawn('geth account new')
+                child.delaybeforesend = None
+                child.expect('.*')
+                child.sendline(self.lineEdit_password.text())
+                child.expect('.*')
+                child.sendline(self.lineEdit_password.text())
+                child.expect(pexpect.EOF, timeout=None)
+                cmd_show_data = child.before
+                cmd_output = cmd_show_data.decode('utf-8').split()
+                account = cmd_output[-1][1:-1]
+                with open('Ethereum_Wallet/Ethereum_Settings.txt', 'w') as f:
+                    f.write(account)
+
+            elif currency_caller == 'Ethereum_Classic':
+                child = pexpect.spawn('geth account new')
+                child.delaybeforesend = None
+                child.expect('.*')
+                child.sendline(self.lineEdit_password.text())
+                child.expect('.*')
+                child.sendline(self.lineEdit_password.text())
+                child.expect(pexpect.EOF, timeout=None)
+                cmd_show_data = child.before
+                cmd_output = cmd_show_data.decode('utf-8').split()
+                account = cmd_output[-1][1:-1]
+                with open('EthereumClassic_Wallet/EthereumClassic_Settings.txt', 'w') as f:
+                    f.write(account)
+
+            elif currency_caller == 'Zcash':
+                with open('Zcash_Settings.txt', 'w') as f:
+                    f.write('Write generated address here.')
+            elif currency_caller == 'Sia':
+                with open('Sia_Settings.txt', 'w') as f:
+                    f.write('Write generated address here.')
+            elif currency_caller == 'Pascal':
+                with open('Pascal_Settings.txt', 'w') as f:
+                    f.write('Write generated address here.')
+            elif currency_caller == 'Monero':
+                with open('Monero_Settings.txt', 'w') as f:
+                    f.write('Write generated address here.')
             accountinfo = AccountInfo()
             accountinfo.show()
             self.close()
@@ -150,18 +196,18 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
                 miningwallet.show()
                 self.close()
         elif self.sender() == self.zcash:
-            if os.path.isfile('ZCash_Wallet/ZCash_Settings.txt'):
-                with open('ZCash_Wallet/ZCash_Settings.txt', 'r') as f:
+            if os.path.isfile('Zcash_Wallet/Zcash_Settings.txt'):
+                with open('Zcash_Wallet/Zcash_Settings.txt', 'r') as f:
                     account = f.readlines()[0]
                 #global nowmining
-                currency_caller = 'ZCash'
+                currency_caller = 'Zcash'
                 nowmining = NowMining()
                 nowmining.show()
                 self.close()
             else:
                 #global currency_caller
                 #global miningwallet
-                currency_caller = 'ZCash'
+                currency_caller = 'Zcash'
                 miningwallet = MiningWallet()
                 miningwallet.show()
                 self.close()
@@ -239,8 +285,9 @@ class AccountInfo(QDialog, Ui_AccountInfo):
         self.close()
 
     def back_pressed(self):
-        pass
-        "Have a settings page"
+        global setuppage
+        setuppage = SetupPage()
+        setuppage.show()
 
 class MiningWallet(QDialog, Ui_MiningWallet):
     def __init__(self):
@@ -254,27 +301,6 @@ class MiningWallet(QDialog, Ui_MiningWallet):
         self.miningwallet_back.clicked.connect(self.back_clicked)
 
     def create_new_wallet(self):
-        global account
-        global currency_caller
-        account = "Get generated address"
-        if currency_caller == 'Ethereum':
-            with open('Ethereum_Settings.txt', 'w') as f:
-                f.write('Write generated address here.')
-        elif currency_caller == 'Ethereum_Classic':
-            with open('EthereumClassic_Settings.txt', 'w') as f:
-                f.write('Write generated address here.')
-        elif currency_caller == 'ZCash':
-            with open('Zcash_Settings.txt', 'w') as f:
-                f.write('Write generated address here.')
-        elif currency_caller == 'Sia':
-            with open('Sia_Settings.txt', 'w') as f:
-                f.write('Write generated address here.')
-        elif currency_caller == 'Pascal':
-            with open('Pascal_Settings.txt', 'w') as f:
-                f.write('Write generated address here.')
-        elif currency_caller == 'Monero':
-            with open('Monero_Settings.txt', 'w') as f:
-                f.write('Write generated address here.')
         global createnewwallet
         createnewwallet = CreateNewWallet()
         createnewwallet.show()
@@ -283,22 +309,22 @@ class MiningWallet(QDialog, Ui_MiningWallet):
     def add_wallet(self):
         self.entered_wallet_no = self.lineEdit_wallet_no.text()
         if currency_caller == 'Ethereum':
-            with open('Ethereum_Settings.txt', 'w') as f:
+            with open('Ethereum_Wallet/Ethereum_Settings.txt', 'w') as f:
                 f.write(self.entered_wallet_no)
         elif currency_caller == 'Ethereum_Classic':
-            with open('EthereumClassic_Settings.txt', 'w') as f:
+            with open('Ethereum_Wallet/EthereumClassic_Settings.txt', 'w') as f:
                 f.write(self.entered_wallet_no)
-        elif currency_caller == 'ZCash':
-            with open('Zcash_Settings.txt', 'w') as f:
+        elif currency_caller == 'Zcash':
+            with open('Zcash_Wallet/Zcash_Settings.txt', 'w') as f:
                 f.write(self.entered_wallet_no)
         elif currency_caller == 'Sia':
-            with open('Sia_Settings.txt', 'w') as f:
+            with open('Sia_Wallet/Sia_Settings.txt', 'w') as f:
                 f.write(self.entered_wallet_no)
         elif currency_caller == 'Pascal':
-            with open('Pascal_Settings.txt', 'w') as f:
+            with open('Pascal_Wallet/Pascal_Settings.txt', 'w') as f:
                 f.write(self.entered_wallet_no)
         elif currency_caller == 'Monero':
-            with open('Monero_Settings.txt', 'w') as f:
+            with open('Monero_Wallet/Monero_Settings.txt', 'w') as f:
                 f.write(self.entered_wallet_no)
         #global nowmining
         nowmining = NowMining()
@@ -315,13 +341,44 @@ class NowMining(QDialog, Ui_NowMining):
     def __init__(self):
         super(self.__class__, self).__init__()
         self.setupUi(self)
+        self.start_mining()
         self.Establish_Connections()
 
+    def start_mining(self):
+        global account
+        global rig_name
+        global email
+        global currency_caller
+
+        if currency_caller == 'Ethereum':
+            if os.path.exists('Ethereum_Wallet/Ethereum_Settings.txt'):
+                with open('Ethereum_Wallet/Ethereum_Settings.txt') as f:
+                    account = f.readlines()[0]
+
+            subprocess.call("setx GPU_FORCE_64BIT_PTR 0", shell=True)
+            subprocess.call("setx GPU_MAX_HEAP_SIZE 100", shell=True)
+            subprocess.call("setx GPU_USE_SYNC_OBJECTS 1", shell=True)
+            subprocess.call("setx GPU_SINGLE_ALLOC_PERCENT 100", shell=True)
+            subprocess.call("setx GPU_MAX_ALLOC_PERCENT 100", shell=True)
+            subprocess.call("ethminer.exe -F http://eth-eu1.nanopool.org:8888/0x" + account + "/" + rig_name + "/" + email + " -I",
+                 shell=True)
+        elif currency_caller == 'Ethereum_Classic':
+            if os.path.exists('EthereumClassic_Wallet/EthereumClassic_Settings.txt'):
+                with open('EthereumClassic_Wallet/EthereumClassic_Settings.txt') as f:
+                    account = f.readlines()[0]
+                    
+            subprocess.call("setx GPU_FORCE_64BIT_PTR 0", shell=True)
+            subprocess.call("setx GPU_MAX_HEAP_SIZE 100", shell=True)
+            subprocess.call("setx GPU_USE_SYNC_OBJECTS 1", shell=True)
+            subprocess.call("setx GPU_SINGLE_ALLOC_PERCENT 100", shell=True)
+            subprocess.call("setx GPU_MAX_ALLOC_PERCENT 100", shell=True)
+            subprocess.call("ethminer.exe --farm-recheck 200 -I -S etc-eu1.nanopool.org:19999 -O 0x" + account + "." + rig_name + "/" + email,
+                            shell=True)
 
     def Establish_Connections(self):
         global currency_caller
         self.coinName_label.setText(currency_caller)
-        self.address_label.setText("account number")
+        self.address_label.setText('0x'+account)
         self.stop_pb.clicked.connect(self.stop)
         self.startOver_pb.clicked.connect(self.startOver)
         self.Mining_back.clicked.connect(self.back_pressed)
@@ -337,7 +394,9 @@ class NowMining(QDialog, Ui_NowMining):
         "Restarts Mining of Same currency"
 
     def back_pressed(self):
-        "Settings Page"
+        global setuppage
+        setuppage = SetupPage()
+        setuppage.show()
 
 def load_info():
     global email
@@ -358,9 +417,9 @@ def load_info():
         os.makedirs('Sia_Wallet')
     if not os.path.exists('Monero_Wallet'):
         os.makedirs('Monero_Wallet')
-    if not os.path.exists('ZCash_Wallet'):
-        os.makedirs('ZCash_Wallet')
-
+    if not os.path.exists('Zcash_Wallet'):
+        os.makedirs('Zcash_Wallet')
+        
     if os.path.isfile('Mining_Settings.txt'):
         with open('Mining_Settings.txt', 'r') as f:
             settings = f.readlines()
