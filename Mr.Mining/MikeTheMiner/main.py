@@ -1,7 +1,8 @@
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
-import sys, os
+import sys
+import os
 import time
 from MainPage import Ui_MainPage
 from SetupPage import Ui_SetupPage
