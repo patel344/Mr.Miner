@@ -348,18 +348,28 @@ class NowMining(QDialog, Ui_NowMining):
         global account
         global rig_name
         global email
+        global currency_caller
 
-        if os.path.exists('Ethereum_Settings.txt'):
-            with open('Ethereum_Settings.txt') as f:
-                account = f.readlines()[0]
+        if currency_caller == 'Ethereum':
+            if os.path.exists('Ethereum_Settings.txt'):
+                with open('Ethereum_Settings.txt') as f:
+                    account = f.readlines()[0]
 
-        subprocess.call("setx GPU_FORCE_64BIT_PTR 0", shell=True)
-        subprocess.call("setx GPU_MAX_HEAP_SIZE 100", shell=True)
-        subprocess.call("setx GPU_USE_SYNC_OBJECTS 1", shell=True)
-        subprocess.call("setx GPU_SINGLE_ALLOC_PERCENT 100", shell=True)
-        subprocess.call("setx GPU_MAX_ALLOC_PERCENT 100", shell=True)
-        subprocess.call("echo http://eth-eu1.nanopool.org:8888/0x" + account + "/" + rig_name + "/" + email + " -I",
-             shell=True)
+            subprocess.call("setx GPU_FORCE_64BIT_PTR 0", shell=True)
+            subprocess.call("setx GPU_MAX_HEAP_SIZE 100", shell=True)
+            subprocess.call("setx GPU_USE_SYNC_OBJECTS 1", shell=True)
+            subprocess.call("setx GPU_SINGLE_ALLOC_PERCENT 100", shell=True)
+            subprocess.call("setx GPU_MAX_ALLOC_PERCENT 100", shell=True)
+            subprocess.call("ethminer.exe -F http://eth-eu1.nanopool.org:8888/0x" + account + "/" + rig_name + "/" + email + " -I",
+                 shell=True)
+        elif currency_caller == 'Ethereum_Classic':
+            subprocess.call("setx GPU_FORCE_64BIT_PTR 0", shell=True)
+            subprocess.call("setx GPU_MAX_HEAP_SIZE 100", shell=True)
+            subprocess.call("setx GPU_USE_SYNC_OBJECTS 1", shell=True)
+            subprocess.call("setx GPU_SINGLE_ALLOC_PERCENT 100", shell=True)
+            subprocess.call("setx GPU_MAX_ALLOC_PERCENT 100", shell=True)
+            subprocess.call("ethminer.exe --farm-recheck 200 -I -S etc-eu1.nanopool.org:19999 -O 0x" + account + "." + rig_name + "/" + email,
+                            shell=True)
 
     def Establish_Connections(self):
         global currency_caller
