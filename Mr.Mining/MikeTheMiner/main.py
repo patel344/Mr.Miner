@@ -113,12 +113,23 @@ class CreateNewWallet(QDialog, Ui_CreateNewWallet):
                 cmd_show_data = child.before
                 cmd_output = cmd_show_data.decode('utf-8').split()
                 account = cmd_output[-1][1:-1]
-
                 with open('Ethereum_Settings.txt', 'w') as f:
                     f.write(account)
+
             elif currency_caller == 'Ethereum_Classic':
+                child = pexpect.spawn('geth account new')
+                child.delaybeforesend = None
+                child.expect('.*')
+                child.sendline(self.lineEdit_password.text())
+                child.expect('.*')
+                child.sendline(self.lineEdit_password.text())
+                child.expect(pexpect.EOF, timeout=None)
+                cmd_show_data = child.before
+                cmd_output = cmd_show_data.decode('utf-8').split()
+                account = cmd_output[-1][1:-1]
                 with open('EthereumClassic_Settings.txt', 'w') as f:
-                    f.write('Write generated address here.')
+                    f.write(account)
+
             elif currency_caller == 'ZCash':
                 with open('Zcash_Settings.txt', 'w') as f:
                     f.write('Write generated address here.')
