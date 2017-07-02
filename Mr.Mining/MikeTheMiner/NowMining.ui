@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>NowMining</class>
+ <widget class="QWidget" name="NowMining">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -13,6 +13,11 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:rgb(33, 33, 33);
+
+</string>
+  </property>
   <widget class="QPushButton" name="Mining_continue">
    <property name="geometry">
     <rect>
@@ -21,6 +26,11 @@
      <width>113</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(39, 255, 36);
+color:rgb(255, 255, 255)
+</string>
    </property>
    <property name="text">
     <string>Continue</string>
@@ -34,6 +44,11 @@
      <width>301</width>
      <height>24</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+color:rgb(255, 255, 255)
+</string>
    </property>
    <property name="text">
     <string>123</string>
@@ -67,7 +82,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Mining</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Mining&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -90,7 +105,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Hash Rate:</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Hash Rate:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_5">
@@ -110,7 +125,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Estimated Coin:</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Estimated Coin:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QLabel" name="address_label">
@@ -121,6 +136,11 @@
      <width>461</width>
      <height>25</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+color:rgb(255, 255, 255)
+</string>
    </property>
    <property name="text">
     <string/>
@@ -134,6 +154,11 @@
      <width>113</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(39, 255, 36);
+color:rgb(255, 255, 255)
+</string>
    </property>
    <property name="text">
     <string>Back</string>
@@ -156,7 +181,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Address:</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Address:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QLabel" name="coinName_label">
@@ -172,6 +197,11 @@
     <font>
      <pointsize>28</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+color:rgb(255, 255, 255)
+</string>
    </property>
    <property name="text">
     <string/>
@@ -189,6 +219,11 @@
      <height>24</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">
+color:rgb(255, 255, 255)
+</string>
+   </property>
    <property name="text">
     <string>123</string>
    </property>
@@ -201,6 +236,11 @@
      <width>171</width>
      <height>61</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(39, 255, 36);
+color:rgb(255, 255, 255)
+</string>
    </property>
    <property name="text">
     <string>Stop Mining</string>
@@ -215,6 +255,11 @@
      <height>61</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(39, 255, 36);
+color:rgb(255, 255, 255)
+</string>
+   </property>
    <property name="text">
     <string>Start Over</string>
    </property>
@@ -227,6 +272,10 @@
      <width>151</width>
      <height>51</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:rgb(255, 255, 255)
+</string>
    </property>
    <property name="text">
     <string>Automatically mine </string>
@@ -242,7 +291,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Ethereum</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Ethereum&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QLabel" name="coinName_cb_2">
@@ -255,7 +304,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>next time Mr. Miner starts</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;next time Mr. Miner starts&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
  </widget>

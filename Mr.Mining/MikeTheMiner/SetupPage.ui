@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>SetupPage</class>
+ <widget class="QWidget" name="SetupPage">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -12,6 +12,9 @@
   </property>
   <property name="windowTitle">
    <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:rgb(33, 33, 33)</string>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
@@ -28,7 +31,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Setup Your Account</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Select Graphic Card:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -39,7 +42,7 @@
     <rect>
      <x>70</x>
      <y>110</y>
-     <width>221</width>
+     <width>291</width>
      <height>41</height>
     </rect>
    </property>
@@ -51,14 +54,14 @@
     </font>
    </property>
    <property name="text">
-    <string>Select Graphic Card:</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Select Graphic Card:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
      <x>70</x>
-     <y>320</y>
+     <y>380</y>
      <width>221</width>
      <height>41</height>
     </rect>
@@ -69,6 +72,11 @@
      <weight>75</weight>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+color:rgb(255, 255, 255)
+</string>
    </property>
    <property name="text">
     <string>Enter Email:</string>
@@ -78,7 +86,7 @@
    <property name="geometry">
     <rect>
      <x>70</x>
-     <y>440</y>
+     <y>470</y>
      <width>241</width>
      <height>41</height>
     </rect>
@@ -89,6 +97,11 @@
      <weight>75</weight>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+color:rgb(255, 255, 255)
+</string>
    </property>
    <property name="text">
     <string>Name Your Mining Rig:</string>
@@ -108,6 +121,11 @@
      <pointsize>18</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">
+color:rgb(255, 255, 255)
+</string>
+   </property>
    <property name="text">
     <string>NVIDIA</string>
    </property>
@@ -126,6 +144,11 @@
      <pointsize>18</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">
+color:rgb(255, 255, 255)
+</string>
+   </property>
    <property name="text">
     <string>AMD</string>
    </property>
@@ -138,6 +161,11 @@
      <width>421</width>
      <height>61</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+color:rgb(255, 255, 255)
+</string>
    </property>
    <property name="text">
     <string/>
@@ -153,10 +181,15 @@
    <property name="geometry">
     <rect>
      <x>70</x>
-     <y>380</y>
+     <y>430</y>
      <width>341</width>
      <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+color:rgb(255, 255, 255)
+</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_rigName">
@@ -168,6 +201,11 @@
      <height>31</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">
+color:rgb(255, 255, 255)
+</string>
+   </property>
   </widget>
   <widget class="QPushButton" name="setup_next_pb">
    <property name="geometry">
@@ -178,8 +216,53 @@
      <height>41</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(39, 255, 36);
+color:rgb(255, 255, 255)
+</string>
+   </property>
    <property name="text">
     <string>Continue</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>300</y>
+     <width>291</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+color:rgb(255, 255, 255)
+</string>
+   </property>
+   <property name="text">
+    <string>Number Of GPUs Installed:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_no_gpus">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>350</y>
+     <width>41</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+color:rgb(255, 255, 255)
+</string>
    </property>
   </widget>
  </widget>

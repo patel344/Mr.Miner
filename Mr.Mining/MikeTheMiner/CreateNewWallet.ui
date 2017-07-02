@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>CreateNewWallet</class>
+ <widget class="QWidget" name="CreateNewWallet">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:rgb(33,33,33);</string>
+  </property>
   <widget class="QPushButton" name="newWallet_back">
    <property name="geometry">
     <rect>
@@ -21,6 +24,11 @@
      <width>113</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(39, 255, 36);
+color:rgb(255, 255, 255)
+</string>
    </property>
    <property name="text">
     <string>Back</string>
@@ -34,6 +42,11 @@
      <width>113</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(39, 255, 36);
+color:rgb(255, 255, 255)
+</string>
    </property>
    <property name="text">
     <string>Continue</string>
@@ -52,6 +65,9 @@
     <font>
      <pointsize>28</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:rgb(255,255,255);</string>
    </property>
    <property name="text">
     <string>Create New Wallet</string>
@@ -76,6 +92,9 @@
      <bold>true</bold>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color:rgb(255,255,255);</string>
+   </property>
    <property name="text">
     <string>Confirm Password:</string>
    </property>
@@ -89,6 +108,9 @@
      <height>31</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(105, 105, 105);</string>
+   </property>
    <property name="echoMode">
     <enum>QLineEdit::Password</enum>
    </property>
@@ -101,6 +123,9 @@
      <width>341</width>
      <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(105, 105, 105);</string>
    </property>
    <property name="echoMode">
     <enum>QLineEdit::Password</enum>
@@ -122,6 +147,9 @@
      <bold>true</bold>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color:rgb(255,255,255);</string>
+   </property>
    <property name="text">
     <string>Choose Password: (min 8 characters)</string>
    </property>
@@ -134,6 +162,9 @@
      <width>541</width>
      <height>71</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:rgb(255,255,255);</string>
    </property>
    <property name="text">
     <string>This password will be used to encrypt your account. It is suggested you use a strong, uncommon password. You MUST remember this password. If you do not there is no way to decrypt your account. </string>

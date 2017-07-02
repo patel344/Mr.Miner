@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>MainPage</class>
+ <widget class="QWidget" name="MainPage">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -57,7 +57,7 @@
   </widget>
  </widget>
  <resources>
-  <include location="MainPageMining.qrc"/>
+  <include location="../../PycharmProjects/Mr.Mining/MikeTheMiner/MainPageMining.qrc"/>
  </resources>
  <connections/>
 </ui>
