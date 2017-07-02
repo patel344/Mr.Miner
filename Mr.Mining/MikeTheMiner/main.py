@@ -119,8 +119,8 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
         global miningwallet
         global currency_caller
         if self.sender() == self.ethereum:
-            if os.path.isfile('Ethereum_Settings.txt'):
-                with open('Ethereum_Settings.txt', 'r') as f:
+            if os.path.isfile('Ethereum_Wallet/Ethereum_Settings.txt'):
+                with open('Ethereum_Wallet/Ethereum_Settings.txt', 'r') as f:
                     account = f.readlines()[0]
                 currency_caller = 'Ethereum'
                 nowmining = NowMining()
@@ -134,8 +134,8 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
                 miningwallet.show()
                 self.close()
         elif self.sender() == self.ethereum_classic:
-            if os.path.isfile('EthereumClassic_Settings.txt'):
-                with open('EthereumClassic_Settings.txt', 'r') as f:
+            if os.path.isfile('EthereumClassic_Wallet/EthereumClassic_Settings.txt'):
+                with open('EthereumClassic_Wallet/EthereumClassic_Settings.txt', 'r') as f:
                     account = f.readlines()[0]
                 #global nowmining
                 currency_caller = 'Ethereum_Classic'
@@ -150,8 +150,8 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
                 miningwallet.show()
                 self.close()
         elif self.sender() == self.zcash:
-            if os.path.isfile('ZCash_Settings.txt'):
-                with open('ZCash_Settings.txt', 'r') as f:
+            if os.path.isfile('ZCash_Wallet/ZCash_Settings.txt'):
+                with open('ZCash_Wallet/ZCash_Settings.txt', 'r') as f:
                     account = f.readlines()[0]
                 #global nowmining
                 currency_caller = 'ZCash'
@@ -166,8 +166,8 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
                 miningwallet.show()
                 self.close()
         elif self.sender() == self.pascal:
-            if os.path.isfile('Pascal_Settings.txt'):
-                with open('Pascal_Settings.txt', 'r') as f:
+            if os.path.isfile('Pascal_Wallet/Pascal_Settings.txt'):
+                with open('Pascal_Wallet/Pascal_Settings.txt', 'r') as f:
                     account = f.readlines()[0]
                 #global nowmining
                 currency_caller = 'Pascal'
@@ -182,8 +182,8 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
                 miningwallet.show()
                 self.close()
         elif self.sender() == self.sia:
-            if os.path.isfile('Sia_Settings.txt'):
-                with open('Sia_Settings.txt', 'r') as f:
+            if os.path.isfile('Sia_Wallet/Sia_Settings.txt'):
+                with open('Sia_Wallet/Sia_Settings.txt', 'r') as f:
                     account = f.readlines()[0]
                 #global nowmining
                 currency_caller = 'Sia'
@@ -198,8 +198,8 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
                 miningwallet.show()
                 self.close()
         elif self.sender() == self.monero:
-            if os.path.isfile('Monero_Settings.txt'):
-                with open('Monero_Settings.txt', 'r') as f:
+            if os.path.isfile('Monero_Wallet/Monero_Settings.txt'):
+                with open('Monero_Wallet/Monero_Settings.txt', 'r') as f:
                     account = f.readlines()[0]
                 #global nowmining
                 currency_caller = 'Monero'
@@ -347,6 +347,19 @@ def load_info():
     global settings_exist
 
     settings_exist = False
+
+    if not os.path.exists('Ethereum_Wallet'):
+        os.makedirs('Ethereum_Wallet')
+    if not os.path.exists('EthereumClassic_Wallet'):
+        os.makedirs('EthereumClassic_Wallet')
+    if not os.path.exists('Pascal_Wallet'):
+        os.makedirs('Pascal_Wallet')
+    if not os.path.exists('Sia_Wallet'):
+        os.makedirs('Sia_Wallet')
+    if not os.path.exists('Monero_Wallet'):
+        os.makedirs('Monero_Wallet')
+    if not os.path.exists('ZCash_Wallet'):
+        os.makedirs('ZCash_Wallet')
 
     if os.path.isfile('Mining_Settings.txt'):
         with open('Mining_Settings.txt', 'r') as f:
