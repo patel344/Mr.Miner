@@ -78,14 +78,21 @@ class SetupPage(QDialog, Ui_SetupPage):
         self.gpu_reqs.setText('AMD REQS')
 
     def save_options(self):
-        with open('Mining_Settings.txt', 'a') as f:
-            f.write(graphic_card)
-            f.write('\n')
-            f.write(num_gpus)
-            f.write('\n')
-            f.write(email)
-            f.write('\n')
-            f.write(rig_name)
+        if self.nvidia_rb.isChecked() or self.amd_rb.isChecked():
+            with open('Mining_Settings.txt', 'a') as f:
+                f.write(graphic_card)
+                f.write('\n')
+                f.write(num_gpus)
+                f.write('\n')
+                f.write(email)
+                f.write('\n')
+                f.write(rig_name)
+        else:
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Critical)
+            msg.setText("Please select the graphic card you are using.")
+            msg.setWindowTitle("Mr.Miner Missing Information")
+            msg.setStandardButtons(QMessageBox.Ok)
 
 class CreateNewWallet(QDialog, Ui_CreateNewWallet):
     def __init__(self):
@@ -100,52 +107,66 @@ class CreateNewWallet(QDialog, Ui_CreateNewWallet):
         global accountinfo
         global account
         global currency_caller
+        if len(self.lineEdit_password.text()) >= 8:
+            if self.lineEdit_password.text() == self.lineEdit_passwordconfirm.text():
+                password = self.lineEdit_password.text()
+                if currency_caller == 'Ethereum':
+                    child = pexpect.popen_spawn.PopenSpawn('geth account new')
+                    child.delaybeforesend = None
+                    child.expect('.*')
+                    child.sendline(self.lineEdit_password.text())
+                    child.expect('.*')
+                    child.sendline(self.lineEdit_password.text())
+                    child.expect(pexpect.EOF, timeout=None)
+                    cmd_show_data = child.before
+                    cmd_output = cmd_show_data.decode('utf-8').split()
+                    account = cmd_output[-1][1:-1]
+                    with open('Ethereum_Wallet/Ethereum_Settings.txt', 'w') as f:
+                        f.write(account)
 
-        if self.lineEdit_password.text() == self.lineEdit_passwordconfirm.text():
-            password = self.lineEdit_password.text()
-            if currency_caller == 'Ethereum':
-                child = pexpect.popen_spawn.PopenSpawn('geth account new')
-                child.delaybeforesend = None
-                child.expect('.*')
-                child.sendline(self.lineEdit_password.text())
-                child.expect('.*')
-                child.sendline(self.lineEdit_password.text())
-                child.expect(pexpect.EOF, timeout=None)
-                cmd_show_data = child.before
-                cmd_output = cmd_show_data.decode('utf-8').split()
-                account = cmd_output[-1][1:-1]
-                with open('Ethereum_Wallet/Ethereum_Settings.txt', 'w') as f:
-                    f.write(account)
+                elif currency_caller == 'Ethereum_Classic':
+                    child = pexpect.popen_spawn.PopenSpawn('geth account new')
+                    child.delaybeforesend = None
+                    child.expect('.*')
+                    child.sendline(self.lineEdit_password.text())
+                    child.expect('.*')
+                    child.sendline(self.lineEdit_password.text())
+                    child.expect(pexpect.EOF, timeout=None)
+                    cmd_show_data = child.before
+                    cmd_output = cmd_show_data.decode('utf-8').split()
+                    account = cmd_output[-1][1:-1]
+                    with open('EthereumClassic_Wallet/EthereumClassic_Settings.txt', 'w') as f:
+                        f.write(account)
 
-            elif currency_caller == 'Ethereum_Classic':
-                child = pexpect.popen_spawn.PopenSpawn('geth account new')
-                child.delaybeforesend = None
-                child.expect('.*')
-                child.sendline(self.lineEdit_password.text())
-                child.expect('.*')
-                child.sendline(self.lineEdit_password.text())
-                child.expect(pexpect.EOF, timeout=None)
-                cmd_show_data = child.before
-                cmd_output = cmd_show_data.decode('utf-8').split()
-                account = cmd_output[-1][1:-1]
-                with open('EthereumClassic_Wallet/EthereumClassic_Settings.txt', 'w') as f:
-                    f.write(account)
+                elif currency_caller == 'Zcash':
+                    with open('Zcash_Settings.txt', 'w') as f:
+                        f.write('Write generated address here.')
+                elif currency_caller == 'Sia':
+                    with open('Sia_Settings.txt', 'w') as f:
+                        f.write('Write generated address here.')
+                elif currency_caller == 'Pascal':
+                    with open('Pascal_Settings.txt', 'w') as f:
+                        f.write('Write generated address here.')
+                elif currency_caller == 'Monero':
+                    with open('Monero_Settings.txt', 'w') as f:
+                        f.write('Write generated address here.')
+            else:
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Critical)
+                msg.setText("Passwords do not match.")
+                msg.setWindowTitle("Mr.Miner Error Occurred")
+                msg.setStandardButtons(QMessageBox.Ok)
+        else:
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Critical)
+            msg.setText("Password must be at least 8 Characters.")
+            msg.InformativeText("Having a strong password is integral to maintaining your wallet's security.")
+            msg.setWindowTitle("Mr.Miner Error Occurred")
+            msg.setStandardButtons(QMessageBox.Ok)
 
-            elif currency_caller == 'Zcash':
-                with open('Zcash_Settings.txt', 'w') as f:
-                    f.write('Write generated address here.')
-            elif currency_caller == 'Sia':
-                with open('Sia_Settings.txt', 'w') as f:
-                    f.write('Write generated address here.')
-            elif currency_caller == 'Pascal':
-                with open('Pascal_Settings.txt', 'w') as f:
-                    f.write('Write generated address here.')
-            elif currency_caller == 'Monero':
-                with open('Monero_Settings.txt', 'w') as f:
-                    f.write('Write generated address here.')
-            accountinfo = AccountInfo()
-            accountinfo.show()
-            self.close()
+        accountinfo = AccountInfo()
+        accountinfo.show()
+        self.close()
 
 class ChooseCurrency(QDialog, Ui_ChooseCurrency):
     def __init__(self):
@@ -310,6 +331,14 @@ class MiningWallet(QDialog, Ui_MiningWallet):
 
     def add_wallet(self):
         self.entered_wallet_no = self.lineEdit_wallet_no.text()
+        if len(self.entered_wallet_no) == 0:
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Critical)
+            msg.setText("It seems like you haven't entered in a wallet number.")
+            msg.setInformativeText("Please enter valid wallet number or create a new one.")
+            msg.setWindowTitle("Mr.Miner Missing Information")
+            msg.setStandardButtons(QMessageBox.Ok)
+
         if currency_caller == 'Ethereum':
             with open('Ethereum_Wallet/Ethereum_Settings.txt', 'w') as f:
                 f.write(self.entered_wallet_no)
