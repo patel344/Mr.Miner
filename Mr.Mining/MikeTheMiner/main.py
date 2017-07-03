@@ -356,13 +356,19 @@ class NowMining(QDialog, Ui_NowMining):
             if os.path.exists('Ethereum_Wallet/Ethereum_Settings.txt'):
                 with open('Ethereum_Wallet/Ethereum_Settings.txt') as f:
                     account = f.readlines()[0]
-
-            subprocess.call("setx GPU_FORCE_64BIT_PTR 0", shell=True)
-            subprocess.call("setx GPU_MAX_HEAP_SIZE 100", shell=True)
-            subprocess.call("setx GPU_USE_SYNC_OBJECTS 1", shell=True)
-            subprocess.call("setx GPU_SINGLE_ALLOC_PERCENT 100", shell=True)
-            subprocess.call("setx GPU_MAX_ALLOC_PERCENT 100", shell=True)
-            subprocess.Popen("Santas_helpers\start.bat",   shell=True)
+            with open('Santas\helpers\etherum_Start.bat')as batman:
+                batman.write('setx GPU_FORCE_64BIT_PTR 0\n')
+                batman.write('setx GPU_MAX_HEAP_SIZE 100\n')
+                batman.write('setx GPU_USE_SYNC_OBJECTS 1\n')
+                batman.write('setx GPU_SINGLE_ALLOC_PERCENT 100\n')
+                batman.write('setx GPU_MAX_ALLOC_PERCENT 100\n')
+                batman.write("Santas_helpers\ethminer.exe -I -F http://eth-eu1.nanopool.org:8888/0x" + account + "/" + rig_name + "/" + email)
+            #batman.close()
+            #subprocess.call("setx GPU_MAX_HEAP_SIZE 100", shell=True)
+            #subprocess.call("setx GPU_USE_SYNC_OBJECTS 1", shell=True)
+            #subprocess.call("setx GPU_SINGLE_ALLOC_PERCENT 100", shell=True)
+            #subprocess.call("setx GPU_MAX_ALLOC_PERCENT 100", shell=True)
+            #subprocess.Popen("Santas_helpers\start.bat",   shell=True)
             #output, stderr = subprocess.Popen("Santas_helpers\ethminer.exe -I -F http://eth-eu1.nanopool.org:8888/0x" + account + "/" + rig_name + "/" + email ,
              #    shell=True).communicate()
             #subprocess.call("Santas_helpers\ethminer.exe -I -F http://eth-eu1.nanopool.org:8888/0x" + account + "/" + rig_name + "/" + email ,
