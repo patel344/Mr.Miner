@@ -15,15 +15,13 @@ class Ui_CreateNewWallet(object):
         CreateNewWallet.setStyleSheet("background-color:rgb(33,33,33);")
         self.newWallet_back = QtWidgets.QPushButton(CreateNewWallet)
         self.newWallet_back.setGeometry(QtCore.QRect(20, 20, 113, 41))
-        self.newWallet_back.setStyleSheet("background-color:rgb(39, 255, 36);\n"
-"color:rgb(255, 255, 255)\n"
-"")
+        self.newWallet_back.setStyleSheet("background-color:rgb(0, 255, 0);\n"
+"color:rgb(255, 255, 255)")
         self.newWallet_back.setObjectName("newWallet_back")
         self.newWallet_continue = QtWidgets.QPushButton(CreateNewWallet)
         self.newWallet_continue.setGeometry(QtCore.QRect(450, 530, 113, 41))
-        self.newWallet_continue.setStyleSheet("background-color:rgb(39, 255, 36);\n"
-"color:rgb(255, 255, 255)\n"
-"")
+        self.newWallet_continue.setStyleSheet("background-color:rgb(0, 255, 0);\n"
+"color:rgb(255, 255, 255)")
         self.newWallet_continue.setObjectName("newWallet_continue")
         self.label = QtWidgets.QLabel(CreateNewWallet)
         self.label.setGeometry(QtCore.QRect(80, 60, 451, 51))

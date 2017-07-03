@@ -24,6 +24,8 @@ class Ui_MainPage(object):
         font.setBold(True)
         font.setWeight(75)
         self.label_2.setFont(font)
+        self.label_2.setStyleSheet("\n"
+"color:rgb(0, 255, 0)")
         self.label_2.setAlignment(QtCore.Qt.AlignCenter)
         self.label_2.setObjectName("label_2")
 
@@ -34,6 +36,6 @@ class Ui_MainPage(object):
         _translate = QtCore.QCoreApplication.translate
         MainPage.setWindowTitle(_translate("MainPage", "Form"))
         self.label.setText(_translate("MainPage", "<html><head/><body><p><img src=\":/MainPageMining/MinerLogo.png\"/></p></body></html>"))
-        self.label_2.setText(_translate("MainPage", "<html><head/><body><p><span style=\" color:#ffffff;\">Welcome To Mister Miner! </span></p></body></html>"))
+        self.label_2.setText(_translate("MainPage", "<html><head/><body><p><span style=\" color:#00ff00;\">Welcome To Mister Miner! </span></p></body></html>"))
 
 import MainPageMining_rc

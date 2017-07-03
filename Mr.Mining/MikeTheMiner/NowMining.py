@@ -17,9 +17,8 @@ class Ui_NowMining(object):
 "")
         self.Mining_continue = QtWidgets.QPushButton(NowMining)
         self.Mining_continue.setGeometry(QtCore.QRect(460, 540, 113, 41))
-        self.Mining_continue.setStyleSheet("background-color:rgb(39, 255, 36);\n"
-"color:rgb(255, 255, 255)\n"
-"")
+        self.Mining_continue.setStyleSheet("background-color:rgb(0, 255, 0);\n"
+"color:rgb(255, 255, 255)")
         self.Mining_continue.setObjectName("Mining_continue")
         self.hashrate_label = QtWidgets.QLabel(NowMining)
         self.hashrate_label.setGeometry(QtCore.QRect(220, 180, 301, 24))
@@ -63,9 +62,8 @@ class Ui_NowMining(object):
         self.address_label.setObjectName("address_label")
         self.Mining_back = QtWidgets.QPushButton(NowMining)
         self.Mining_back.setGeometry(QtCore.QRect(10, 10, 113, 41))
-        self.Mining_back.setStyleSheet("background-color:rgb(39, 255, 36);\n"
-"color:rgb(255, 255, 255)\n"
-"")
+        self.Mining_back.setStyleSheet("background-color:rgb(0, 255, 0);\n"
+"color:rgb(255, 255, 255)")
         self.Mining_back.setObjectName("Mining_back")
         self.label_3 = QtWidgets.QLabel(NowMining)
         self.label_3.setGeometry(QtCore.QRect(40, 100, 71, 41))
@@ -94,15 +92,13 @@ class Ui_NowMining(object):
         self.estCoin_label.setObjectName("estCoin_label")
         self.stop_pb = QtWidgets.QPushButton(NowMining)
         self.stop_pb.setGeometry(QtCore.QRect(100, 340, 171, 61))
-        self.stop_pb.setStyleSheet("background-color:rgb(39, 255, 36);\n"
-"color:rgb(255, 255, 255)\n"
-"")
+        self.stop_pb.setStyleSheet("background-color:rgb(0, 255, 0);\n"
+"color:rgb(255, 255, 255)")
         self.stop_pb.setObjectName("stop_pb")
         self.startOver_pb = QtWidgets.QPushButton(NowMining)
         self.startOver_pb.setGeometry(QtCore.QRect(320, 340, 171, 61))
-        self.startOver_pb.setStyleSheet("background-color:rgb(39, 255, 36);\n"
-"color:rgb(255, 255, 255)\n"
-"")
+        self.startOver_pb.setStyleSheet("background-color:rgb(0, 255, 0);\n"
+"color:rgb(255, 255, 255)")
         self.startOver_pb.setObjectName("startOver_pb")
         self.auto_cb = QtWidgets.QCheckBox(NowMining)
         self.auto_cb.setGeometry(QtCore.QRect(50, 430, 151, 51))
@@ -127,7 +123,7 @@ class Ui_NowMining(object):
         self.label.setText(_translate("NowMining", "<html><head/><body><p><span style=\" color:#ffffff;\">Mining</span></p></body></html>"))
         self.label_4.setText(_translate("NowMining", "<html><head/><body><p><span style=\" color:#ffffff;\">Hash Rate:</span></p></body></html>"))
         self.label_5.setText(_translate("NowMining", "<html><head/><body><p><span style=\" color:#ffffff;\">Estimated Coin:</span></p></body></html>"))
-        self.Mining_back.setText(_translate("NowMining", "Back"))
+        self.Mining_back.setText(_translate("NowMining", "Settings"))
         self.label_3.setText(_translate("NowMining", "<html><head/><body><p><span style=\" color:#ffffff;\">Address:</span></p></body></html>"))
         self.estCoin_label.setText(_translate("NowMining", "123"))
         self.stop_pb.setText(_translate("NowMining", "Stop Mining"))

@@ -27,15 +27,14 @@ class Ui_AccountInfo(object):
         self.label.setObjectName("label")
         self.accntinfo_back = QtWidgets.QPushButton(AccountInfo)
         self.accntinfo_back.setGeometry(QtCore.QRect(10, 10, 113, 41))
-        self.accntinfo_back.setStyleSheet("background-color:rgb(39, 255, 36);\n"
+        self.accntinfo_back.setStyleSheet("background-color:rgb(0, 255, 0);\n"
 "color:rgb(255, 255, 255)\n"
 "")
         self.accntinfo_back.setObjectName("accntinfo_back")
         self.accntinfo_continue = QtWidgets.QPushButton(AccountInfo)
         self.accntinfo_continue.setGeometry(QtCore.QRect(460, 540, 113, 41))
-        self.accntinfo_continue.setStyleSheet("background-color:rgb(39, 255, 36);\n"
-"color:rgb(255, 255, 255)\n"
-"")
+        self.accntinfo_continue.setStyleSheet("background-color:rgb(0, 255, 0);\n"
+"color:rgb(255, 255, 255)")
         self.accntinfo_continue.setObjectName("accntinfo_continue")
         self.label_2 = QtWidgets.QLabel(AccountInfo)
         self.label_2.setGeometry(QtCore.QRect(40, 450, 391, 71))
@@ -106,7 +105,7 @@ class Ui_AccountInfo(object):
         _translate = QtCore.QCoreApplication.translate
         AccountInfo.setWindowTitle(_translate("AccountInfo", "Form"))
         self.label.setText(_translate("AccountInfo", "Account Information"))
-        self.accntinfo_back.setText(_translate("AccountInfo", "Back"))
+        self.accntinfo_back.setText(_translate("AccountInfo", "Settings"))
         self.accntinfo_continue.setText(_translate("AccountInfo", "Continue"))
         self.label_2.setText(_translate("AccountInfo", "This password will be used to encrypt your account. It is suggested you use a strong, uncommon password. You MUST remember this password. If you do not there is no way to decrypt your account. "))
         self.label_4.setText(_translate("AccountInfo", "Monitor Mining Progress At:"))

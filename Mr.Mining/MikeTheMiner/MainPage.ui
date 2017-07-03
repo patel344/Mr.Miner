@@ -48,8 +48,12 @@
      <bold>true</bold>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">
+color:rgb(0, 255, 0)</string>
+   </property>
    <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Welcome To Mister Miner! &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;Welcome To Mister Miner! &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -57,7 +61,7 @@
   </widget>
  </widget>
  <resources>
-  <include location="../../PycharmProjects/Mr.Mining/MikeTheMiner/MainPageMining.qrc"/>
+  <include location="MainPageMining.qrc"/>
  </resources>
  <connections/>
 </ui>

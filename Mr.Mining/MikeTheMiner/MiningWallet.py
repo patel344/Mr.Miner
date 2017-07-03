@@ -31,9 +31,8 @@ class Ui_MiningWallet(object):
         font.setBold(True)
         font.setWeight(75)
         self.create_wallet_pb.setFont(font)
-        self.create_wallet_pb.setStyleSheet("background-color:rgb(39, 255, 36);\n"
-"color:rgb(255, 255, 255)\n"
-"")
+        self.create_wallet_pb.setStyleSheet("background-color:rgb(0, 255, 0);\n"
+"color:rgb(255, 255, 255)")
         self.create_wallet_pb.setObjectName("create_wallet_pb")
         self.label_2 = QtWidgets.QLabel(MiningWallet)
         self.label_2.setGeometry(QtCore.QRect(260, 280, 61, 51))
@@ -66,9 +65,8 @@ class Ui_MiningWallet(object):
         self.label_3.setObjectName("label_3")
         self.add_wallet_pb = QtWidgets.QPushButton(MiningWallet)
         self.add_wallet_pb.setGeometry(QtCore.QRect(450, 420, 131, 41))
-        self.add_wallet_pb.setStyleSheet("background-color:rgb(39, 255, 36);\n"
-"color:rgb(255, 255, 255)\n"
-"")
+        self.add_wallet_pb.setStyleSheet("background-color:rgb(0, 255, 0);\n"
+"color:rgb(255, 255, 255)")
         self.add_wallet_pb.setObjectName("add_wallet_pb")
         self.label_4 = QtWidgets.QLabel(MiningWallet)
         self.label_4.setGeometry(QtCore.QRect(70, 340, 431, 51))
@@ -77,9 +75,8 @@ class Ui_MiningWallet(object):
         self.label_4.setObjectName("label_4")
         self.miningwallet_back = QtWidgets.QPushButton(MiningWallet)
         self.miningwallet_back.setGeometry(QtCore.QRect(20, 11, 113, 41))
-        self.miningwallet_back.setStyleSheet("background-color:rgb(39, 255, 36);\n"
-"color:rgb(255, 255, 255)\n"
-"")
+        self.miningwallet_back.setStyleSheet("background-color:rgb(0, 255, 0);\n"
+"color:rgb(255, 255, 255)")
         self.miningwallet_back.setObjectName("miningwallet_back")
 
         self.retranslateUi(MiningWallet)

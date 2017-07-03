@@ -79,21 +79,20 @@ class Ui_SetupPage(object):
         self.gpu_reqs.setObjectName("gpu_reqs")
         self.lineEdit_email = QtWidgets.QLineEdit(SetupPage)
         self.lineEdit_email.setGeometry(QtCore.QRect(70, 430, 341, 31))
-        self.lineEdit_email.setStyleSheet("\n"
-"color:rgb(255, 255, 255)\n"
+        self.lineEdit_email.setStyleSheet("background-color:rgb(105,105,105);\n"
+"color:rgb(255, 255, 255);\n"
 "")
         self.lineEdit_email.setObjectName("lineEdit_email")
         self.lineEdit_rigName = QtWidgets.QLineEdit(SetupPage)
         self.lineEdit_rigName.setGeometry(QtCore.QRect(70, 510, 341, 31))
-        self.lineEdit_rigName.setStyleSheet("\n"
-"color:rgb(255, 255, 255)\n"
+        self.lineEdit_rigName.setStyleSheet("background-color:rgb(105,105,105);\n"
+"color:rgb(255, 255, 255);\n"
 "")
         self.lineEdit_rigName.setObjectName("lineEdit_rigName")
         self.setup_next_pb = QtWidgets.QPushButton(SetupPage)
         self.setup_next_pb.setGeometry(QtCore.QRect(462, 551, 121, 41))
-        self.setup_next_pb.setStyleSheet("background-color:rgb(39, 255, 36);\n"
-"color:rgb(255, 255, 255)\n"
-"")
+        self.setup_next_pb.setStyleSheet("background-color:rgb(0, 255, 0);\n"
+"color:rgb(255, 255, 255)")
         self.setup_next_pb.setObjectName("setup_next_pb")
         self.label_5 = QtWidgets.QLabel(SetupPage)
         self.label_5.setGeometry(QtCore.QRect(70, 300, 291, 41))
@@ -108,8 +107,8 @@ class Ui_SetupPage(object):
         self.label_5.setObjectName("label_5")
         self.lineEdit_no_gpus = QtWidgets.QLineEdit(SetupPage)
         self.lineEdit_no_gpus.setGeometry(QtCore.QRect(70, 350, 41, 31))
-        self.lineEdit_no_gpus.setStyleSheet("\n"
-"color:rgb(255, 255, 255)\n"
+        self.lineEdit_no_gpus.setStyleSheet("background-color:rgb(105,105,105);\n"
+"color:rgb(255, 255, 255);\n"
 "")
         self.lineEdit_no_gpus.setObjectName("lineEdit_no_gpus")
 
