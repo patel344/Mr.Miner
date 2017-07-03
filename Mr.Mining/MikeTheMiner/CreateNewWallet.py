@@ -70,7 +70,7 @@ class Ui_CreateNewWallet(object):
 
     def retranslateUi(self, CreateNewWallet):
         _translate = QtCore.QCoreApplication.translate
-        CreateNewWallet.setWindowTitle(_translate("CreateNewWallet", "Form"))
+        CreateNewWallet.setWindowTitle(_translate("CreateNewWallet", "Mr.Miner"))
         self.newWallet_back.setText(_translate("CreateNewWallet", "Back"))
         self.newWallet_continue.setText(_translate("CreateNewWallet", "Continue"))
         self.label.setText(_translate("CreateNewWallet", "Create New Wallet"))

@@ -112,7 +112,7 @@ class Ui_NowMining(object):
 
     def retranslateUi(self, NowMining):
         _translate = QtCore.QCoreApplication.translate
-        NowMining.setWindowTitle(_translate("NowMining", "Form"))
+        NowMining.setWindowTitle(_translate("NowMining", "Mr.Miner"))
         self.hashrate_label.setText(_translate("NowMining", "123"))
         self.label.setText(_translate("NowMining", "<html><head/><body><p><span style=\" color:#ffffff;\">Mining</span></p></body></html>"))
         self.label_4.setText(_translate("NowMining", "<html><head/><body><p><span style=\" color:#ffffff;\">Hash Rate:</span></p></body></html>"))

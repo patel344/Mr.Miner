@@ -84,7 +84,7 @@ class Ui_MiningWallet(object):
 
     def retranslateUi(self, MiningWallet):
         _translate = QtCore.QCoreApplication.translate
-        MiningWallet.setWindowTitle(_translate("MiningWallet", "Form"))
+        MiningWallet.setWindowTitle(_translate("MiningWallet", "Mr.Miner"))
         self.label.setText(_translate("MiningWallet", "Mining Wallet"))
         self.create_wallet_pb.setText(_translate("MiningWallet", "Create New Wallet"))
         self.label_2.setText(_translate("MiningWallet", "OR"))

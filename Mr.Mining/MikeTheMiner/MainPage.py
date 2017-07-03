@@ -34,7 +34,7 @@ class Ui_MainPage(object):
 
     def retranslateUi(self, MainPage):
         _translate = QtCore.QCoreApplication.translate
-        MainPage.setWindowTitle(_translate("MainPage", "Form"))
+        MainPage.setWindowTitle(_translate("MainPage", "Mr.Miner"))
         self.label.setText(_translate("MainPage", "<html><head/><body><p><img src=\":/MainPageMining/MinerLogo.png\"/></p></body></html>"))
         self.label_2.setText(_translate("MainPage", "<html><head/><body><p><span style=\" color:#00ff00;\">Welcome To Mister Miner! </span></p></body></html>"))
 

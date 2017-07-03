@@ -103,7 +103,7 @@ class Ui_AccountInfo(object):
 
     def retranslateUi(self, AccountInfo):
         _translate = QtCore.QCoreApplication.translate
-        AccountInfo.setWindowTitle(_translate("AccountInfo", "Form"))
+        AccountInfo.setWindowTitle(_translate("AccountInfo", "Mr.Miner"))
         self.label.setText(_translate("AccountInfo", "Account Information"))
         self.accntinfo_back.setText(_translate("AccountInfo", "Settings"))
         self.accntinfo_continue.setText(_translate("AccountInfo", "Continue"))
