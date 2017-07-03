@@ -15,11 +15,6 @@ class Ui_NowMining(object):
         NowMining.setStyleSheet("background-color:rgb(33, 33, 33);\n"
 "\n"
 "")
-        self.Mining_continue = QtWidgets.QPushButton(NowMining)
-        self.Mining_continue.setGeometry(QtCore.QRect(460, 540, 113, 41))
-        self.Mining_continue.setStyleSheet("background-color:rgb(0, 255, 0);\n"
-"color:rgb(255, 255, 255)")
-        self.Mining_continue.setObjectName("Mining_continue")
         self.hashrate_label = QtWidgets.QLabel(NowMining)
         self.hashrate_label.setGeometry(QtCore.QRect(220, 180, 301, 24))
         self.hashrate_label.setStyleSheet("\n"
@@ -118,7 +113,6 @@ class Ui_NowMining(object):
     def retranslateUi(self, NowMining):
         _translate = QtCore.QCoreApplication.translate
         NowMining.setWindowTitle(_translate("NowMining", "Form"))
-        self.Mining_continue.setText(_translate("NowMining", "Continue"))
         self.hashrate_label.setText(_translate("NowMining", "123"))
         self.label.setText(_translate("NowMining", "<html><head/><body><p><span style=\" color:#ffffff;\">Mining</span></p></body></html>"))
         self.label_4.setText(_translate("NowMining", "<html><head/><body><p><span style=\" color:#ffffff;\">Hash Rate:</span></p></body></html>"))

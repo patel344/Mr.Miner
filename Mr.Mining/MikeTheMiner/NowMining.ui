@@ -18,23 +18,6 @@
 
 </string>
   </property>
-  <widget class="QPushButton" name="Mining_continue">
-   <property name="geometry">
-    <rect>
-     <x>460</x>
-     <y>540</y>
-     <width>113</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color:rgb(0, 255, 0);
-color:rgb(255, 255, 255)</string>
-   </property>
-   <property name="text">
-    <string>Continue</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="hashrate_label">
    <property name="geometry">
     <rect>

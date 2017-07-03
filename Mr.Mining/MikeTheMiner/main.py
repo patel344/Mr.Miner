@@ -392,7 +392,32 @@ class NowMining(QDialog, Ui_NowMining):
         self.close()
 
     def startOver(self):
-        "Restarts Mining of Same currency"
+        if currency_caller == 'Ethereum':
+            if os.path.exists('Ethereum_Wallet/Ethereum_Settings.txt'):
+                with open('Ethereum_Wallet/Ethereum_Settings.txt') as f:
+                    account = f.readlines()[0]
+
+                subprocess.call("setx GPU_FORCE_64BIT_PTR 0", shell=True)
+                subprocess.call("setx GPU_MAX_HEAP_SIZE 100", shell=True)
+                subprocess.call("setx GPU_USE_SYNC_OBJECTS 1", shell=True)
+                subprocess.call("setx GPU_SINGLE_ALLOC_PERCENT 100", shell=True)
+                subprocess.call("setx GPU_MAX_ALLOC_PERCENT 100", shell=True)
+                subprocess.call("echo ethminer.exe -F http://eth-eu1.nanopool.org:8888/0x" + account + "/" + rig_name + "/" + email + " -I",
+                 shell=True)
+
+        elif currency_caller == 'Ethereum_Classic':
+            if os.path.exists('EthereumClassic_Wallet/EthereumClassic_Settings.txt'):
+                with open('EthereumClassic_Wallet/EthereumClassic_Settings.txt') as f:
+                    account = f.readlines()[0]
+
+                subprocess.call("setx GPU_FORCE_64BIT_PTR 0", shell=True)
+                subprocess.call("setx GPU_MAX_HEAP_SIZE 100", shell=True)
+                subprocess.call("setx GPU_USE_SYNC_OBJECTS 1", shell=True)
+                subprocess.call("setx GPU_SINGLE_ALLOC_PERCENT 100", shell=True)
+                subprocess.call("setx GPU_MAX_ALLOC_PERCENT 100", shell=True)
+                subprocess.call("ethminer.exe --farm-recheck 200 -I -S etc-eu1.nanopool.org:19999 -O 0x" + account + "." + rig_name + "/" + email,
+                            shell=True)
+
 
     def back_pressed(self):
         global setuppage
