@@ -278,7 +278,7 @@
   <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>59</x>
+     <x>50</x>
      <y>10</y>
      <width>481</width>
      <height>80</height>

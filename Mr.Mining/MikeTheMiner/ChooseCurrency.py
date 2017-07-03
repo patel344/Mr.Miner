@@ -97,7 +97,7 @@ class Ui_ChooseCurrency(object):
         self.label_7.setStyleSheet("color:rgb(0, 255, 0)")
         self.label_7.setObjectName("label_7")
         self.verticalLayoutWidget = QtWidgets.QWidget(ChooseCurrency)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(59, 10, 481, 80))
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(50, 10, 481, 80))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout_3.setSizeConstraint(QtWidgets.QLayout.SetFixedSize)
