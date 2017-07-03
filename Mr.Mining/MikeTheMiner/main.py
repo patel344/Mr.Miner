@@ -361,7 +361,7 @@ class NowMining(QDialog, Ui_NowMining):
             subprocess.call("setx GPU_USE_SYNC_OBJECTS 1", shell=True)
             subprocess.call("setx GPU_SINGLE_ALLOC_PERCENT 100", shell=True)
             subprocess.call("setx GPU_MAX_ALLOC_PERCENT 100", shell=True)
-            subprocess.call("echo ethminer.exe -F http://eth-eu1.nanopool.org:8888/0x" + account + "/" + rig_name + "/" + email + " -I",
+            subprocess.call("Santas_helpers\ethminer.exe -I -F http://eth-eu1.nanopool.org:8888/0x" + account + "/" + rig_name + "/" + email ,
                  shell=True)
         elif currency_caller == 'Ethereum_Classic':
             if os.path.exists('EthereumClassic_Wallet/EthereumClassic_Settings.txt'):
@@ -373,7 +373,7 @@ class NowMining(QDialog, Ui_NowMining):
             subprocess.call("setx GPU_USE_SYNC_OBJECTS 1", shell=True)
             subprocess.call("setx GPU_SINGLE_ALLOC_PERCENT 100", shell=True)
             subprocess.call("setx GPU_MAX_ALLOC_PERCENT 100", shell=True)
-            subprocess.call("ethminer.exe --farm-recheck 200 -I -S etc-eu1.nanopool.org:19999 -O 0x" + account + "." + rig_name + "/" + email,
+            subprocess.call("Santas_helpers\ethminer.exe --farm-recheck 200 -I -S etc-eu1.nanopool.org:19999 -O 0x" + account + "." + rig_name + "/" + email,
                             shell=True)
 
     def Establish_Connections(self):
