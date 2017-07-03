@@ -384,6 +384,16 @@ class NowMining(QDialog, Ui_NowMining):
         self.stop_pb.clicked.connect(self.stop)
         self.startOver_pb.clicked.connect(self.startOver)
         self.Mining_back.clicked.connect(self.back_pressed)
+        self.auto_cb.stateChanged.connect(self.auto_mine)
+        self.coinName_cb.setText(currency_caller)
+
+    def auto_mine(self):
+        if self.auto_cb.isChecked():
+            with open('AutoMine_Settings.txt', 'w') as f:
+                f.write(currency_caller)
+        else:
+            if os.path.exists('AutoMine_Settings.txt'):
+                os.remove('AutoMine_Settings.txt')
 
     def stop(self):
         "Quit mining application"
@@ -431,7 +441,10 @@ def load_info():
     global num_gpus
     global graphic_card
     global settings_exist
+    global currency_caller
+    global automine_bool
 
+    automine_bool = False
     settings_exist = False
 
     if not os.path.exists('Ethereum_Wallet'):
@@ -446,7 +459,12 @@ def load_info():
         os.makedirs('Monero_Wallet')
     if not os.path.exists('Zcash_Wallet'):
         os.makedirs('Zcash_Wallet')
-        
+
+    if os.path.isfile('AutoMine_Settings.txt'):
+        with open('AutoMine_Settings.txt') as f:
+            currency_caller = f.readlines()[0]
+        automine_bool = True
+
     if os.path.isfile('Mining_Settings.txt'):
         with open('Mining_Settings.txt', 'r') as f:
             settings = f.readlines()
@@ -487,9 +505,15 @@ def main():
 
     # If setup info has already been entered go directly to currency page
     if load_info():
-        global choosecurrency
-        choosecurrency = ChooseCurrency()
-        choosecurrency.show()
+        if automine_bool:
+            global nowmining
+            nowmining = NowMining()
+            nowmining.auto_cb.setChecked(True)
+            nowmining.show()
+        else:
+            global choosecurrency
+            choosecurrency = ChooseCurrency()
+            choosecurrency.show()
     else:
         global setuppage
         setuppage = SetupPage()
