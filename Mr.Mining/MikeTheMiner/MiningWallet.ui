@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
+    <width>632</width>
     <height>600</height>
    </rect>
   </property>
@@ -20,8 +20,8 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>70</x>
-     <y>50</y>
+     <x>100</x>
+     <y>60</y>
      <width>451</width>
      <height>51</height>
     </rect>
@@ -46,7 +46,7 @@ color:rgb(255, 255, 255)
   <widget class="QPushButton" name="create_wallet_pb">
    <property name="geometry">
     <rect>
-     <x>170</x>
+     <x>210</x>
      <y>170</y>
      <width>251</width>
      <height>81</height>
@@ -54,9 +54,7 @@ color:rgb(255, 255, 255)
    </property>
    <property name="font">
     <font>
-     <pointsize>21</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
+     <pointsize>20</pointsize>
     </font>
    </property>
    <property name="styleSheet">
@@ -70,17 +68,15 @@ color:rgb(255, 255, 255)</string>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>280</y>
+     <x>300</x>
+     <y>270</y>
      <width>61</width>
      <height>51</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>24</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
+     <pointsize>20</pointsize>
     </font>
    </property>
    <property name="styleSheet">
@@ -98,8 +94,8 @@ color:rgb(255, 255, 255)
   <widget class="QLineEdit" name="lineEdit_wallet_no">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>423</y>
+     <x>200</x>
+     <y>420</y>
      <width>271</width>
      <height>30</height>
     </rect>
@@ -115,13 +111,13 @@ color:rgb(255, 255, 255)
     <rect>
      <x>10</x>
      <y>413</y>
-     <width>161</width>
+     <width>181</width>
      <height>41</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>14</pointsize>
+     <pointsize>12</pointsize>
      <weight>75</weight>
      <bold>true</bold>
     </font>
@@ -138,10 +134,10 @@ color:rgb(255, 255, 255)
   <widget class="QPushButton" name="add_wallet_pb">
    <property name="geometry">
     <rect>
-     <x>450</x>
-     <y>420</y>
+     <x>479</x>
+     <y>415</y>
      <width>131</width>
-     <height>41</height>
+     <height>40</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -155,7 +151,7 @@ color:rgb(255, 255, 255)</string>
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>70</x>
+     <x>100</x>
      <y>340</y>
      <width>431</width>
      <height>51</height>

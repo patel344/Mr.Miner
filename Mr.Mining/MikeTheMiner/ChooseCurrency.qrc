@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="ChooseCurrency">
+    <file>Logo_green-01.png</file>
     <file>etc-logo.png</file>
     <file>eth-logo.png</file>
     <file>pasc-logo.png</file>

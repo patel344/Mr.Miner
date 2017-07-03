@@ -85,7 +85,7 @@ color:rgb(255, 255, 255)</string>
    </property>
    <property name="font">
     <font>
-     <pointsize>20</pointsize>
+     <pointsize>18</pointsize>
      <weight>75</weight>
      <bold>true</bold>
     </font>
@@ -134,13 +134,13 @@ color:rgb(255, 255, 255)</string>
     <rect>
      <x>40</x>
      <y>145</y>
-     <width>401</width>
+     <width>451</width>
      <height>41</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>20</pointsize>
+     <pointsize>18</pointsize>
      <weight>75</weight>
      <bold>true</bold>
     </font>
@@ -172,6 +172,8 @@ color:rgb(255, 255, 255)</string>
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="ChooseCurrency.qrc"/>
+ </resources>
  <connections/>
 </ui>
