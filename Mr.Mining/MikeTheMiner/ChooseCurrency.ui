@@ -285,6 +285,9 @@
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_3">
+    <property name="sizeConstraint">
+     <enum>QLayout::SetFixedSize</enum>
+    </property>
     <item>
      <widget class="QLabel" name="label">
       <property name="font">
