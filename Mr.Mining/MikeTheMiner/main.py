@@ -1,11 +1,12 @@
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
-
+from subprocess import Popen, PIPE, STDOUT
 import sys, os
 import time
 import subprocess
 import pexpect
+from pexpect import popen_spawn
 
 from MainPage import Ui_MainPage
 from SetupPage import Ui_SetupPage
@@ -103,7 +104,7 @@ class CreateNewWallet(QDialog, Ui_CreateNewWallet):
         if self.lineEdit_password.text() == self.lineEdit_passwordconfirm.text():
             password = self.lineEdit_password.text()
             if currency_caller == 'Ethereum':
-                child = pexpect.spawn('geth account new')
+                child = pexpect.popen_spawn.PopenSpawn('geth account new')
                 child.delaybeforesend = None
                 child.expect('.*')
                 child.sendline(self.lineEdit_password.text())
@@ -117,7 +118,7 @@ class CreateNewWallet(QDialog, Ui_CreateNewWallet):
                     f.write(account)
 
             elif currency_caller == 'Ethereum_Classic':
-                child = pexpect.spawn('geth account new')
+                child = pexpect.popen_spawn.PopenSpawn('geth account new')
                 child.delaybeforesend = None
                 child.expect('.*')
                 child.sendline(self.lineEdit_password.text())
