@@ -25,4 +25,4 @@ exe = EXE(pyz,
           debug=False,
           strip=False,
           upx=True,
-          console=False , icon='logo_green.ico')
+          console=True , icon='logo_green.ico')
