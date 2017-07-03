@@ -27,7 +27,11 @@
      <height>501</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout"/>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="sizeConstraint">
+     <enum>QLayout::SetFixedSize</enum>
+    </property>
+   </layout>
   </widget>
   <widget class="QPushButton" name="stop_pb">
    <property name="geometry">

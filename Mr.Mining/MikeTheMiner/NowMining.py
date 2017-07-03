@@ -19,6 +19,7 @@ class Ui_NowMining(object):
         self.verticalLayoutWidget.setGeometry(QtCore.QRect(9, 9, 581, 501))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
+        self.verticalLayout.setSizeConstraint(QtWidgets.QLayout.SetFixedSize)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout.setObjectName("verticalLayout")
         self.stop_pb = QtWidgets.QPushButton(NowMining)
