@@ -393,7 +393,12 @@ class NowMining(QDialog, Ui_NowMining):
                 batman.write('setx GPU_USE_SYNC_OBJECTS 1\n')
                 batman.write('setx GPU_SINGLE_ALLOC_PERCENT 100\n')
                 batman.write('setx GPU_MAX_ALLOC_PERCENT 100\n')
-                batman.write("Santas_helpers\ethminer.exe -I -F http://eth-eu1.nanopool.org:8888/0x" + account + "/" + rig_name + "/" + email)
+                #NVIDIA
+                if graphic_card == 'nvidia\n':
+                    batman.write(
+                        "Santas_helpers\ethminer.exe -I -F http://eth-eu1.nanopool.org:8888/0x" + account + "/" + rig_name + "/" + email)
+                elif graphic_card == 'amd\n':
+                    batman.write("Santas_helpers\ethminer.exe -P -F http://eth-eu1.nanopool.org:8888/0x" + account + "/" + rig_name + "/" + email)
             subprocess.Popen("Santas_helpers\etherum_Start.bat", shell=True)
             #batman.close()
             #subprocess.call("setx GPU_MAX_HEAP_SIZE 100", shell=True)
@@ -409,13 +414,21 @@ class NowMining(QDialog, Ui_NowMining):
             if os.path.exists('EthereumClassic_Wallet/EthereumClassic_Settings.txt'):
                 with open('EthereumClassic_Wallet/EthereumClassic_Settings.txt') as f:
                     account = f.readlines()[0]
-            subprocess.call("setx GPU_FORCE_64BIT_PTR 0", shell=True)
-            subprocess.call("setx GPU_MAX_HEAP_SIZE 100", shell=True)
-            subprocess.call("setx GPU_USE_SYNC_OBJECTS 1", shell=True)
-            subprocess.call("setx GPU_SINGLE_ALLOC_PERCENT 100", shell=True)
-            subprocess.call("setx GPU_MAX_ALLOC_PERCENT 100", shell=True)
-            subprocess.call("Santas_helpers\ethminer.exe --farm-recheck 200 -I -S etc-eu1.nanopool.org:19999 -O 0x" + account + "." + rig_name + "/" + email,
-                            shell=True)
+            with open('Santas_helpers\etherumClassic_Start.bat', 'w')as batman:
+                batman.write('setx GPU_FORCE_64BIT_PTR 0\n')
+                batman.write('setx GPU_MAX_HEAP_SIZE 100\n')
+                batman.write('setx GPU_USE_SYNC_OBJECTS 1\n')
+                batman.write('setx GPU_SINGLE_ALLOC_PERCENT 100\n')
+                batman.write('setx GPU_MAX_ALLOC_PERCENT 100\n')
+                if graphic_card == 'nvidia\n':
+                    batman.write(
+                        "Santas_helpers\ethminer.exe --farm-recheck 200 -I -S etc-eu1.nanopool.org:19999 -O 0x" + account + "." + rig_name + "/" + email)
+                elif graphic_card == 'amd\n ':
+                    batman.write(
+                        "Santas_helpers\ethminer.exe --farm-recheck 200 -P -S etc-eu1.nanopool.org:19999 -O 0x" + account + "." + rig_name + "/" + email)
+
+
+            subprocess.Popen("Santas_helpers\etherumClassic_Start.bat", shell=True)
         elif currency_caller == 'Zcash':
             if os.path.exists('Zcash_Wallet/Zcash_Settings.txt'):
                 with open('Zcash_Wallet/Zcash_Settings.txt') as f:
@@ -454,6 +467,16 @@ class NowMining(QDialog, Ui_NowMining):
         "Quit mining application"
         if currency_caller == 'Ethereum':
             os.system("taskkill /f /im  ethminer.exe")
+        elif currency_caller == 'Ethereum_Classic':
+            os.system("taskkill /f /im  ethminer.exe")
+        elif currency_caller == 'Zcash':
+            os.system("taskkill /f /im  ethminer.exe")
+        elif currency_caller == 'Sia':
+            os.system("taskkill /f /im  ethminer.exe")
+        elif currency_caller == 'Pascal':
+            os.system("taskkill /f /im  ethminer.exe")
+        elif currency_caller == 'Monero':
+            os.system("taskkill /f /im  ethminer.exe")
         global choosecurrency
         choosecurrency = ChooseCurrency()
         choosecurrency.show()
@@ -461,31 +484,52 @@ class NowMining(QDialog, Ui_NowMining):
 
     def startOver(self):
         if currency_caller == 'Ethereum':
+            os.system("taskkill /f /im  ethminer.exe")
             if os.path.exists('Ethereum_Wallet/Ethereum_Settings.txt'):
                 with open('Ethereum_Wallet/Ethereum_Settings.txt') as f:
                     account = f.readlines()[0]
+            with open('Santas_helpers\etherum_Start.bat', 'w')as batman:
+                batman.write('setx GPU_FORCE_64BIT_PTR 0\n')
+                batman.write('setx GPU_MAX_HEAP_SIZE 100\n')
+                batman.write('setx GPU_USE_SYNC_OBJECTS 1\n')
+                batman.write('setx GPU_SINGLE_ALLOC_PERCENT 100\n')
+                batman.write('setx GPU_MAX_ALLOC_PERCENT 100\n')
+                # NVIDIA
 
-                subprocess.call("setx GPU_FORCE_64BIT_PTR 0", shell=True)
-                subprocess.call("setx GPU_MAX_HEAP_SIZE 100", shell=True)
-                subprocess.call("setx GPU_USE_SYNC_OBJECTS 1", shell=True)
-                subprocess.call("setx GPU_SINGLE_ALLOC_PERCENT 100", shell=True)
-                subprocess.call("setx GPU_MAX_ALLOC_PERCENT 100", shell=True)
-                subprocess.call("echo ethminer.exe -F http://eth-eu1.nanopool.org:8888/0x" + account + "/" + rig_name + "/" + email + " -I",
-                 shell=True)
+                if graphic_card == 'nvidia\n':
+                    batman.write(
+                        "Santas_helpers\ethminer.exe -I -F http://eth-eu1.nanopool.org:8888/0x" + account + "/" + rig_name + "/" + email)
+                elif graphic_card == 'amd\n':
+                    batman.write(
+                        "Santas_helpers\ethminer.exe -P -F http://eth-eu1.nanopool.org:8888/0x" + account + "/" + rig_name + "/" + email)
+            subprocess.Popen("Santas_helpers\etherum_Start.bat", shell=True)
 
         elif currency_caller == 'Ethereum_Classic':
+            os.system("taskkill /f /im  ethminer.exe")
             if os.path.exists('EthereumClassic_Wallet/EthereumClassic_Settings.txt'):
                 with open('EthereumClassic_Wallet/EthereumClassic_Settings.txt') as f:
                     account = f.readlines()[0]
-
-                subprocess.call("setx GPU_FORCE_64BIT_PTR 0", shell=True)
-                subprocess.call("setx GPU_MAX_HEAP_SIZE 100", shell=True)
-                subprocess.call("setx GPU_USE_SYNC_OBJECTS 1", shell=True)
-                subprocess.call("setx GPU_SINGLE_ALLOC_PERCENT 100", shell=True)
-                subprocess.call("setx GPU_MAX_ALLOC_PERCENT 100", shell=True)
-                subprocess.call("ethminer.exe --farm-recheck 200 -I -S etc-eu1.nanopool.org:19999 -O 0x" + account + "." + rig_name + "/" + email,
-                            shell=True)
-
+            with open('Santas_helpers\etherumClassic_Start.bat', 'w')as batman:
+                batman.write('setx GPU_FORCE_64BIT_PTR 0\n')
+                batman.write('setx GPU_MAX_HEAP_SIZE 100\n')
+                batman.write('setx GPU_USE_SYNC_OBJECTS 1\n')
+                batman.write('setx GPU_SINGLE_ALLOC_PERCENT 100\n')
+                batman.write('setx GPU_MAX_ALLOC_PERCENT 100\n')
+                if graphic_card == 'nvidia\n':
+                    batman.write(
+                        "Santas_helpers\ethminer.exe --farm-recheck 200 -I -S etc-eu1.nanopool.org:19999 -O 0x" + account + "." + rig_name + "/" + email)
+                elif graphic_card == 'amd\n':
+                    batman.write(
+                        "Santas_helpers\ethminer.exe --farm-recheck 200 -P -S etc-eu1.nanopool.org:19999 -O 0x" + account + "." + rig_name + "/" + email)
+            subprocess.Popen("Santas_helpers\etherumClassic_Start.bat", shell=True)
+        elif currency_caller == 'Zcash':
+            os.system("taskkill /f /im  ethminer.exe")
+        elif currency_caller == 'Sia':
+            os.system("taskkill /f /im  ethminer.exe")
+        elif currency_caller == 'Pascal':
+            os.system("taskkill /f /im  ethminer.exe")
+        elif currency_caller == 'Monero':
+            os.system("taskkill /f /im  ethminer.exe")
 
     def back_pressed(self):
         global setuppage
