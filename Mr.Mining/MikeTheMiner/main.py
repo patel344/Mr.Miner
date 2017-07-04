@@ -53,12 +53,25 @@ class SetupPage(QDialog, Ui_SetupPage):
     def nvidia_chosen(self):
         global graphic_card
         graphic_card = 'nvidia'
-        self.gpu_reqs.setText('NVIDIA REQS')
+        self.gpu_reqs.setText('*Download and Install your GPU Drivers from:\nhttp://www.nvidia.com/Download/index.aspx\n'
+                                '*Download and Install CUDA Drivers from: \n'
+                                'https://developer.nvidia.com/cuda-downloads\n'
+                                '*Download and Install Microsoft Visual Studio redistributable 2015: \n'
+                                'https://www.microsoft.com/en-us/download/details.aspx?id=48145\n'
+                                '*Download and Install Microsoft Visual Studio redistributable 2013\n'
+                                'https://www.microsoft.com/en-us/download/details.aspx?id=40784\n')
 
     def amd_chosen(self):
         global graphic_card
         graphic_card = 'amd'
-        self.gpu_reqs.setText('AMD REQS')
+        self.gpu_reqs.setText(
+            '*Download and Install your GPU Drivers from:\nhttp://support.amd.com/en-us/download\n'
+            '*Download and Install OPENCL Drivers from: \n'
+            'http://support.amd.com/en-us/kb-articles/Pages/OpenCL2-Driver.aspx\n'
+            '*Download and Install Microsoft Visual Studio redistributable 2015: \n'
+            'https://www.microsoft.com/en-us/download/details.aspx?id=48145\n'
+            '*Download and Install Microsoft Visual Studio redistributable 2013\n'
+            'https://www.microsoft.com/en-us/download/details.aspx?id=40784\n')
 
     def save_options(self):
         global choosecurrency
@@ -487,7 +500,7 @@ class NowMining(QDialog, Ui_NowMining):
                     shit_call = 'Santas_helpers\gominer.exe -I 28 -H sia-eu1.nanopool.org:9980 -Q "address=' + account + '&worker='+ rig_name +'&email=' + email +'" \n'
                     batman.write(shit_call)
             subprocess.Popen("Santas_helpers\Sia_Start.bat", shell=True)
-        elif currency_caller == 'Monero_CPU':
+        elif currency_caller == 'Monero':
             if os.path.exists('Monero_Wallet/Monero_Settings.txt'):
                 with open('Monero_Wallet/Monero_Settings.txt') as f:
                     account = f.readlines()[0]
@@ -499,7 +512,7 @@ class NowMining(QDialog, Ui_NowMining):
                     elif graphic_card == 'amd\n ':
                         batman.write("Santas_helpers\miner xmr.conf")
                 subprocess.Popen("Santas_helpers\Monero_Start.bat", shell=True)
-        elif currency_caller == 'Monero':
+        elif currency_caller == 'Monero_CPU':
             if os.path.exists('Monero_Wallet/Monero_Settings.txt'):
                 with open('Monero_Wallet/Monero_Settings.txt') as f:
                     account = f.readlines()[0]
@@ -537,11 +550,17 @@ class NowMining(QDialog, Ui_NowMining):
             elif graphic_card == 'amd\n':
                 os.system("taskkill /f /im  genoil.exe")
         elif currency_caller == 'Sia':
-            os.system("taskkill /f /im  ethminer.exe")
+            if graphic_card == 'nvidia\n':
+                os.system("taskkill /f /im  ccminer.exe")
+            elif graphic_card == 'amd\n':
+                os.system("taskkill /f /im  ominer.exe")
         elif currency_caller == 'Monero_CPU':
-            os.system("taskkill /f /im  ethminer.exe")
+            os.system("taskkill /f /im  miner.exe")
         elif currency_caller == 'Monero':
-            os.system("taskkill /f /im  ethminer.exe")
+            if graphic_card == 'nvidia\n':
+                os.system("taskkill /f /im  ccminer.exe")
+            elif graphic_card == 'amd\n':
+                os.system("taskkill /f /im  miner.exe")
         global choosecurrency
         choosecurrency = ChooseCurrency()
         choosecurrency.show()
@@ -615,7 +634,7 @@ class NowMining(QDialog, Ui_NowMining):
             if graphic_card == 'nvidia\n':
                 os.system("taskkill /f /im  ccminer.exe")
             elif graphic_card == 'amd\n':
-                os.system("taskkill /f /im  gominer.exe")
+                os.system("taskkill /f /im  ominer.exe")
             if os.path.exists('Sia_Wallet/Sia_Settings.txt'):
                 with open('Sia_Wallet/Sia_Settings.txt') as f:
                     account = f.readlines()[0]
@@ -628,9 +647,12 @@ class NowMining(QDialog, Ui_NowMining):
                     batman.write(shit_call)
             subprocess.Popen("Santas_helpers\Sia_Start.bat", shell=True)
         elif currency_caller == 'Monero_CPU':
-            os.system("taskkill /f /im  ethminer.exe")
+            os.system("taskkill /f /im  miner.exe")
         elif currency_caller == 'Monero':
-            os.system("taskkill /f /im  ethminer.exe")
+            if graphic_card == 'nvidia\n':
+                os.system("taskkill /f /im  ccminer.exe")
+            elif graphic_card == 'amd\n':
+                os.system("taskkill /f /im  miner.exe")
 
     def back_pressed(self):
         global setuppage
