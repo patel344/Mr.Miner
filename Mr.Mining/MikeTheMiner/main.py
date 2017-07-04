@@ -46,26 +46,9 @@ class SetupPage(QDialog, Ui_SetupPage):
         self.Establish_Connections()
 
     def Establish_Connections(self):
-        self.setup_next_pb.clicked.connect(self.handle_button)
         self.nvidia_rb.toggled.connect(self.nvidia_chosen)
         self.amd_rb.toggled.connect(self.amd_chosen)
         self.setup_next_pb.clicked.connect(self.save_options)
-
-    def handle_button(self):
-        global choosecurrency
-        global email
-        global rig_name
-        global num_gpus
-
-        # Check if email is valid
-        email = self.lineEdit_email.text()
-        rig_name = self.lineEdit_rigName.text()
-        num_gpus = self.lineEdit_no_gpus.text()
-
-        # Going To Next Stage
-        choosecurrency = ChooseCurrency()
-        choosecurrency.show()
-        self.close()
 
     def nvidia_chosen(self):
         global graphic_card
@@ -78,8 +61,28 @@ class SetupPage(QDialog, Ui_SetupPage):
         self.gpu_reqs.setText('AMD REQS')
 
     def save_options(self):
+        global choosecurrency
+        global email
+        global rig_name
+        global num_gpus
+
+        # Check if email is valid
+        email = self.lineEdit_email.text()
+        rig_name = self.lineEdit_rigName.text()
+        num_gpus = self.lineEdit_no_gpus.text()
+
         if self.nvidia_rb.isChecked() or self.amd_rb.isChecked():
-            with open('Mining_Settings.txt', 'a') as f:
+            try:
+                val = int(num_gpus)
+            except ValueError:
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Critical)
+                msg.setText("Number of GPUs input must be an integer value.")
+                msg.setWindowTitle("Mr.Miner Incorrect Information")
+                msg.setStandardButtons(QMessageBox.Ok)
+                msg.exec()
+
+            with open('Mining_Settings.txt', 'w') as f:
                 f.write(graphic_card)
                 f.write('\n')
                 f.write(num_gpus)
@@ -87,6 +90,12 @@ class SetupPage(QDialog, Ui_SetupPage):
                 f.write(email)
                 f.write('\n')
                 f.write(rig_name)
+
+            # Going To Next Stage
+            choosecurrency = ChooseCurrency()
+            choosecurrency.show()
+            self.close()
+
         else:
             msg = QMessageBox()
             msg.setIcon(QMessageBox.Critical)
@@ -103,6 +112,13 @@ class CreateNewWallet(QDialog, Ui_CreateNewWallet):
 
     def Establish_Connections(self):
         self.newWallet_continue.clicked.connect(self.handle_next)
+        self.newWallet_back.clicked.connect(self.handle_back)
+
+    def handle_back(self):
+        global miningwallet
+        miningwallet = MiningWallet()
+        miningwallet.show()
+        self.close()
 
     def handle_next(self):
         global accountinfo
@@ -186,6 +202,13 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
         self.sia.clicked.connect(self.handle_currency)
         self.monero.clicked.connect(self.handle_currency)
         self.pascal.clicked.connect(self.handle_currency)
+        self.Mining_back.clicked.connect(self.handle_back)
+
+    def handle_back(self):
+        global setuppage
+        setuppage = SetupPage()
+        setuppage.show()
+        self.close()
 
     def handle_currency(self):
         global nowmining
@@ -371,7 +394,7 @@ class MiningWallet(QDialog, Ui_MiningWallet):
         self.close()
 
     def back_clicked(self):
-        #global choosecurrency
+        global choosecurrency
         choosecurrency = ChooseCurrency()
         choosecurrency.show()
         self.close()
