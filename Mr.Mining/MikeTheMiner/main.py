@@ -93,6 +93,7 @@ class SetupPage(QDialog, Ui_SetupPage):
             msg.setText("Please select the graphic card you are using.")
             msg.setWindowTitle("Mr.Miner Missing Information")
             msg.setStandardButtons(QMessageBox.Ok)
+            msg.exec()
 
 class CreateNewWallet(QDialog, Ui_CreateNewWallet):
     def __init__(self):
@@ -142,7 +143,6 @@ class CreateNewWallet(QDialog, Ui_CreateNewWallet):
                     #open wallet aplication
                     with open('Zcash_Settings.txt', 'w') as f:
                         f.write('Write generated address here.')
-
                 elif currency_caller == 'Sia':
                     with open('Sia_Settings.txt', 'w') as f:
                         f.write('Write generated address here.')
@@ -152,23 +152,26 @@ class CreateNewWallet(QDialog, Ui_CreateNewWallet):
                 elif currency_caller == 'Monero':
                     with open('Monero_Settings.txt', 'w') as f:
                         f.write('Write generated address here.')
+
+                accountinfo = AccountInfo()
+                accountinfo.show()
+                self.close()
+
             else:
                 msg = QMessageBox()
                 msg.setIcon(QMessageBox.Critical)
                 msg.setText("Passwords do not match.")
                 msg.setWindowTitle("Mr.Miner Error Occurred")
                 msg.setStandardButtons(QMessageBox.Ok)
+                msg.exec()
         else:
             msg = QMessageBox()
             msg.setIcon(QMessageBox.Critical)
             msg.setText("Password must be at least 8 Characters.")
-            msg.InformativeText("Having a strong password is integral to maintaining your wallet's security.")
+            msg.setInformativeText("Having a strong password is integral to maintaining your wallet's security.")
             msg.setWindowTitle("Mr.Miner Error Occurred")
             msg.setStandardButtons(QMessageBox.Ok)
-
-        accountinfo = AccountInfo()
-        accountinfo.show()
-        self.close()
+            msg.exec()
 
 class ChooseCurrency(QDialog, Ui_ChooseCurrency):
     def __init__(self):
@@ -341,6 +344,7 @@ class MiningWallet(QDialog, Ui_MiningWallet):
             msg.setInformativeText("Please enter valid wallet number or create a new one.")
             msg.setWindowTitle("Mr.Miner Missing Information")
             msg.setStandardButtons(QMessageBox.Ok)
+            msg.exec()
 
         if currency_caller == 'Ethereum':
             with open('Ethereum_Wallet/Ethereum_Settings.txt', 'w') as f:
