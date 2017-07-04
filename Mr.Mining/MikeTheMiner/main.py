@@ -339,6 +339,7 @@ class AccountInfo(QDialog, Ui_AccountInfo):
         global setuppage
         setuppage = SetupPage()
         setuppage.show()
+        self.close()
 
 class MiningWallet(QDialog, Ui_MiningWallet):
     def __init__(self):
@@ -388,7 +389,8 @@ class MiningWallet(QDialog, Ui_MiningWallet):
         elif currency_caller == 'Monero':
             with open('Monero_Wallet/Monero_Settings.txt', 'w') as f:
                 f.write(self.entered_wallet_no)
-        #global nowmining
+
+        global nowmining
         nowmining = NowMining()
         nowmining.show()
         self.close()
