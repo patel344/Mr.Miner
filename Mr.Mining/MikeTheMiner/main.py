@@ -470,7 +470,7 @@ class NowMining(QDialog, Ui_NowMining):
                         shit_call = shit_call + " " + ig
                     shit_call = shit_call + '\n'
                     batman.write(shit_call)
-                elif graphic_card == 'amd\n ':
+                elif graphic_card == 'amd\n':
                     shit_call = "Santas_helpers\genoil.exe -c zec-eu1.nanopool.org:6666 -u " + account + "/" + rig_name + "/" + email + " -p x -g"
                     for ig in int(num_gpus):
                         shit_call = shit_call + " " + ig
