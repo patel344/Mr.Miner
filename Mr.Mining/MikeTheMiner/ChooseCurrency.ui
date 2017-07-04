@@ -118,7 +118,7 @@
    </property>
    <property name="icon">
     <iconset resource="ChooseCurrency.qrc">
-     <normaloff>:/ChooseCurrency/pasc-logo.png</normaloff>:/ChooseCurrency/pasc-logo.png</iconset>
+     <normaloff>:/ChooseCurrency/xmr-logo.png</normaloff>:/ChooseCurrency/xmr-logo.png</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -230,17 +230,17 @@
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>101</x>
+     <x>90</x>
      <y>470</y>
-     <width>41</width>
-     <height>16</height>
+     <width>61</width>
+     <height>20</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">color:rgb(0, 255, 0)</string>
    </property>
    <property name="text">
-    <string>Pascal</string>
+    <string>Monero CPU</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_6">
@@ -262,7 +262,7 @@
   <widget class="QLabel" name="label_7">
    <property name="geometry">
     <rect>
-     <x>458</x>
+     <x>450</x>
      <y>470</y>
      <width>61</width>
      <height>16</height>
@@ -272,7 +272,7 @@
     <string notr="true">color:rgb(0, 255, 0)</string>
    </property>
    <property name="text">
-    <string>Monero</string>
+    <string>Monero GPU</string>
    </property>
   </widget>
   <widget class="QLabel" name="label">
