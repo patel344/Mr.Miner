@@ -126,6 +126,7 @@ class Ui_NowMining(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.coinName_cb.sizePolicy().hasHeightForWidth())
         self.coinName_cb.setSizePolicy(sizePolicy)
+        self.coinName_cb.setStyleSheet("color:rgb(255,255,255);")
         self.coinName_cb.setObjectName("coinName_cb")
         self.stop_pb = QtWidgets.QPushButton(NowMining)
         self.stop_pb.setGeometry(QtCore.QRect(60, 420, 171, 61))

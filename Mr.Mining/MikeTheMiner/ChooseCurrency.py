@@ -77,7 +77,7 @@ class Ui_ChooseCurrency(object):
         self.label_2.setStyleSheet("color:rgb(0, 255, 0)")
         self.label_2.setObjectName("label_2")
         self.label_3 = QtWidgets.QLabel(ChooseCurrency)
-        self.label_3.setGeometry(QtCore.QRect(257, 330, 91, 16))
+        self.label_3.setGeometry(QtCore.QRect(248, 330, 111, 16))
         self.label_3.setStyleSheet("color:rgb(0, 255, 0)")
         self.label_3.setObjectName("label_3")
         self.label_4 = QtWidgets.QLabel(ChooseCurrency)
