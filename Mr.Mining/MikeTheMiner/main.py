@@ -336,7 +336,10 @@ class AccountInfo(QDialog, Ui_AccountInfo):
         #global currency_caller
         self.address_label.setText(account)
         #change for other pools
-        self.urlprogress_label.setText('www.nanopool.com/0x'+account)
+        if currency_caller == 'Sia' and graphic_card == 'nvidia\n':
+            self.urlprogress_label.setText('https://siamining.com/addresses/0x' + account)
+        else:
+            self.urlprogress_label.setText('www.nanopool.com/0x'+account)
         self.filepath_label.setText(currency_caller+'_Settings.txt')
 
     def Establish_Connections(self):
