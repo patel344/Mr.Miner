@@ -467,15 +467,15 @@ class NowMining(QDialog, Ui_NowMining):
             cpu_t = 0 #add thread thing
             with open('Santas_helpers\Zcash_Start.bat', 'w')as batman:
                 if graphic_card == 'nvidia\n':
-                    shit_call =   r"Santas_helpers\nheqminer -l zec-eu1.nanopool.org:6666 -u " + account + "/" + rig_name + " -t " + cpu_t + " -cd"
-                    for ig in int(num_gpus):
-                        shit_call = shit_call + " " + ig
+                    shit_call =   r"Santas_helpers\nheqminer -l zec-eu1.nanopool.org:6666 -u " + account + "/" + rig_name + " -t " + str(cpu_t) + " -cd"
+                    for ig in range(1, int(num_gpus)+1):
+                        shit_call = shit_call + " " + str(ig)
                     shit_call = shit_call + '\n'
                     batman.write(shit_call)
                 elif graphic_card == 'amd\n':
                     shit_call = "Santas_helpers\genoil.exe -c zec-eu1.nanopool.org:6666 -u " + account + "/" + rig_name + "/" + email + " -p x -g"
-                    for ig in int(num_gpus):
-                        shit_call = shit_call + " " + ig
+                    for ig in range(1, int(num_gpus)+1):
+                        shit_call = shit_call + " " + str(ig)
                     shit_call = shit_call + " -i 20 -w 64 -P 0\n"
                     batman.write(shit_call)
             subprocess.Popen("Santas_helpers\Zcash_Start.bat", shell=True)
