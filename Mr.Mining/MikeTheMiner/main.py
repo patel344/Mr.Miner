@@ -516,9 +516,9 @@ class NowMining(QDialog, Ui_NowMining):
                 #NVIDIA
                 if graphic_card == 'nvidia\n':
                     batman.write(
-                        "Santas_helpers\ethminer.exe -I -F http://eth-eu1.nanopool.org:8888/0x" + account + "/" + rig_name + "/" + email)
+                        "Santas_helpers\ethminer.exe -I -F http://eth-eu1.nanopool.org:8888/0x" + account.replace("\n", "") + "/" + rig_name.replace("\n", "") + "/" + email.replace("\n", ""))
                 elif graphic_card == 'amd\n':
-                    batman.write("Santas_helpers\ethminer.exe -P -F http://eth-eu1.nanopool.org:8888/0x" + account + "/" + rig_name + "/" + email)
+                    batman.write("Santas_helpers\ethminer.exe -P -F http://eth-eu1.nanopool.org:8888/0x" + account.replace("\n", "") + "/" + rig_name.replace("\n", "") + "/" + email.replace("\n", ""))
             subprocess.Popen("Santas_helpers\etherum_Start.bat", shell=True)
         elif currency_caller == 'Ethereum_Classic':
             if os.path.exists('EthereumClassic_Wallet/EthereumClassic_Settings.txt'):
@@ -532,10 +532,10 @@ class NowMining(QDialog, Ui_NowMining):
                 batman.write('setx GPU_MAX_ALLOC_PERCENT 100\n')
                 if graphic_card == 'nvidia\n':
                     batman.write(
-                        "Santas_helpers\ethminer.exe -I -F http://etc-eu1.nanopool.org:18888/0x" + account + "/" + rig_name + "/" + email )
+                        "Santas_helpers\ethminer.exe -I -F http://etc-eu1.nanopool.org:18888/0x" + account.replace("\n", "") + "/" + rig_name.replace("\n", "") + "/" + email.replace("\n", "") )
                 elif graphic_card == 'amd\n ':
                     batman.write(
-                        "Santas_helpers\ethminer.exe -P -F http://etc-eu1.nanopool.org:18888/0x" + account + "/" + rig_name + "/" + email)
+                        "Santas_helpers\ethminer.exe -P -F http://etc-eu1.nanopool.org:18888/0x" + account.replace("\n", "") + "/" + rig_name.replace("\n", "") + "/" + email.replace("\n", ""))
             subprocess.Popen("Santas_helpers\etherumClassic_Start.bat", shell=True)
         elif currency_caller == 'Zcash':
             if os.path.exists('Zcash_Wallet/Zcash_Settings.txt'):
@@ -549,13 +549,13 @@ class NowMining(QDialog, Ui_NowMining):
             cpu_t = int(num_threads) - 1 #adding thread count
             with open('Santas_helpers\Zcash_Start.bat', 'w')as batman:
                 if graphic_card == 'nvidia\n':
-                    shit_call =   r"Santas_helpers\nheqminer -l zec-eu1.nanopool.org:6666 -u " + account + "/" + rig_name + " -t " + str(cpu_t) + " -cd"
+                    shit_call =   r"Santas_helpers\nheqminer -l zec-eu1.nanopool.org:6666 -u " + account.replace("\n", "") + "/" + rig_name.replace("\n", "") + " -t " + str(cpu_t).replace("\n", "") + " -cd"
                     for ig in range(int(num_gpus)):
                         shit_call = shit_call + " " + str(ig)
                     shit_call = shit_call + '\n'
                     batman.write(shit_call)
                 elif graphic_card == 'amd\n':
-                    shit_call = "Santas_helpers\genoil.exe -c zec-eu1.nanopool.org:6666 -u " + account + "/" + rig_name + "/" + email.replace("\n", "") + " -p x -g"
+                    shit_call = "Santas_helpers\genoil.exe -c zec-eu1.nanopool.org:6666 -u " + account.replace("\n", "") + "/" + rig_name.replace("\n", "") + "/" + email.replace("\n", "") + " -p x -g"
                     for ig in range(int(num_gpus)):
                         shit_call = shit_call + " " + str(ig)
                     shit_call = shit_call + " -i 20 -w 64 -P 0\n"
@@ -568,10 +568,10 @@ class NowMining(QDialog, Ui_NowMining):
                     account = f.readlines()[0]
             with open('Santas_helpers\Sia_Start.bat', 'w')as batman:
                 if graphic_card == 'nvidia\n':
-                    shit_call = "Santas_helpers\ccminer -a sia -e --url=stratum+tcp://us-east.siamining.com:3333 -u " + account + "." + rig_name + " -i 28 \n"
+                    shit_call = "Santas_helpers\ccminer -a sia -e --url=stratum+tcp://us-east.siamining.com:3333 -u " + account.replace("\n", "") + "." + rig_name.replace("\n", "") + " -i 28 \n"
                     batman.write(shit_call)
                 elif graphic_card == 'amd\n ':
-                    shit_call = 'Santas_helpers\gominer.exe -I 28 -H sia-eu1.nanopool.org:9980 -Q "address=' + account + '&worker='+ rig_name +'&email=' + email +'" \n'
+                    shit_call = 'Santas_helpers\gominer.exe -I 28 -H sia-eu1.nanopool.org:9980 -Q "address=' + account.replace("\n", "") + '&worker='+ rig_name.replace("\n", "") +'&email=' + email.replace("\n", "") +'" \n'
                     batman.write(shit_call)
             subprocess.Popen("Santas_helpers\Sia_Start.bat", shell=True)
         elif currency_caller == 'Monero':
@@ -673,10 +673,10 @@ class NowMining(QDialog, Ui_NowMining):
 
                 if graphic_card == 'nvidia\n':
                     batman.write(
-                        "Santas_helpers\ethminer.exe -I -F http://eth-eu1.nanopool.org:8888/0x" + account + "/" + rig_name + "/" + email)
+                        "Santas_helpers\ethminer.exe -I -F http://eth-eu1.nanopool.org:8888/0x" + account.replace("\n", "") + "/" + rig_name.replace("\n", "") + "/" + email.replace("\n", ""))
                 elif graphic_card == 'amd\n':
                     batman.write(
-                        "Santas_helpers\ethminer.exe -P -F http://eth-eu1.nanopool.org:8888/0x" + account + "/" + rig_name + "/" + email)
+                        "Santas_helpers\ethminer.exe -P -F http://eth-eu1.nanopool.org:8888/0x" + account.replace("\n", "") + "/" + rig_name.replace("\n", "") + "/" + email.replace("\n", ""))
             subprocess.Popen("Santas_helpers\etherum_Start.bat", shell=True)
 
         elif currency_caller == 'Ethereum_Classic':
@@ -692,10 +692,10 @@ class NowMining(QDialog, Ui_NowMining):
                 batman.write('setx GPU_MAX_ALLOC_PERCENT 100\n')
                 if graphic_card == 'nvidia\n':
                     batman.write(
-                        "Santas_helpers\ethminer.exe -I -F http://etc-eu1.nanopool.org:18888/0x" + account + "/" + rig_name + "/" + email)
+                        "Santas_helpers\ethminer.exe -I -F http://etc-eu1.nanopool.org:18888/0x" + account.replace("\n", "") + "/" + rig_name.replace("\n", "") + "/" + email.replace("\n", ""))
                 elif graphic_card == 'amd\n':
                     batman.write(
-                        "Santas_helpers\ethminer.exe -P -F http://etc-eu1.nanopool.org:18888/0x" + account + "/" + rig_name + "/" + email)
+                        "Santas_helpers\ethminer.exe -P -F http://etc-eu1.nanopool.org:18888/0x" + account.replace("\n", "") + "/" + rig_name.replace("\n", "") + "/" + email.replace("\n", ""))
             subprocess.Popen("Santas_helpers\etherumClassic_Start.bat", shell=True)
         elif currency_caller == 'Zcash':
             if graphic_card == 'nvidia\n':
@@ -708,14 +708,14 @@ class NowMining(QDialog, Ui_NowMining):
             cpu_t = num_threads - 1  # adding thread count
             with open('Santas_helpers\Zcash_Start.bat', 'w')as batman:
                 if graphic_card == 'nvidia\n':
-                    shit_call = r"Santas_helpers\nheqminer -l zec-eu1.nanopool.org:6666 -u " + account + "/" + rig_name + " -t " + str(
+                    shit_call = r"Santas_helpers\nheqminer -l zec-eu1.nanopool.org:6666 -u " + account.replace("\n", "") + "/" + rig_name.replace("\n", "") + " -t " + str(
                         cpu_t) + " -cd"
                     for ig in range(int(num_gpus)):
                         shit_call = shit_call + " " + str(ig)
                     shit_call = shit_call + '\n'
                     batman.write(shit_call)
                 elif graphic_card == 'amd\n':
-                    shit_call = "Santas_helpers\genoil.exe -c zec-eu1.nanopool.org:6666 -u " + account + "/" + rig_name + "/" + email + " -p x -g"
+                    shit_call = "Santas_helpers\genoil.exe -c zec-eu1.nanopool.org:6666 -u " + account.replace("\n", "") + "/" + rig_name.replace("\n", "") + "/" + email.replace("\n", "") + " -p x -g"
                     for ig in range(int(num_gpus)):
                         shit_call = shit_call + " " + str(ig)
                     shit_call = shit_call + " -i 20 -w 64 -P 0\n"

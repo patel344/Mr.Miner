@@ -15,11 +15,11 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="103" column="38" lean-forward="false" selection-start-line="103" selection-start-column="38" selection-end-line="103" selection-end-column="38" />
+            <state relative-caret-position="284">
+              <caret line="678" column="123" lean-forward="false" selection-start-line="678" selection-start-column="123" selection-end-line="678" selection-end-column="123" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
-                <marker date="1499278257214" expanded="false" signature="32583:33607" ph="..." />
+                <marker date="1499278917536" expanded="false" signature="33285:34309" ph="..." />
               </folding>
             </state>
           </provider>
@@ -62,6 +62,7 @@
       <find>num</find>
       <find>num_th</find>
       <find>setuppage</find>
+      <find>sia</find>
     </findStrings>
     <replaceStrings>
       <replace>Monero_CPU</replace>
@@ -331,38 +332,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>578</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>591</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>487</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>486</line>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>100</line>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>88</line>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -381,7 +350,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
-            <marker date="1499278257214" expanded="false" signature="32583:33607" ph="..." />
+            <marker date="1499278917536" expanded="false" signature="33285:34309" ph="..." />
           </folding>
         </state>
       </provider>
@@ -408,7 +377,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
-            <marker date="1499278257214" expanded="false" signature="32583:33607" ph="..." />
+            <marker date="1499278917536" expanded="false" signature="33285:34309" ph="..." />
           </folding>
         </state>
       </provider>
@@ -419,7 +388,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
-            <marker date="1499278257214" expanded="false" signature="32583:33607" ph="..." />
+            <marker date="1499278917536" expanded="false" signature="33285:34309" ph="..." />
           </folding>
         </state>
       </provider>
@@ -430,7 +399,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
-            <marker date="1499278257214" expanded="false" signature="32583:33607" ph="..." />
+            <marker date="1499278917536" expanded="false" signature="33285:34309" ph="..." />
           </folding>
         </state>
       </provider>
@@ -441,7 +410,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
-            <marker date="1499278257214" expanded="false" signature="32583:33607" ph="..." />
+            <marker date="1499278917536" expanded="false" signature="33285:34309" ph="..." />
           </folding>
         </state>
       </provider>
@@ -512,11 +481,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="103" column="38" lean-forward="false" selection-start-line="103" selection-start-column="38" selection-end-line="103" selection-end-column="38" />
+        <state relative-caret-position="284">
+          <caret line="678" column="123" lean-forward="false" selection-start-line="678" selection-start-column="123" selection-end-line="678" selection-end-column="123" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
-            <marker date="1499278257214" expanded="false" signature="32583:33607" ph="..." />
+            <marker date="1499278917536" expanded="false" signature="33285:34309" ph="..." />
           </folding>
         </state>
       </provider>
