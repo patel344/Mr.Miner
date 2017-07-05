@@ -873,7 +873,7 @@ private:
 				auto mp = f.miningProgress();
 				f.resetMiningProgress();
 				if (current)
-					minelog << "farm URL pendeja:" << m_farmURL[9] << "Mining on Magic" << "#" + (current.headerHash.hex().substr(0, 8)) << ": " << mp << f.getSolutionStats();
+					minelog << "farm URL pendeja:" << m_farmURL[9] << "Mining on Magic 2.0" << "#" + (current.headerHash.hex().substr(0, 8)) << ": " << mp << f.getSolutionStats();
 				else
 					minelog << "Getting work package...";
 
