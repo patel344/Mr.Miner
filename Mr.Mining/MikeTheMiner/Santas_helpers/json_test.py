@@ -43,7 +43,7 @@ proc = subprocess.Popen('WMIC CPU Get NumberOfCores,NumberOfLogicalProcessors /F
 
 
 num_threads = (proc.communicate()[0]).decode('utf-8').split()[-1].strip()
-re.match(r"[0-9]+$", num_threads)
+num_threads = re.search(r"[0-9]+", num_threads).group(0).strip()
 print(int(num_threads))
 
 with open('xmr-cpu.conf', 'r') as f:
