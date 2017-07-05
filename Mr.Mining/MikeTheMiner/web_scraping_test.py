@@ -16,8 +16,10 @@ from selenium import webdriver
 driver = webdriver.Firefox()
 driver.get("https://eth.nanopool.org/account/0xabc5d8b3d2bb800de6bccd100c5cb7ca5d57edd2")
 #a = driver.execute_script("return hashrate()")
-element = driver.find_elements_by_class_name("panel-body")
-print(element)
+#element = driver.find_elements_by_class_name("panel-body")
+#text = driver.find_elements_by_xpath("Mh")
+text = driver.find_elements_by_name("#text")
+print(text)
 
 #element.click()
 #"text: hashrate() + ' Mh/s'"

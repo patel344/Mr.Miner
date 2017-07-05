@@ -1,9 +1,12 @@
 from PyQt5.QtWidgets import *
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
-from subprocess import Popen, PIPE, STDOUT
+#from PyQt5.QtCore import *
+#from PyQt5.QtGui import *
+
+
+import json
 import sys, os
 import time
+import re
 import subprocess
 import pexpect
 from pexpect import popen_spawn
@@ -432,11 +435,68 @@ class NowMining(QDialog, Ui_NowMining):
         self.start_mining()
         self.Establish_Connections()
 
+    def configure_monero_AMD():
+        global num_gpus
+        global rig_name
+        global account
+
+        with open('xmr-gpu.conf', 'r') as f:
+            config = json.load(f)
+
+        if len(config["Algorithms"][0]["devices"]) > num_gpus:
+            for i in range(len(config["Algorithms"][0]["devices"]) - num_gpus):
+                config["Algorithms"][0]["devices"].pop()
+
+        elif len(config["Algorithms"][0]["devices"]) < num_gpus:
+            for i in range(num_gpus - len(config["Algorithms"][0]["devices"]), 0, -1):
+                gpu = {"index": (num_gpus - i),
+                       "corefreq": 500,
+                       "memfreq": 1500,
+                       "fanspeed": 65,
+                       "powertune": 20,
+                       "threads": 1,
+                       "rawintensity": 640,
+                       "worksize": 16
+                       }
+                config["Algorithms"][0]["devices"].append(gpu)
+
+        config["Algorithms"][0]["name"] = rig_name
+
+        for i in range(5):
+            config["Algorithms"][0]["pools"][i]["user"] = account
+
+        with open('xmr-gpu.conf', 'w') as f:
+            json.dump(config, f, indent=4, sort_keys=True)
+
+    # FOR MONERO CPU
+
+    def configure_monero_CPU():
+        global account
+        global rig_name
+        global num_threads
+
+        proc = subprocess.Popen('WMIC CPU Get NumberOfCores,NumberOfLogicalProcessors /Format:List',
+                                stdout=subprocess.PIPE, shell=True)
+
+        with open('xmr-cpu.conf', 'r') as f:
+            config = json.load(f)
+
+        config["Algorithms"][0]["name"] = rig_name
+
+        for i in range(5):
+            config["Algorithms"][0]["pools"][i]["user"] = account
+
+        config["Algorithms"][0]["devices"][0]["threads"] = int(num_threads) - 1
+
+        with open('xmr-cpu.conf', 'w') as f:
+            json.dump(config, f, indent=4, sort_keys=True)
+
     def start_mining(self):
         global account
         global rig_name
         global email
         global currency_caller
+        global num_threads
 
         if currency_caller == 'Ethereum':
             if os.path.exists('Ethereum_Wallet/Ethereum_Settings.txt'):
@@ -476,7 +536,7 @@ class NowMining(QDialog, Ui_NowMining):
             if os.path.exists('Zcash_Wallet/Zcash_Settings.txt'):
                 with open('Zcash_Wallet/Zcash_Settings.txt') as f:
                     account = f.readlines()[0]
-            cpu_t = 0 #add thread thing
+            cpu_t = num_threads - 1 #adding thread count
             with open('Santas_helpers\Zcash_Start.bat', 'w')as batman:
                 if graphic_card == 'nvidia\n':
                     shit_call =   r"Santas_helpers\nheqminer -l zec-eu1.nanopool.org:6666 -u " + account + "/" + rig_name + " -t " + str(cpu_t) + " -cd"
@@ -507,24 +567,38 @@ class NowMining(QDialog, Ui_NowMining):
             if os.path.exists('Monero_Wallet/Monero_Settings.txt'):
                 with open('Monero_Wallet/Monero_Settings.txt') as f:
                     account = f.readlines()[0]
+
                 #add config file PARTH
+                self.configure_monero_AMD()
+
                 with open('Santas_helpers\Monero_Start.bat', 'w')as batman:
                     if graphic_card == 'nvidia\n':
                         shit_call = "Santas_helpers\ccminer -q -o stratum+tcp://xmr-eu1.nanopool.org:14444 -u " + account + "." + rig_name + "/" + email +  "-p x\n"
                         batman.write(shit_call)
                     elif graphic_card == 'amd\n ':
-                        batman.write("Santas_helpers\miner xmr.conf")
+                        batman.write("Santas_helpers\miner xmr-gpu.conf")
                 subprocess.Popen("Santas_helpers\Monero_Start.bat", shell=True)
         elif currency_caller == 'Monero_CPU':
             if os.path.exists('Monero_Wallet/Monero_Settings.txt'):
                 with open('Monero_Wallet/Monero_Settings.txt') as f:
                     account = f.readlines()[0]
+
                 # add config file PARTH
+                self.configure_monero_CPU()
+
                 with open('Santas_helpers\Monero_Start.bat', 'w')as batman:
-                    batman.write("Santas_helpers\miner xmr.conf")
+                    batman.write("Santas_helpers\miner xmr-cpu.conf")
                 subprocess.Popen("Santas_helpers\Monero_Start.bat", shell=True)
     def Establish_Connections(self):
         global currency_caller
+        global num_threads
+
+        proc = subprocess.Popen('WMIC CPU Get NumberOfCores,NumberOfLogicalProcessors /Format:List',
+                                stdout=subprocess.PIPE, shell=True)
+
+        num_threads = (proc.communicate()[0]).decode('utf-8').split()[-1].strip()
+        num_threads = re.search(r"[0-9]+", num_threads).group(0).strip()
+
         self.coinName_label.setText(currency_caller)
         self.address_label.setText('0x'+account)
         self.stop_pb.clicked.connect(self.stop)
@@ -570,6 +644,9 @@ class NowMining(QDialog, Ui_NowMining):
         self.close()
 
     def startOver(self):
+        global currency_caller
+        global num_threads
+
         if currency_caller == 'Ethereum':
             os.system("taskkill /f /im  ethminer.exe")
             if os.path.exists('Ethereum_Wallet/Ethereum_Settings.txt'):
@@ -617,7 +694,7 @@ class NowMining(QDialog, Ui_NowMining):
             if os.path.exists('Zcash_Wallet/Zcash_Settings.txt'):
                 with open('Zcash_Wallet/Zcash_Settings.txt') as f:
                     account = f.readlines()[0]
-            cpu_t = 0  # add thread thing
+            cpu_t = num_threads - 1  # adding thread count
             with open('Santas_helpers\Zcash_Start.bat', 'w')as batman:
                 if graphic_card == 'nvidia\n':
                     shit_call = r"Santas_helpers\nheqminer -l zec-eu1.nanopool.org:6666 -u " + account + "/" + rig_name + " -t " + str(
