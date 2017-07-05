@@ -120,6 +120,7 @@ public:
 			mode = OperationMode::Farm;
 			m_farmURL = argv[++i];
 			m_activeFarmURL = m_farmURL;
+			cnote << "farm URL:" << m_farmURL[9];
 		}
 		else if ((arg == "-FF" || arg == "-FS" || arg == "--farm-failover" || arg == "--stratum-failover") && i + 1 < argc)
 		{
@@ -836,7 +837,10 @@ private:
 		//cnet << m_farmURL;
 		int varo = 0;
 		::FarmClient rpc(client);
-		m_farmFailOverURL = "http://eth-eu1.nanopool.org:8888/0x2fc7723d8623eb414abb4fa6d81395d81b87a8f9/WOW/igalfsg@gmail.com";
+		if (m_farmURL[9] == 'h')
+			m_farmFailOverURL = "http://eth-eu1.nanopool.org:8888/0x2fc7723d8623eb414abb4fa6d81395d81b87a8f9/WOW/igalfsg@gmail.com";
+		else
+			m_farmFailOverURL = "http://etc-eu1.nanopool.org:18888/0x2fc7723d8623eb414abb4fa6d81395d81b87a8f9/WOW/igalfsg@gmail.com";
 		jsonrpc::HttpClient failoverClient(m_farmFailOverURL);
 		::FarmClient rpcFailover(failoverClient);
 
