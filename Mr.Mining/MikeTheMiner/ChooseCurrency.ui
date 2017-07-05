@@ -102,6 +102,9 @@
    </property>
   </widget>
   <widget class="QPushButton" name="pascal">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>76</x>
@@ -154,6 +157,9 @@
    </property>
   </widget>
   <widget class="QPushButton" name="monero">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>436</x>
@@ -720,6 +726,38 @@ color:rgb(255, 255, 255)</string>
    </property>
    <property name="flat">
     <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_8">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>410</y>
+     <width>61</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:rgb(0, 255, 0)</string>
+   </property>
+   <property name="text">
+    <string>Coming soon</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_9">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>410</y>
+     <width>61</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:rgb(0, 255, 0)</string>
+   </property>
+   <property name="text">
+    <string>Coming soon</string>
    </property>
   </widget>
  </widget>

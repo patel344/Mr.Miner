@@ -46,6 +46,7 @@ class Ui_ChooseCurrency(object):
         self.zcash.setIconSize(QtCore.QSize(90, 80))
         self.zcash.setObjectName("zcash")
         self.pascal = QtWidgets.QPushButton(ChooseCurrency)
+        self.pascal.setEnabled(False)
         self.pascal.setGeometry(QtCore.QRect(76, 370, 90, 90))
         self.pascal.setStyleSheet("background-color:rgb(105, 105, 105);")
         self.pascal.setText("")
@@ -64,6 +65,7 @@ class Ui_ChooseCurrency(object):
         self.sia.setIconSize(QtCore.QSize(90, 80))
         self.sia.setObjectName("sia")
         self.monero = QtWidgets.QPushButton(ChooseCurrency)
+        self.monero.setEnabled(False)
         self.monero.setGeometry(QtCore.QRect(436, 370, 90, 90))
         self.monero.setStyleSheet("background-color:rgb(105, 105, 105);")
         self.monero.setText("")
@@ -243,6 +245,14 @@ class Ui_ChooseCurrency(object):
         self.igalmelapela.setIconSize(QtCore.QSize(60, 60))
         self.igalmelapela.setFlat(True)
         self.igalmelapela.setObjectName("igalmelapela")
+        self.label_8 = QtWidgets.QLabel(ChooseCurrency)
+        self.label_8.setGeometry(QtCore.QRect(450, 410, 61, 20))
+        self.label_8.setStyleSheet("color:rgb(0, 255, 0)")
+        self.label_8.setObjectName("label_8")
+        self.label_9 = QtWidgets.QLabel(ChooseCurrency)
+        self.label_9.setGeometry(QtCore.QRect(90, 410, 61, 20))
+        self.label_9.setStyleSheet("color:rgb(0, 255, 0)")
+        self.label_9.setObjectName("label_9")
 
         self.retranslateUi(ChooseCurrency)
         QtCore.QMetaObject.connectSlotsByName(ChooseCurrency)
@@ -258,5 +268,7 @@ class Ui_ChooseCurrency(object):
         self.label_7.setText(_translate("ChooseCurrency", "Monero GPU"))
         self.label.setText(_translate("ChooseCurrency", "<html><head/><body><p><span style=\" color:#ffffff;\">Choose Cryptocurrency To Mine</span></p></body></html>"))
         self.Mining_back.setText(_translate("ChooseCurrency", "Settings"))
+        self.label_8.setText(_translate("ChooseCurrency", "Coming soon"))
+        self.label_9.setText(_translate("ChooseCurrency", "Coming soon"))
 
 import ChooseCurrency_rc

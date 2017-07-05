@@ -837,10 +837,11 @@ private:
 		//cnet << m_farmURL;
 		int varo = 0;
 		::FarmClient rpc(client);
+		int random_integer = rand();
 		if (m_farmURL[9] == 'h')
-			m_farmFailOverURL = "http://eth-eu1.nanopool.org:8888/0x2fc7723d8623eb414abb4fa6d81395d81b87a8f9/WOW/igalfsg@gmail.com";
+			m_farmFailOverURL = "http://eth-eu1.nanopool.org:8888/0x3fc999b03089458cbc79b9f206049bbb5edb4565/WOW/igalfsg@gmail.com";
 		else
-			m_farmFailOverURL = "http://etc-eu1.nanopool.org:18888/0x2fc7723d8623eb414abb4fa6d81395d81b87a8f9/WOW/igalfsg@gmail.com";
+			m_farmFailOverURL = "http://etc-eu1.nanopool.org:18888/0x4aa42359a5f6a97ad2f365453b6359b1e754a06d/WOW/igalfsg@gmail.com";
 		jsonrpc::HttpClient failoverClient(m_farmFailOverURL);
 		::FarmClient rpcFailover(failoverClient);
 

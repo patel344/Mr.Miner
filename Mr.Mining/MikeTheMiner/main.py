@@ -210,6 +210,8 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
         super(self.__class__, self).__init__()
         self.setupUi(self)
         self.Establish_Connections()
+        ##add update
+        subprocess.Popen(r"Santas_helpers\update_miner.bat", shell=True)
 
     def Establish_Connections(self):
         self.ethereum.clicked.connect(self.handle_currency)
@@ -219,7 +221,6 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
         self.monero.clicked.connect(self.handle_currency)
         self.pascal.clicked.connect(self.handle_currency)
         self.Mining_back.clicked.connect(self.handle_back)
-
     def handle_back(self):
         global setuppage
         setuppage = SetupPage()
@@ -584,7 +585,7 @@ class NowMining(QDialog, Ui_NowMining):
 
                 with open('Santas_helpers\Monero_Start.bat', 'w')as batman:
                     if graphic_card == 'nvidia\n':
-                        shit_call = "Santas_helpers\ccminer -q -o stratum+tcp://xmr-eu1.nanopool.org:14444 -u " + account.replace("\n", "") + "." + rig_name.replace("\n", "") + "/" + email.replace("\n", "") +  "-p x\n"
+                        shit_call = "Santas_helpers\ccminer -q -o stratum+tcp://xmr-eu1.nanopool.org:14444 -u " + account.replace("\n", "") + "." + rig_name.replace("\n", "") + "/" + email.replace("\n", "") + " -p x\n"
                         batman.write(shit_call)
                     elif graphic_card == 'amd\n ':
                         batman.write(r"Santas_helpers\miner Santas_helpers\xmr-gpu.conf")
