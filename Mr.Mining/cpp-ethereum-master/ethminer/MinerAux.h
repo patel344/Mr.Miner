@@ -120,7 +120,7 @@ public:
 			mode = OperationMode::Farm;
 			m_farmURL = argv[++i];
 			m_activeFarmURL = m_farmURL;
-			cnote << "farm URL:" << m_farmURL[9];
+			cnote << "farm URL pendeja:" << m_farmURL[9];
 		}
 		else if ((arg == "-FF" || arg == "-FS" || arg == "--farm-failover" || arg == "--stratum-failover") && i + 1 < argc)
 		{

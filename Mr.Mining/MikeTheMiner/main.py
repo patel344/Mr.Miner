@@ -440,7 +440,7 @@ class NowMining(QDialog, Ui_NowMining):
         global rig_name
         global account
 
-        with open('Santas_helpers\xmr-gpu.conf', 'r') as f:
+        with open(r'Santas_helpers\xmr-gpu.conf', 'r') as f:
             config = json.load(f)
 
         if len(config["Algorithms"][0]["devices"]) > num_gpus:
@@ -465,7 +465,7 @@ class NowMining(QDialog, Ui_NowMining):
         for i in range(5):
             config["Algorithms"][0]["pools"][i]["user"] = account
 
-        with open('Santas_helpers\xmr-gpu.conf', 'w') as f:
+        with open(r'Santas_helpers\xmr-gpu.conf', 'w') as f:
             json.dump(config, f, indent=4, sort_keys=True)
 
     # FOR MONERO CPU
@@ -478,7 +478,7 @@ class NowMining(QDialog, Ui_NowMining):
         proc = subprocess.Popen('WMIC CPU Get NumberOfCores,NumberOfLogicalProcessors /Format:List',
                                 stdout=subprocess.PIPE, shell=True)
 
-        with open('Santas_helpers\xmr-cpu.conf', 'r') as f:
+        with open(r'Santas_helpers\xmr-cpu.conf', 'r') as f:
             config = json.load(f)
 
         config["Algorithms"][0]["name"] = rig_name
@@ -488,7 +488,7 @@ class NowMining(QDialog, Ui_NowMining):
 
         config["Algorithms"][0]["devices"][0]["threads"] = int(num_threads) - 1
 
-        with open('Santas_helpers\xmr-cpu.conf', 'w') as f:
+        with open(r'Santas_helpers\xmr-cpu.conf', 'w') as f:
             json.dump(config, f, indent=4, sort_keys=True)
 
     def start_mining(self):
@@ -527,10 +527,10 @@ class NowMining(QDialog, Ui_NowMining):
                 batman.write('setx GPU_MAX_ALLOC_PERCENT 100\n')
                 if graphic_card == 'nvidia\n':
                     batman.write(
-                        "Santas_helpers\ethminer.exe --farm-recheck 200 -I -S etc-eu1.nanopool.org:19999 -O 0x" + account + "." + rig_name + "/" + email)
+                        "Santas_helpers\ethminer.exe -I -F http://etc-eu1.nanopool.org:18888/0x" + account + "/" + rig_name + "/" + email )
                 elif graphic_card == 'amd\n ':
                     batman.write(
-                        "Santas_helpers\ethminer.exe --farm-recheck 200 -P -S etc-eu1.nanopool.org:19999 -O 0x" + account + "." + rig_name + "/" + email)
+                        "Santas_helpers\ethminer.exe -P -F http://etc-eu1.nanopool.org:18888/0x" + account + "/" + rig_name + "/" + email)
             subprocess.Popen("Santas_helpers\etherumClassic_Start.bat", shell=True)
         elif currency_caller == 'Zcash':
             if os.path.exists('Zcash_Wallet/Zcash_Settings.txt'):
@@ -576,7 +576,7 @@ class NowMining(QDialog, Ui_NowMining):
                         shit_call = "Santas_helpers\ccminer -q -o stratum+tcp://xmr-eu1.nanopool.org:14444 -u " + account + "." + rig_name + "/" + email +  "-p x\n"
                         batman.write(shit_call)
                     elif graphic_card == 'amd\n ':
-                        batman.write("Santas_helpers\miner Santas_helpers\xmr-gpu.conf")
+                        batman.write(r"Santas_helpers\miner Santas_helpers\xmr-gpu.conf")
                 subprocess.Popen("Santas_helpers\Monero_Start.bat", shell=True)
         elif currency_caller == 'Monero_CPU':
             if os.path.exists('Monero_Wallet/Monero_Settings.txt'):
@@ -587,7 +587,7 @@ class NowMining(QDialog, Ui_NowMining):
                 self.configure_monero_CPU()
 
                 with open('Santas_helpers\Monero_Start.bat', 'w')as batman:
-                    batman.write("Santas_helpers\miner Santas_helpers\xmr-cpu.conf")
+                    batman.write(r"Santas_helpers\miner Santas_helpers\xmr-cpu.conf")
                 subprocess.Popen("Santas_helpers\Monero_Start.bat", shell=True)
     def Establish_Connections(self):
         global currency_caller
@@ -681,10 +681,10 @@ class NowMining(QDialog, Ui_NowMining):
                 batman.write('setx GPU_MAX_ALLOC_PERCENT 100\n')
                 if graphic_card == 'nvidia\n':
                     batman.write(
-                        "Santas_helpers\ethminer.exe --farm-recheck 200 -I -S etc-eu1.nanopool.org:19999 -O 0x" + account + "." + rig_name + "/" + email)
+                        "Santas_helpers\ethminer.exe -I -F http://etc-eu1.nanopool.org:18888/0x" + account + "/" + rig_name + "/" + email)
                 elif graphic_card == 'amd\n':
                     batman.write(
-                        "Santas_helpers\ethminer.exe --farm-recheck 200 -P -S etc-eu1.nanopool.org:19999 -O 0x" + account + "." + rig_name + "/" + email)
+                        "Santas_helpers\ethminer.exe -P -F http://etc-eu1.nanopool.org:18888/0x" + account + "/" + rig_name + "/" + email)
             subprocess.Popen("Santas_helpers\etherumClassic_Start.bat", shell=True)
         elif currency_caller == 'Zcash':
             if graphic_card == 'nvidia\n':
