@@ -1,5 +1,6 @@
 import json
 import subprocess
+import re
 
 # FOR MONERO GPU AMD
 
@@ -40,7 +41,9 @@ with open('xmr-gpu.conf', 'w') as f:
 
 proc = subprocess.Popen('WMIC CPU Get NumberOfCores,NumberOfLogicalProcessors /Format:List', stdout=subprocess.PIPE, shell=True)
 
+
 num_threads = (proc.communicate()[0]).decode('utf-8').split()[-1].strip()
+re.match(r"[0-9]+$", num_threads)
 print(int(num_threads))
 
 with open('xmr-cpu.conf', 'r') as f:
