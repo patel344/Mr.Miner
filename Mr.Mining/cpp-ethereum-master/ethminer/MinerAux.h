@@ -120,7 +120,7 @@ public:
 			mode = OperationMode::Farm;
 			m_farmURL = argv[++i];
 			m_activeFarmURL = m_farmURL;
-			cnote << "farm URL pendeja:" << m_farmURL[9];
+			//cnote << "farm URL pendeja:" << m_farmURL[9];
 		}
 		else if ((arg == "-FF" || arg == "-FS" || arg == "--farm-failover" || arg == "--stratum-failover") && i + 1 < argc)
 		{
@@ -873,7 +873,7 @@ private:
 				auto mp = f.miningProgress();
 				f.resetMiningProgress();
 				if (current)
-					minelog << "farm URL pendeja:" << m_farmURL[9] << "Mining on Magic 2.0" << "#" + (current.headerHash.hex().substr(0, 8)) << ": " << mp << f.getSolutionStats();
+					minelog << "Mining on Magic 2.0" << "#" + (current.headerHash.hex().substr(0, 8)) << ": " << mp << f.getSolutionStats();
 				else
 					minelog << "Getting work package...";
 

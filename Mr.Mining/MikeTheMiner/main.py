@@ -86,7 +86,7 @@ class SetupPage(QDialog, Ui_SetupPage):
         email = self.lineEdit_email.text()
         rig_name = self.lineEdit_rigName.text()
         num_gpus = self.lineEdit_no_gpus.text()
-
+        print(num_gpus)
         if self.nvidia_rb.isChecked() or self.amd_rb.isChecked():
             try:
                 num_gpus = int(num_gpus)
@@ -101,7 +101,7 @@ class SetupPage(QDialog, Ui_SetupPage):
             with open('Mining_Settings.txt', 'w') as f:
                 f.write(graphic_card)
                 f.write('\n')
-                f.write(num_gpus)
+                f.write(str(num_gpus))
                 f.write('\n')
                 f.write(email)
                 f.write('\n')
@@ -486,6 +486,11 @@ class NowMining(QDialog, Ui_NowMining):
         for i in range(5):
             config["Algorithms"][0]["pools"][i]["user"] = account
 
+        proc = subprocess.Popen('WMIC CPU Get NumberOfCores,NumberOfLogicalProcessors /Format:List',
+                                stdout=subprocess.PIPE, shell=True)
+
+        num_threads = (proc.communicate()[0]).decode('utf-8').split()[-1].strip()
+        num_threads = re.search(r"[0-9]+", num_threads).group(0).strip()
         config["Algorithms"][0]["devices"][0]["threads"] = int(num_threads) - 1
 
         with open(r'Santas_helpers\xmr-cpu.conf', 'w') as f:
@@ -536,7 +541,12 @@ class NowMining(QDialog, Ui_NowMining):
             if os.path.exists('Zcash_Wallet/Zcash_Settings.txt'):
                 with open('Zcash_Wallet/Zcash_Settings.txt') as f:
                     account = f.readlines()[0]
-            cpu_t = num_threads - 1 #adding thread count
+            proc = subprocess.Popen('WMIC CPU Get NumberOfCores,NumberOfLogicalProcessors /Format:List',
+                                    stdout=subprocess.PIPE, shell=True)
+
+            num_threads = (proc.communicate()[0]).decode('utf-8').split()[-1].strip()
+            num_threads = re.search(r"[0-9]+", num_threads).group(0).strip()
+            cpu_t = int(num_threads) - 1 #adding thread count
             with open('Santas_helpers\Zcash_Start.bat', 'w')as batman:
                 if graphic_card == 'nvidia\n':
                     shit_call =   r"Santas_helpers\nheqminer -l zec-eu1.nanopool.org:6666 -u " + account + "/" + rig_name + " -t " + str(cpu_t) + " -cd"
@@ -545,11 +555,12 @@ class NowMining(QDialog, Ui_NowMining):
                     shit_call = shit_call + '\n'
                     batman.write(shit_call)
                 elif graphic_card == 'amd\n':
-                    shit_call = "Santas_helpers\genoil.exe -c zec-eu1.nanopool.org:6666 -u " + account + "/" + rig_name + "/" + email + " -p x -g"
+                    shit_call = "Santas_helpers\genoil.exe -c zec-eu1.nanopool.org:6666 -u " + account + "/" + rig_name + "/" + email.replace("\n", "") + " -p x -g"
                     for ig in range(int(num_gpus)):
                         shit_call = shit_call + " " + str(ig)
                     shit_call = shit_call + " -i 20 -w 64 -P 0\n"
                     batman.write(shit_call)
+                    print(shit_call)
             subprocess.Popen("Santas_helpers\Zcash_Start.bat", shell=True)
         elif currency_caller == 'Sia':
             if os.path.exists('Sia_Wallet/Sia_Settings.txt'):
@@ -573,7 +584,7 @@ class NowMining(QDialog, Ui_NowMining):
 
                 with open('Santas_helpers\Monero_Start.bat', 'w')as batman:
                     if graphic_card == 'nvidia\n':
-                        shit_call = "Santas_helpers\ccminer -q -o stratum+tcp://xmr-eu1.nanopool.org:14444 -u " + account + "." + rig_name + "/" + email +  "-p x\n"
+                        shit_call = "Santas_helpers\ccminer -q -o stratum+tcp://xmr-eu1.nanopool.org:14444 -u " + account.replace("\n", "") + "." + rig_name.replace("\n", "") + "/" + email.replace("\n", "") +  "-p x\n"
                         batman.write(shit_call)
                     elif graphic_card == 'amd\n ':
                         batman.write(r"Santas_helpers\miner Santas_helpers\xmr-gpu.conf")
