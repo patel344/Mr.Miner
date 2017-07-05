@@ -89,7 +89,7 @@ class SetupPage(QDialog, Ui_SetupPage):
 
         if self.nvidia_rb.isChecked() or self.amd_rb.isChecked():
             try:
-                val = int(num_gpus)
+                num_gpus = int(num_gpus)
             except ValueError:
                 msg = QMessageBox()
                 msg.setIcon(QMessageBox.Critical)
@@ -435,19 +435,19 @@ class NowMining(QDialog, Ui_NowMining):
         self.start_mining()
         self.Establish_Connections()
 
-    def configure_monero_AMD():
+    def configure_monero_AMD(self):
         global num_gpus
         global rig_name
         global account
 
-        with open(r'Santas_helpers\xmr-gpu.conf', 'r') as f:
+        with open(r'Santas_helpers/xmr-gpu.conf', 'r') as f:
             config = json.load(f)
 
-        if len(config["Algorithms"][0]["devices"]) > num_gpus:
-            for i in range(len(config["Algorithms"][0]["devices"]) - num_gpus):
+        if len(config["Algorithms"][0]["devices"]) > int(num_gpus):
+            for i in range(len(config["Algorithms"][0]["devices"]) - int(num_gpus)):
                 config["Algorithms"][0]["devices"].pop()
 
-        elif len(config["Algorithms"][0]["devices"]) < num_gpus:
+        elif len(config["Algorithms"][0]["devices"]) < int(num_gpus):
             for i in range(num_gpus - len(config["Algorithms"][0]["devices"]), 0, -1):
                 gpu = {"index": (num_gpus - i),
                        "corefreq": 500,
@@ -470,7 +470,7 @@ class NowMining(QDialog, Ui_NowMining):
 
     # FOR MONERO CPU
 
-    def configure_monero_CPU():
+    def configure_monero_CPU(self):
         global account
         global rig_name
         global num_threads
