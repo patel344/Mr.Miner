@@ -606,8 +606,13 @@ class NowMining(QDialog, Ui_NowMining):
                     batman.write('setx GPU_USE_SYNC_OBJECTS 1\n')
                     batman.write('setx GPU_SINGLE_ALLOC_PERCENT 100\n')
                     batman.write('setx GPU_MAX_ALLOC_PERCENT 100\n')
-                    batman.write('Santas_helpers\Claymore_dual\EthDcrMiner64.exe -epool eth-eu1.nanopool.org:9999 -ewal ' + account.replace("\n", "") + "/" + rig_name.replace("\n", "") + "/" + email.replace("\n", "") +
+                    if account[0:2] == '0x':
+                        batman.write('Santas_helpers\Claymore_dual\EthDcrMiner64.exe -epool eth-eu1.nanopool.org:9999 -ewal ' + account.replace("\n", "") + "/" + rig_name.replace("\n", "") + "/" + email.replace("\n", "") +
                                  ' -epsw x -dpool stratum+tcp://sia-eu1.nanopool.org:7777 -dwal ' + account2.replace("\n", "") + "/" + rig_name.replace("\n", "") + "/" + email.replace("\n", "") + ' -dpsw x -dcoin sia -ftime 10')
+                    else:
+                        batman.write(
+                            'Santas_helpers\Claymore_dual\EthDcrMiner64.exe -epool eth-eu1.nanopool.org:9999 -ewal 0x' + account.replace("\n", "") + "/" + rig_name.replace("\n", "") + "/" + email.replace("\n", "") +
+                            ' -epsw x -dpool stratum+tcp://sia-eu1.nanopool.org:7777 -dwal ' + account2.replace("\n","") + "/" + rig_name.replace("\n", "") + "/" + email.replace("\n", "") + ' -dpsw x -dcoin sia -ftime 10')
                 subprocess.Popen("Santas_helpers\ETH-SIA_Start.bat", shell=True)
     def Establish_Connections(self):
         global currency_caller
