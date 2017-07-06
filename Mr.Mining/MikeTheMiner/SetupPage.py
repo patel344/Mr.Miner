@@ -73,12 +73,14 @@ class Ui_SetupPage(object):
         font = QtGui.QFont()
         font.setPointSize(10)
         self.gpu_reqs.setFont(font)
+        self.gpu_reqs.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
         self.gpu_reqs.setStyleSheet("\n"
 "color:rgb(255, 255, 255)\n"
 "")
         self.gpu_reqs.setText("")
         self.gpu_reqs.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
         self.gpu_reqs.setWordWrap(True)
+        self.gpu_reqs.setTextInteractionFlags(QtCore.Qt.LinksAccessibleByMouse|QtCore.Qt.TextSelectableByKeyboard|QtCore.Qt.TextSelectableByMouse)
         self.gpu_reqs.setObjectName("gpu_reqs")
         self.lineEdit_email = QtWidgets.QLineEdit(SetupPage)
         self.lineEdit_email.setGeometry(QtCore.QRect(70, 510, 341, 31))
@@ -113,6 +115,7 @@ class Ui_SetupPage(object):
         self.lineEdit_no_gpus.setStyleSheet("background-color:rgb(105,105,105);\n"
 "color:rgb(255, 255, 255);\n"
 "")
+        self.lineEdit_no_gpus.setInputMask("")
         self.lineEdit_no_gpus.setObjectName("lineEdit_no_gpus")
         self.igalmelapela = QtWidgets.QPushButton(SetupPage)
         self.igalmelapela.setEnabled(True)

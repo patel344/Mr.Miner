@@ -1,0 +1,28 @@
+missing module named resource - imported by posix, ptyprocess.ptyprocess, C:\Users\igalf\OneDrive\Documents\GitHub\Mr.Miner\Mr.Mining\MikeTheMiner\main.py
+missing module named posix - imported by os, C:\Users\igalf\OneDrive\Documents\GitHub\Mr.Miner\Mr.Mining\MikeTheMiner\main.py
+missing module named _posixsubprocess - imported by subprocess, multiprocessing.util, C:\Users\igalf\OneDrive\Documents\GitHub\Mr.Miner\Mr.Mining\MikeTheMiner\main.py
+missing module named 'org.python' - imported by pickle, C:\Users\igalf\OneDrive\Documents\GitHub\Mr.Miner\Mr.Mining\MikeTheMiner\main.py, xml.sax
+missing module named readline - imported by cmd, code, pdb, C:\Users\igalf\OneDrive\Documents\GitHub\Mr.Miner\Mr.Mining\MikeTheMiner\main.py
+excluded module named _frozen_importlib - imported by importlib, importlib.abc, C:\Users\igalf\OneDrive\Documents\GitHub\Mr.Miner\Mr.Mining\MikeTheMiner\main.py
+missing module named _frozen_importlib_external - imported by importlib._bootstrap, importlib, importlib.abc, C:\Users\igalf\OneDrive\Documents\GitHub\Mr.Miner\Mr.Mining\MikeTheMiner\main.py
+missing module named _scproxy - imported by urllib.request
+missing module named java - imported by platform, C:\Users\igalf\OneDrive\Documents\GitHub\Mr.Miner\Mr.Mining\MikeTheMiner\main.py
+missing module named 'java.lang' - imported by platform, C:\Users\igalf\OneDrive\Documents\GitHub\Mr.Miner\Mr.Mining\MikeTheMiner\main.py, xml.sax._exceptions
+missing module named vms_lib - imported by platform, C:\Users\igalf\OneDrive\Documents\GitHub\Mr.Miner\Mr.Mining\MikeTheMiner\main.py
+missing module named termios - imported by tty, ptyprocess.ptyprocess, C:\Users\igalf\OneDrive\Documents\GitHub\Mr.Miner\Mr.Mining\MikeTheMiner\main.py, getpass
+missing module named grp - imported by tarfile, shutil, C:\Users\igalf\OneDrive\Documents\GitHub\Mr.Miner\Mr.Mining\MikeTheMiner\main.py
+missing module named pwd - imported by posixpath, tarfile, shutil, http.server, webbrowser, C:\Users\igalf\OneDrive\Documents\GitHub\Mr.Miner\Mr.Mining\MikeTheMiner\main.py, netrc, getpass
+missing module named ce - imported by os, C:\Users\igalf\OneDrive\Documents\GitHub\Mr.Miner\Mr.Mining\MikeTheMiner\main.py
+missing module named _dummy_threading - imported by dummy_threading, C:\Users\igalf\OneDrive\Documents\GitHub\Mr.Miner\Mr.Mining\MikeTheMiner\main.py
+missing module named org - imported by copy, C:\Users\igalf\OneDrive\Documents\GitHub\Mr.Miner\Mr.Mining\MikeTheMiner\main.py
+missing module named fcntl - imported by pty, ptyprocess.ptyprocess, asyncio.unix_events
+missing module named multiprocessing.set_start_method - imported by multiprocessing, multiprocessing.spawn
+missing module named multiprocessing.get_start_method - imported by multiprocessing, multiprocessing.spawn
+missing module named multiprocessing.get_context - imported by multiprocessing, multiprocessing.pool, multiprocessing.managers, multiprocessing.sharedctypes
+missing module named multiprocessing.TimeoutError - imported by multiprocessing, multiprocessing.pool
+missing module named multiprocessing.AuthenticationError - imported by multiprocessing, multiprocessing.connection
+missing module named multiprocessing.BufferTooShort - imported by multiprocessing, multiprocessing.connection
+missing module named multiprocessing.SimpleQueue - imported by multiprocessing, concurrent.futures.process
+missing module named asyncio.DefaultEventLoopPolicy - imported by asyncio, asyncio.events
+missing module named Queue - imported by pexpect.popen_spawn
+missing module named __builtin__ - imported by ptyprocess.ptyprocess

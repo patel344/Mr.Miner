@@ -82,6 +82,7 @@ class Ui_AccountInfo(object):
 "color:rgb(255, 255, 255)\n"
 "")
         self.address_label.setText("")
+        self.address_label.setTextInteractionFlags(QtCore.Qt.LinksAccessibleByMouse|QtCore.Qt.TextSelectableByKeyboard|QtCore.Qt.TextSelectableByMouse)
         self.address_label.setObjectName("address_label")
         self.urlprogress_label = QtWidgets.QLabel(AccountInfo)
         self.urlprogress_label.setGeometry(QtCore.QRect(40, 320, 461, 31))
@@ -89,6 +90,7 @@ class Ui_AccountInfo(object):
 "color:rgb(255, 255, 255)\n"
 "")
         self.urlprogress_label.setText("")
+        self.urlprogress_label.setTextInteractionFlags(QtCore.Qt.LinksAccessibleByMouse|QtCore.Qt.TextSelectableByKeyboard|QtCore.Qt.TextSelectableByMouse)
         self.urlprogress_label.setObjectName("urlprogress_label")
         self.filepath_label = QtWidgets.QLabel(AccountInfo)
         self.filepath_label.setGeometry(QtCore.QRect(40, 430, 461, 31))
@@ -96,6 +98,7 @@ class Ui_AccountInfo(object):
 "color:rgb(255, 255, 255)\n"
 "")
         self.filepath_label.setText("")
+        self.filepath_label.setTextInteractionFlags(QtCore.Qt.LinksAccessibleByMouse|QtCore.Qt.TextSelectableByKeyboard|QtCore.Qt.TextSelectableByMouse)
         self.filepath_label.setObjectName("filepath_label")
         self.igalmelapela = QtWidgets.QPushButton(AccountInfo)
         self.igalmelapela.setEnabled(True)

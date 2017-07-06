@@ -178,9 +178,6 @@ class CreateNewWallet(QDialog, Ui_CreateNewWallet):
                 elif currency_caller == 'Sia':
                     with open('Sia_Settings.txt', 'w') as f:
                         f.write('Write generated address here.')
-                elif currency_caller == 'Monero_CPU':
-                    with open('Monero_Settings.txt', 'w') as f:
-                        f.write('Write generated address here.')
                 elif currency_caller == 'Monero':
                     with open('Monero_Settings.txt', 'w') as f:
                         f.write('Write generated address here.')
@@ -232,6 +229,7 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
         global miningwallet
         global currency_caller
         global account
+        global account2
         if self.sender() == self.ethereum:
             if os.path.isfile('Ethereum_Wallet/Ethereum_Settings.txt'):
                 with open('Ethereum_Wallet/Ethereum_Settings.txt', 'r') as f:
@@ -280,21 +278,24 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
                 miningwallet.show()
                 self.close()
         elif self.sender() == self.pascal:
-            if os.path.isfile('Monero_Wallet/Monero_Settings.txt'):
-                with open('Monero_Wallet/Monero_Settings.txt', 'r') as f:
+            if os.path.isfile('Ethereum_Wallet/Ethereum_Settings.txt') and os.path.isfile('Sia_Wallet/Sia_Settings.txt'):
+                with open('Ethereum_Wallet/Ethereum_Settings.txt', 'r') as f:
                     account = f.readlines()[0]
+                with open('Sia_Wallet/Sia_Settings.txt', 'r') as f:
+                    account2 = f.readlines()[0]
                 #global nowmining
-                currency_caller = 'Monero_CPU'
+                currency_caller = 'ETH-SIA'
                 nowmining = NowMining()
                 nowmining.show()
                 self.close()
             else:
-                #global currency_caller
-                #global miningwallet
-                currency_caller = 'Monero_CPU'
-                miningwallet = MiningWallet()
-                miningwallet.show()
-                self.close()
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Critical)
+                msg.setText("Oh no! we couldin't your wallets. please make sure you have a ethereum wallet and SIA wallet with us by clicking on the curency and"
+                            "creating a wallet or adding you previously owned wallet")
+                msg.setWindowTitle("Mr.Miner Incorrect Information")
+                msg.setStandardButtons(QMessageBox.Ok)
+                msg.exec()
         elif self.sender() == self.sia:
             if os.path.isfile('Sia_Wallet/Sia_Settings.txt'):
                 with open('Sia_Wallet/Sia_Settings.txt', 'r') as f:
@@ -341,10 +342,15 @@ class AccountInfo(QDialog, Ui_AccountInfo):
         self.address_label.setText(account)
         #change for other pools
         if currency_caller == 'Sia' and graphic_card == 'nvidia\n':
-            self.urlprogress_label.setText('https://siamining.com/addresses/0x' + account)
-        else:
-            self.urlprogress_label.setText('www.nanopool.com/0x'+account)
-        self.filepath_label.setText(currency_caller+'_Settings.txt')
+            self.urlprogress_label.setText('https://siamining.com/addresses/' + account)
+        elif currency_caller == 'Ethereum':
+            self.urlprogress_label.setText('https://eth.nanopool.org/account/0x' + account)
+        elif currency_caller == 'Ethereum_Classic':
+            self.urlprogress_label.setText('https://etc.nanopool.org/account/0x' + account)
+        elif currency_caller == 'Zcash':
+            self.urlprogress_label.setText('https://zec.nanopool.org/account/' + account)
+        elif currency_caller == 'Monero':
+            self.urlprogress_label.setText('https://xmr.nanopool.org/account/' + account)
 
     def Establish_Connections(self):
         self.accntinfo_continue.clicked.connect(self.next_pressed)
@@ -384,8 +390,7 @@ class MiningWallet(QDialog, Ui_MiningWallet):
             subprocess.Popen("Santas_helpers\zcash_wallet_creator.bat", shell=True)
         elif currency_caller == 'Sia':
             subprocess.Popen("Santas_helpers\sia_wallet_creator.bat", shell=True)
-        elif currency_caller == 'Monero' or currency_caller == 'Monero_CPU':
-            subprocess.Popen("Santas_helpers\monero_wallet_creator.bat", shell=True)
+
 
     def add_wallet(self):
         self.entered_wallet_no = self.lineEdit_wallet_no.text()
@@ -410,9 +415,6 @@ class MiningWallet(QDialog, Ui_MiningWallet):
                 f.close()
         elif currency_caller == 'Sia':
             with open('Sia_Wallet/Sia_Settings.txt', 'w') as f:
-                f.write(self.entered_wallet_no)
-        elif currency_caller == 'Monero_CPU':
-            with open('Monero_Wallet/Monero_Settings.txt', 'w') as f:
                 f.write(self.entered_wallet_no)
         elif currency_caller == 'Monero':
             with open('Monero_Wallet/Monero_Settings.txt', 'w') as f:
@@ -499,6 +501,7 @@ class NowMining(QDialog, Ui_NowMining):
 
     def start_mining(self):
         global account
+        global account2
         global rig_name
         global email
         global currency_caller
@@ -515,6 +518,7 @@ class NowMining(QDialog, Ui_NowMining):
                 batman.write('setx GPU_SINGLE_ALLOC_PERCENT 100\n')
                 batman.write('setx GPU_MAX_ALLOC_PERCENT 100\n')
                 #NVIDIA
+                print(graphic_card)
                 if graphic_card == 'nvidia\n':
                     batman.write(
                         "Santas_helpers\ethminer.exe -I -F http://eth-eu1.nanopool.org:8888/0x" + account.replace("\n", "") + "/" + rig_name.replace("\n", "") + "/" + email.replace("\n", ""))
@@ -590,17 +594,21 @@ class NowMining(QDialog, Ui_NowMining):
                     elif graphic_card == 'amd\n ':
                         batman.write(r"Santas_helpers\miner Santas_helpers\xmr-gpu.conf")
                 subprocess.Popen("Santas_helpers\Monero_Start.bat", shell=True)
-        elif currency_caller == 'Monero_CPU':
-            if os.path.exists('Monero_Wallet/Monero_Settings.txt'):
-                with open('Monero_Wallet/Monero_Settings.txt') as f:
+        elif currency_caller == 'ETH-SIA':
+            if os.path.isfile('Ethereum_Wallet/Ethereum_Settings.txt') and os.path.isfile('Sia_Wallet/Sia_Settings.txt'):
+                with open('Ethereum_Wallet/Ethereum_Settings.txt', 'r') as f:
                     account = f.readlines()[0]
-
-                # add config file PARTH
-                self.configure_monero_CPU()
-
-                with open('Santas_helpers\Monero_Start.bat', 'w')as batman:
-                    batman.write(r"Santas_helpers\miner Santas_helpers\xmr-cpu.conf")
-                subprocess.Popen("Santas_helpers\Monero_Start.bat", shell=True)
+                with open('Sia_Wallet/Sia_Settings.txt', 'r') as f:
+                    account2 = f.readlines()[0]
+                with open('Santas_helpers\ETH-SIA_Start.bat', 'w')as batman:
+                    batman.write('setx GPU_FORCE_64BIT_PTR 0\n')
+                    batman.write('setx GPU_MAX_HEAP_SIZE 100\n')
+                    batman.write('setx GPU_USE_SYNC_OBJECTS 1\n')
+                    batman.write('setx GPU_SINGLE_ALLOC_PERCENT 100\n')
+                    batman.write('setx GPU_MAX_ALLOC_PERCENT 100\n')
+                    batman.write('Santas_helpers\Claymore_dual\EthDcrMiner64.exe -epool eth-eu1.nanopool.org:9999 -ewal ' + account.replace("\n", "") + "/" + rig_name.replace("\n", "") + "/" + email.replace("\n", "") +
+                                 ' -epsw x -dpool stratum+tcp://sia-eu1.nanopool.org:7777 -dwal ' + account2.replace("\n", "") + "/" + rig_name.replace("\n", "") + "/" + email.replace("\n", "") + ' -dpsw x -dcoin sia -ftime 10')
+                subprocess.Popen("Santas_helpers\ETH-SIA_Start.bat", shell=True)
     def Establish_Connections(self):
         global currency_caller
         global num_threads
@@ -643,8 +651,8 @@ class NowMining(QDialog, Ui_NowMining):
                 os.system("taskkill /f /im  ccminer.exe")
             elif graphic_card == 'amd\n':
                 os.system("taskkill /f /im  ominer.exe")
-        elif currency_caller == 'Monero_CPU':
-            os.system("taskkill /f /im  miner.exe")
+        elif currency_caller == 'ETH-SIA':
+            os.system("taskkill /f /im EthDcrMiner64.exe")
         elif currency_caller == 'Monero':
             if graphic_card == 'nvidia\n':
                 os.system("taskkill /f /im  ccminer.exe")
@@ -738,8 +746,8 @@ class NowMining(QDialog, Ui_NowMining):
                     shit_call = 'Santas_helpers\gominer.exe -I 28 -H sia-eu1.nanopool.org:9980 -Q "address=' + account + '&worker='+ rig_name +'&email=' + email +'" \n'
                     batman.write(shit_call)
             subprocess.Popen("Santas_helpers\Sia_Start.bat", shell=True)
-        elif currency_caller == 'Monero_CPU':
-            os.system("taskkill /f /im  miner.exe")
+        elif currency_caller == 'ETH-SIA':
+            os.system("taskkill /f /im EthDcrMiner64.exe")
         elif currency_caller == 'Monero':
             if graphic_card == 'nvidia\n':
                 os.system("taskkill /f /im  ccminer.exe")
