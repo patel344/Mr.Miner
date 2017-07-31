@@ -217,7 +217,7 @@ class Ui_SetupPage(object):
     def retranslateUi(self, SetupPage):
         _translate = QtCore.QCoreApplication.translate
         SetupPage.setWindowTitle(_translate("SetupPage", "Mr.Miner"))
-        self.label.setText(_translate("SetupPage", "<html><head/><body><p><span style=\" color:#ffffff;\">Select Your Settigns:</span></p></body></html>"))
+        self.label.setText(_translate("SetupPage", "<html><head/><body><p><span style=\" color:#ffffff;\">Select Your Settings:</span></p></body></html>"))
         self.label_2.setText(_translate("SetupPage", "<html><head/><body><p><span style=\" color:#ffffff;\">Select Graphic Card:</span></p></body></html>"))
         self.label_3.setText(_translate("SetupPage", "Enter Email:"))
         self.label_4.setText(_translate("SetupPage", "Name Your Mining Rig:"))
