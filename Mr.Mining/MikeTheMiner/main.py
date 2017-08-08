@@ -350,7 +350,7 @@ class AccountInfo(QDialog, Ui_AccountInfo):
         elif currency_caller == 'Zcash':
             self.urlprogress_label.setText('https://zec.nanopool.org/account/' + account)
         elif currency_caller == 'Monero':
-            self.urlprogress_label.setText('https://xmr.nanopool.org/account/' + account)
+            self.urlprogress_label.setText('http://dwarfpool.com/xmr/address?wallet=' + account)
 
     def Establish_Connections(self):
         self.accntinfo_continue.clicked.connect(self.next_pressed)
@@ -390,6 +390,9 @@ class MiningWallet(QDialog, Ui_MiningWallet):
             subprocess.Popen("Santas_helpers\zcash_wallet_creator.bat", shell=True)
         elif currency_caller == 'Sia':
             subprocess.Popen("Santas_helpers\sia_wallet_creator.bat", shell=True)
+        #add monoero wallet t
+        elif currency_caller == 'Monero':
+            subprocess.Popen("Santas_helpers\monero_wallet_creator.bat", shell=True)
 
 
     def add_wallet(self):
@@ -583,17 +586,10 @@ class NowMining(QDialog, Ui_NowMining):
             if os.path.exists('Monero_Wallet/Monero_Settings.txt'):
                 with open('Monero_Wallet/Monero_Settings.txt') as f:
                     account = f.readlines()[0]
-
-                #add config file PARTH
-                self.configure_monero_AMD()
-
                 with open('Santas_helpers\Monero_Start.bat', 'w')as batman:
-                    if graphic_card == 'nvidia\n'  or 'nvidia' in graphic_card:
-                        shit_call = "Santas_helpers\ccminer -q -o stratum+tcp://xmr-eu1.nanopool.org:14444 -u " + account.replace("\n", "") + "." + rig_name.replace("\n", "") + "/" + email.replace("\n", "") + " -p x\n"
-                        batman.write(shit_call)
-                    elif graphic_card == 'amd\n '  or 'amd' in graphic_card:
-                        batman.write(r"Santas_helpers\miner Santas_helpers\xmr-gpu.conf")
-                subprocess.Popen("Santas_helpers\Monero_Start.bat", shell=True)
+                    shit_call = r"Santas_helpers\xmrig.exe -o xmr-eu.dwarfpool.com:8005 -u " + account.replace("\n", "") + " -p x -k"
+                    batman.write(shit_call)
+                    subprocess.Popen("Santas_helpers\Monero_Start.bat", shell=True)
         elif currency_caller == 'ETH-SIA':
             if os.path.isfile('Ethereum_Wallet/Ethereum_Settings.txt') and os.path.isfile('Sia_Wallet/Sia_Settings.txt'):
                 with open('Ethereum_Wallet/Ethereum_Settings.txt', 'r') as f:
@@ -659,10 +655,7 @@ class NowMining(QDialog, Ui_NowMining):
         elif currency_caller == 'ETH-SIA':
             os.system("taskkill /f /im EthDcrMiner64.exe")
         elif currency_caller == 'Monero':
-            if graphic_card == 'nvidia\n' or 'nvidia' in graphic_card:
-                os.system("taskkill /f /im  ccminer.exe")
-            elif graphic_card == 'amd\n' or 'amd' in graphic_card:
-                os.system("taskkill /f /im  miner.exe")
+            os.system("taskkill /f /im  xmrig.exe")
         global choosecurrency
         choosecurrency = ChooseCurrency()
         choosecurrency.show()
@@ -754,10 +747,15 @@ class NowMining(QDialog, Ui_NowMining):
         elif currency_caller == 'ETH-SIA':
             os.system("taskkill /f /im EthDcrMiner64.exe")
         elif currency_caller == 'Monero':
-            if graphic_card == 'nvidia\n' or 'nvidia' in graphic_card:
-                os.system("taskkill /f /im  ccminer.exe")
-            elif graphic_card == 'amd\n' or 'amd' in graphic_card:
-                os.system("taskkill /f /im  miner.exe")
+            os.system("taskkill /f /im  xmrig.exe")
+            with open('Monero_Wallet/Monero_Settings.txt') as f:
+                account = f.readlines()[0]
+            with open('Santas_helpers\Monero_Start.bat', 'w')as batman:
+                shit_call = r"Santas_helpers\xmrig.exe -o xmr-eu.dwarfpool.com:8005 -u " + account.replace("\n",
+                                                                                                           "") + " -p x -k"
+                batman.write(shit_call)
+                subprocess.Popen("Santas_helpers\Monero_Start.bat", shell=True)
+
 
     def back_pressed(self):
         global setuppage

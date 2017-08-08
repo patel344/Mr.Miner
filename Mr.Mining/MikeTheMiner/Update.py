@@ -7,14 +7,16 @@ files = [f for f in os.listdir('.') if os.path.isfile(f)]
 for f in files:
     if'MisterMiner' in f:
         version = f
-with urllib.request.urlopen('http://misterminers.com/' + version) as response:
+
+print('http://misterminers.com/' + version.replace(".exe", "") + '.txt')
+with urllib.request.urlopen('http://misterminers.com/' + version.replace(".exe","") + '.txt') as response:
    html = response.read()
    stuff = html.decode("utf-8").splitlines()#.decode("utf-8").splitlines()
 #urllib.request.urlretrieve ("http://fitlifeapp.com/MrMiner/pasc-logo.png", "yougood.png")
 erase = 0
 santa = 0
 print (stuff[0].split(' ')[1])
-if stuff[0].split(' ')[1] != version:
+if stuff[0].split(' ')[1] != version.replace(".exe", ""):
     for i in stuff[1:]:
         if erase == 0:
             if i == 'santa':

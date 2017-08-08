@@ -35,3 +35,11 @@
 2017-07-05 14:59:40.435	9176	ERROR	WalletAPI	src/wallet/api/wallet.cpp:721	daemonBlockChainTargetHeight: possibly lost connection to daemon
 2017-07-05 15:00:13.154	9176	ERROR	net.http	contrib/epee/include/net/http_client.h:441	Unexpected recv fail
 2017-07-05 15:00:13.154	9176	ERROR	WalletAPI	src/wallet/api/wallet.cpp:721	daemonBlockChainTargetHeight: possibly lost connection to daemon
+2017-08-02 21:13:53.489	4916	INFO 	global	contrib/epee/src/mlog.cpp:145	New log categories: *:WARNING,net:FATAL,net.p2p:FATAL,net.cn:FATAL,global:INFO,verify:FATAL,stacktrace:INFO
+2017-08-02 21:13:55.506	4916	INFO 	global	contrib/epee/src/mlog.cpp:153	New log categories: *:WARNING,net:FATAL,net.p2p:FATAL,net.cn:FATAL,global:INFO,verify:FATAL,stacktrace:INFO
+2017-08-02 21:13:56.924	4916	INFO 	global	contrib/epee/src/mlog.cpp:153	New log categories: *:WARNING,net:FATAL,net.p2p:FATAL,net.cn:FATAL,global:INFO,verify:FATAL,stacktrace:INFO
+2017-08-02 21:13:57.117	9456	ERROR	net.http	contrib/epee/include/storages/portable_storage.h:161	portable_storage: wrong binary format - signature missmatch
+2017-08-02 21:13:57.117	9456	ERROR	wallet.wallet2	src/wallet/wallet2.cpp:2081	!r. THROW EXCEPTION: error::invalid_password
+2017-08-02 21:13:57.118	9456	WARN 	net.http	src/wallet/wallet_errors.h:697	C:/msys64/home/vagrant/slave/monero-core-win64/build/monero/src/wallet/wallet2.cpp:2081:N5tools5error16invalid_passwordE: invalid password
+2017-08-02 21:13:57.133	9456	ERROR	WalletAPI	src/wallet/api/wallet.cpp:502	Error opening wallet: invalid password
+2017-08-02 21:13:58.643	9456	ERROR	WalletAPI	src/wallet/api/wallet.cpp:551	Status_Critical - not storing wallet
