@@ -217,6 +217,9 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
         self.sia.clicked.connect(self.handle_currency)
         self.monero.clicked.connect(self.handle_currency)
         self.pascal.clicked.connect(self.handle_currency)
+        self.monero_eth_sia.clicked.connect(self.handle_currency)
+        self.monero_pasc_monero.clicked.connect(self.handle_currency)
+        self.monero_zcash.clicked.connect(self.handle_currency)
         self.Mining_back.clicked.connect(self.handle_back)
     def handle_back(self):
         global setuppage
@@ -230,6 +233,7 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
         global currency_caller
         global account
         global account2
+        global account3
         if self.sender() == self.ethereum:
             if os.path.isfile('Ethereum_Wallet/Ethereum_Settings.txt'):
                 with open('Ethereum_Wallet/Ethereum_Settings.txt', 'r') as f:
@@ -328,7 +332,76 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
                 miningwallet = MiningWallet()
                 miningwallet.show()
                 self.close()
-
+        elif self.sender() == self.monero_zcash:
+            if os.path.isfile('Monero_Wallet/Monero_Settings.txt') and os.path.isfile('Zcash_Wallet/Zcash_Settings.txt'):
+                with open('Monero_Wallet/Monero_Settings.txt', 'r') as f:
+                    account = f.readlines()[0]
+                with open('Zcash_Wallet/Zcash_Settings.txt', 'r') as f:
+                    account2 = f.readlines()[0]
+                #global nowmining
+                currency_caller = 'monero_zcash'
+                nowmining = NowMining()
+                nowmining.show()
+                self.close()
+            else:
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Critical)
+                msg.setText("Oh no! we couldin't your wallets. please make sure you have a monero wallet and zcash wallet with us by clicking on the curency and"
+                            "creating a wallet or adding you previously owned wallet")
+                msg.setWindowTitle("Mr.Miner Incorrect Information")
+                msg.setStandardButtons(QMessageBox.Ok)
+                msg.exec()
+        elif self.sender() == self.monero_eth_sia:
+            if os.path.isfile('Ethereum_Wallet/Ethereum_Settings.txt') and os.path.isfile('Monero_Wallet/Monero_Settings.txt') and os.path.isfile('Sia_Wallet/Sia_Settings.txt'):
+                with open('Ethereum_Wallet/Ethereum_Settings.txt', 'r') as f:
+                    account = f.readlines()[0]
+                with open('Sia_Wallet/Sia_Settings.txt', 'r') as f:
+                    account2 = f.readlines()[0]
+                with open('Monero_Wallet/Monero_Settings.txt', 'r') as f:
+                    account3 = f.readlines()[0]
+                #global nowmining
+                currency_caller = 'ETH-SIA-monero'
+                nowmining = NowMining()
+                nowmining.show()
+                self.close()
+            else:
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Critical)
+                msg.setText("Oh no! we couldin't your wallets. please make sure you have a ethereum wallet, a Monero wallet and SIA wallet with us by clicking on the curency and"
+                            "creating a wallet or adding you previously owned wallet")
+                msg.setWindowTitle("Mr.Miner Incorrect Information")
+                msg.setStandardButtons(QMessageBox.Ok)
+                msg.exec()
+        elif self.sender() == self.monero_pasc_monero:
+            if os.path.isfile('Ethereum_Wallet/Ethereum_Settings.txt') and os.path.isfile('Monero_Wallet/Monero_Settings.txt') and os.path.isfile('Pascal_Wallet/Pascal_Settings.txt'):
+                with open('Ethereum_Wallet/Ethereum_Settings.txt', 'r') as f:
+                    account = f.readlines()[0]
+                with open('Pascal_Wallet/Pascal_Settings.txt', 'r') as f:
+                    account2 = f.readlines()[0]
+                with open('Monero_Wallet/Monero_Settings.txt', 'r') as f:
+                    account3 = f.readlines()[0]
+                #global nowmining
+                currency_caller = 'ETH-Pascal-monero'
+                nowmining = NowMining()
+                nowmining.show()
+                self.close()
+            elif os.path.isfile('Ethereum_Wallet/Ethereum_Settings.txt') and os.path.isfile('Monero_Wallet/Monero_Settings.txt'):
+                with open('Ethereum_Wallet/Ethereum_Settings.txt', 'r') as f:
+                    account = f.readlines()[0]
+                with open('Monero_Wallet/Monero_Settings.txt', 'r') as f:
+                    account3 = f.readlines()[0]
+                currency_caller = 'ETH-Pascal-monero'
+                miningwallet = MiningWallet()
+                miningwallet.show()
+                self.close()
+            else:
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Critical)
+                msg.setText("Oh no! we couldin't your wallets. please make sure you have a ethereum wallet, and Monero wallet with us by clicking on the curency and"
+                            "creating a wallet or adding you previously owned wallet")
+                msg.setWindowTitle("Mr.Miner Incorrect Information")
+                msg.setStandardButtons(QMessageBox.Ok)
+                msg.exec()
 class AccountInfo(QDialog, Ui_AccountInfo):
     def __init__(self):
         super(self.__class__, self).__init__()
@@ -393,6 +466,8 @@ class MiningWallet(QDialog, Ui_MiningWallet):
         #add monoero wallet t
         elif currency_caller == 'Monero':
             subprocess.Popen("Santas_helpers\monero_wallet_creator.bat", shell=True)
+        elif currency_caller == 'ETH-Pascal-monero':
+            subprocess.Popen("Santas_helpers\Pascal_wallet_creator.bat", shell=True)
 
 
     def add_wallet(self):
@@ -421,6 +496,9 @@ class MiningWallet(QDialog, Ui_MiningWallet):
                 f.write(self.entered_wallet_no)
         elif currency_caller == 'Monero':
             with open('Monero_Wallet/Monero_Settings.txt', 'w') as f:
+                f.write(self.entered_wallet_no)
+        elif currency_caller == 'ETH-Pascal-monero':
+            with open('Pascal_Wallet/Pascal_Settings.txt', 'w') as f:
                 f.write(self.entered_wallet_no)
 
         global nowmining

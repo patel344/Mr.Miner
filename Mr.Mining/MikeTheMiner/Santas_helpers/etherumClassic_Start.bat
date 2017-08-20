@@ -3,4 +3,3 @@ setx GPU_MAX_HEAP_SIZE 100
 setx GPU_USE_SYNC_OBJECTS 1
 setx GPU_SINGLE_ALLOC_PERCENT 100
 setx GPU_MAX_ALLOC_PERCENT 100
-Santas_helpers\ethminer.exe -I -F http://etc-eu1.nanopool.org:18888/0x4aa42359a5f6a97ad2f365453b6359b1e754a06d/1/1
