@@ -1,5 +1,9 @@
 <RCC>
   <qresource prefix="ChooseCurrency">
+    <file>xmr_eth_sia.png</file>
+    <file>zcash_xmr.png</file>
+    <file>eth_sia.png</file>
+    <file>xmr_eth_pasc.png</file>
     <file>Logo_green-01.png</file>
     <file>etc-logo.png</file>
     <file>eth-logo.png</file>

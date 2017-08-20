@@ -121,7 +121,7 @@
    </property>
    <property name="icon">
     <iconset resource="ChooseCurrency.qrc">
-     <normaloff>:/ChooseCurrency/eth-logo.png</normaloff>:/ChooseCurrency/eth-logo.png</iconset>
+     <normaloff>:/ChooseCurrency/eth_sia.png</normaloff>:/ChooseCurrency/eth_sia.png</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -748,7 +748,7 @@ color:rgb(255, 255, 255)</string>
    </property>
    <property name="icon">
     <iconset resource="ChooseCurrency.qrc">
-     <normaloff>:/ChooseCurrency/xmr-logo.png</normaloff>:/ChooseCurrency/xmr-logo.png</iconset>
+     <normaloff>:/ChooseCurrency/zcash_xmr.png</normaloff>:/ChooseCurrency/zcash_xmr.png</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -777,7 +777,7 @@ color:rgb(255, 255, 255)</string>
    </property>
    <property name="icon">
     <iconset resource="ChooseCurrency.qrc">
-     <normaloff>:/ChooseCurrency/xmr-logo.png</normaloff>:/ChooseCurrency/xmr-logo.png</iconset>
+     <normaloff>:/ChooseCurrency/xmr_eth_pasc.png</normaloff>:/ChooseCurrency/xmr_eth_pasc.png</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -806,7 +806,7 @@ color:rgb(255, 255, 255)</string>
    </property>
    <property name="icon">
     <iconset resource="ChooseCurrency.qrc">
-     <normaloff>:/ChooseCurrency/xmr-logo.png</normaloff>:/ChooseCurrency/xmr-logo.png</iconset>
+     <normaloff>:/ChooseCurrency/xmr_eth_sia.png</normaloff>:/ChooseCurrency/xmr_eth_sia.png</iconset>
    </property>
    <property name="iconSize">
     <size>

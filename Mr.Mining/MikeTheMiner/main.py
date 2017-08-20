@@ -579,7 +579,111 @@ class NowMining(QDialog, Ui_NowMining):
 
         with open(r'Santas_helpers\xmr-cpu.conf', 'w') as f:
             json.dump(config, f, indent=4, sort_keys=True)
+    def sia_mine(self):
+        if os.path.exists('Sia_Wallet/Sia_Settings.txt'):
+            with open('Sia_Wallet/Sia_Settings.txt') as f:
+                account = f.readlines()[0]
+        with open('Santas_helpers\Sia_Start.bat', 'w')as batman:
+            if graphic_card == 'nvidia\n' or 'nvidia' in graphic_card:
+                shit_call = "Santas_helpers\ccminer -a sia -e --url=stratum+tcp://us-east.siamining.com:3333 -u " + account.replace(
+                    "\n", "") + "." + rig_name.replace("\n", "") + " -i 28 \n"
+                batman.write(shit_call)
+            elif graphic_card == 'amd\n ' or 'amd' in graphic_card:
+                shit_call = 'Santas_helpers\gominer.exe -I 28 -H sia-eu1.nanopool.org:9980 -Q "address=' + account.replace(
+                    "\n", "") + '&worker=' + rig_name.replace("\n", "") + '&email=' + email.replace("\n", "") + '" \n'
+                batman.write(shit_call)
+        subprocess.Popen("Santas_helpers\Sia_Start.bat", shell=True)
+    def monero_mine(self):
+        if os.path.exists('Monero_Wallet/Monero_Settings.txt'):
+            with open('Monero_Wallet/Monero_Settings.txt') as f:
+                account = f.readlines()[0]
+            with open('Santas_helpers\Monero_Start.bat', 'w')as batman:
+                shit_call = r"Santas_helpers\xmrig.exe -o xmr-eu.dwarfpool.com:8005 -u " + account.replace("\n","") + " -p x -k"
+                batman.write(shit_call)
+                subprocess.Popen("Santas_helpers\Monero_Start.bat", shell=True)
+    def eth_sia_mine(self):
+        if os.path.isfile('Ethereum_Wallet/Ethereum_Settings.txt') and os.path.isfile('Sia_Wallet/Sia_Settings.txt'):
+            with open('Ethereum_Wallet/Ethereum_Settings.txt', 'r') as f:
+                account = f.readlines()[0]
+            with open('Sia_Wallet/Sia_Settings.txt', 'r') as f:
+                account2 = f.readlines()[0]
+            with open('Santas_helpers\ETH-SIA_Start.bat', 'w')as batman:
+                batman.write('setx GPU_FORCE_64BIT_PTR 0\n')
+                batman.write('setx GPU_MAX_HEAP_SIZE 100\n')
+                batman.write('setx GPU_USE_SYNC_OBJECTS 1\n')
+                batman.write('setx GPU_SINGLE_ALLOC_PERCENT 100\n')
+                batman.write('setx GPU_MAX_ALLOC_PERCENT 100\n')
+                if account[0:2] == '0x':
+                    batman.write(
+                        'Santas_helpers\Claymore_dual\EthDcrMiner64.exe -epool eth-eu1.nanopool.org:9999 -ewal ' + account.replace(
+                            "\n", "") + "/" + rig_name.replace("\n", "") + "/" + email.replace("\n", "") +
+                        ' -epsw x -dpool stratum+tcp://sia-eu1.nanopool.org:7777 -dwal ' + account2.replace("\n",
+                                                                                                            "") + "/" + rig_name.replace(
+                            "\n", "") + "/" + email.replace("\n", "") + ' -dpsw x -dcoin sia -ftime 10')
+                else:
+                    batman.write(
+                        'Santas_helpers\Claymore_dual\EthDcrMiner64.exe -epool eth-eu1.nanopool.org:9999 -ewal 0x' + account.replace(
+                            "\n", "") + "/" + rig_name.replace("\n", "") + "/" + email.replace("\n", "") +
+                        ' -epsw x -dpool stratum+tcp://sia-eu1.nanopool.org:7777 -dwal ' + account2.replace("\n",
+                                                                                                            "") + "/" + rig_name.replace(
+                            "\n", "") + "/" + email.replace("\n", "") + ' -dpsw x -dcoin sia -ftime 10')
+            subprocess.Popen("Santas_helpers\ETH-SIA_Start.bat", shell=True)
+    def eth_pascal_mine(self):
+        if os.path.isfile('Ethereum_Wallet/Ethereum_Settings.txt') and os.path.isfile('Pascal_Wallet/Pascal_Settings.txt'):
+            with open('Ethereum_Wallet/Ethereum_Settings.txt', 'r') as f:
+                account = f.readlines()[0]
+            with open('Pascal_Wallet/Pascal_Settings.txt', 'r') as f:
+                account2 = f.readlines()[0]
+            with open('Santas_helpers\ETH-Pascal_Start.bat', 'w')as batman:
+                batman.write('setx GPU_FORCE_64BIT_PTR 0\n')
+                batman.write('setx GPU_MAX_HEAP_SIZE 100\n')
+                batman.write('setx GPU_USE_SYNC_OBJECTS 1\n')
+                batman.write('setx GPU_SINGLE_ALLOC_PERCENT 100\n')
+                batman.write('setx GPU_MAX_ALLOC_PERCENT 100\n')
+                if account[0:2] == '0x':
+                    batman.write(
+                        'Santas_helpers\Claymore_dual\EthDcrMiner64.exe -epool eth-eu1.nanopool.org:9999 -ewal ' + account.replace(
+                            "\n", "") + "/" + rig_name.replace("\n", "") + "/" + email.replace("\n", "") +
+                        ' -epsw x -dpool stratum+tcp://pasc-eu1.nanopool.org:15555 -dwal ' +
+                        account2.replace("\n","") + ".0." + rig_name.replace(
+                            "\n", "") + "/" + email.replace("\n", "") + ' -dpsw x -dcoin pasc -ftime 10')
+                else:
+                    batman.write(
+                        'Santas_helpers\Claymore_dual\EthDcrMiner64.exe -epool eth-eu1.nanopool.org:9999 -ewal 0x' + account.replace(
+                            "\n", "") + "/" + rig_name.replace("\n", "") + "/" + email.replace("\n", "") +
+                        ' -epsw x -dpool stratum+tcp://pasc-eu1.nanopool.org:15555 -dwal ' +
+                        account2.replace("\n","") + ".0." + rig_name.replace(
+                            "\n", "") + "/" + email.replace("\n", "") + ' -dpsw x -dcoin pasc -ftime 10')
+            subprocess.Popen("Santas_helpers\ETH-Pascal_Start.bat", shell=True)
+    def zcash_mine(self):
+        if os.path.exists('Zcash_Wallet/Zcash_Settings.txt'):
+            with open('Zcash_Wallet/Zcash_Settings.txt') as f:
+                account = f.readlines()[0]
+        proc = subprocess.Popen('WMIC CPU Get NumberOfCores,NumberOfLogicalProcessors /Format:List',
+                                stdout=subprocess.PIPE, shell=True)
 
+        num_threads = (proc.communicate()[0]).decode('utf-8').split()[-1].strip()
+        num_threads = re.search(r"[0-9]+", num_threads).group(0).strip()
+        cpu_t = int(num_threads) - 1  # adding thread count
+        with open('Santas_helpers\Zcash_Start.bat', 'w')as batman:
+            if graphic_card == 'nvidia\n' or graphic_card == 'nvidia':
+                shit_call = r"Santas_helpers\nheqminer -l zec-eu1.nanopool.org:6666 -u " + account.replace("\n",
+                                                                                                           "") + "/" + rig_name.replace(
+                    "\n", "") + " -t " + str(cpu_t).replace("\n", "") + " -cd"
+                for ig in range(int(num_gpus)):
+                    shit_call = shit_call + " " + str(ig)
+                shit_call = shit_call + '\n'
+                batman.write(shit_call)
+            elif graphic_card == 'amd\n' or 'amd' in graphic_card:
+                shit_call = "Santas_helpers\genoil.exe -c zec-eu1.nanopool.org:6666 -u " + account.replace("\n",
+                                                                                                           "") + "/" + rig_name.replace(
+                    "\n", "") + "/" + email.replace("\n", "") + " -p x -g"
+                for ig in range(int(num_gpus)):
+                    shit_call = shit_call + " " + str(ig)
+                shit_call = shit_call + " -i 20 -w 64 -P 0\n"
+                batman.write(shit_call)
+                print(shit_call)
+        subprocess.Popen("Santas_helpers\Zcash_Start.bat", shell=True)
     def start_mining(self):
         global account
         global account2
@@ -624,70 +728,24 @@ class NowMining(QDialog, Ui_NowMining):
                         "Santas_helpers\ethminer.exe -P -F http://etc-eu1.nanopool.org:18888/0x" + account.replace("\n", "") + "/" + rig_name.replace("\n", "") + "/" + email.replace("\n", ""))
             subprocess.Popen("Santas_helpers\etherumClassic_Start.bat", shell=True)
         elif currency_caller == 'Zcash':
-            if os.path.exists('Zcash_Wallet/Zcash_Settings.txt'):
-                with open('Zcash_Wallet/Zcash_Settings.txt') as f:
-                    account = f.readlines()[0]
-            proc = subprocess.Popen('WMIC CPU Get NumberOfCores,NumberOfLogicalProcessors /Format:List',
-                                    stdout=subprocess.PIPE, shell=True)
-
-            num_threads = (proc.communicate()[0]).decode('utf-8').split()[-1].strip()
-            num_threads = re.search(r"[0-9]+", num_threads).group(0).strip()
-            cpu_t = int(num_threads) - 1 #adding thread count
-            with open('Santas_helpers\Zcash_Start.bat', 'w')as batman:
-                if graphic_card == 'nvidia\n' or graphic_card == 'nvidia':
-                    shit_call =   r"Santas_helpers\nheqminer -l zec-eu1.nanopool.org:6666 -u " + account.replace("\n", "") + "/" + rig_name.replace("\n", "") + " -t " + str(cpu_t).replace("\n", "") + " -cd"
-                    for ig in range(int(num_gpus)):
-                        shit_call = shit_call + " " + str(ig)
-                    shit_call = shit_call + '\n'
-                    batman.write(shit_call)
-                elif graphic_card == 'amd\n' or 'amd' in graphic_card:
-                    shit_call = "Santas_helpers\genoil.exe -c zec-eu1.nanopool.org:6666 -u " + account.replace("\n", "") + "/" + rig_name.replace("\n", "") + "/" + email.replace("\n", "") + " -p x -g"
-                    for ig in range(int(num_gpus)):
-                        shit_call = shit_call + " " + str(ig)
-                    shit_call = shit_call + " -i 20 -w 64 -P 0\n"
-                    batman.write(shit_call)
-                    print(shit_call)
-            subprocess.Popen("Santas_helpers\Zcash_Start.bat", shell=True)
+            self.zcash_mine()
         elif currency_caller == 'Sia':
-            if os.path.exists('Sia_Wallet/Sia_Settings.txt'):
-                with open('Sia_Wallet/Sia_Settings.txt') as f:
-                    account = f.readlines()[0]
-            with open('Santas_helpers\Sia_Start.bat', 'w')as batman:
-                if graphic_card == 'nvidia\n' or 'nvidia' in graphic_card:
-                    shit_call = "Santas_helpers\ccminer -a sia -e --url=stratum+tcp://us-east.siamining.com:3333 -u " + account.replace("\n", "") + "." + rig_name.replace("\n", "") + " -i 28 \n"
-                    batman.write(shit_call)
-                elif graphic_card == 'amd\n ' or 'amd' in graphic_card:
-                    shit_call = 'Santas_helpers\gominer.exe -I 28 -H sia-eu1.nanopool.org:9980 -Q "address=' + account.replace("\n", "") + '&worker='+ rig_name.replace("\n", "") +'&email=' + email.replace("\n", "") +'" \n'
-                    batman.write(shit_call)
-            subprocess.Popen("Santas_helpers\Sia_Start.bat", shell=True)
+            self.sia_mine()
         elif currency_caller == 'Monero':
-            if os.path.exists('Monero_Wallet/Monero_Settings.txt'):
-                with open('Monero_Wallet/Monero_Settings.txt') as f:
-                    account = f.readlines()[0]
-                with open('Santas_helpers\Monero_Start.bat', 'w')as batman:
-                    shit_call = r"Santas_helpers\xmrig.exe -o xmr-eu.dwarfpool.com:8005 -u " + account.replace("\n", "") + " -p x -k"
-                    batman.write(shit_call)
-                    subprocess.Popen("Santas_helpers\Monero_Start.bat", shell=True)
+            self.monero_mine()
         elif currency_caller == 'ETH-SIA':
-            if os.path.isfile('Ethereum_Wallet/Ethereum_Settings.txt') and os.path.isfile('Sia_Wallet/Sia_Settings.txt'):
-                with open('Ethereum_Wallet/Ethereum_Settings.txt', 'r') as f:
-                    account = f.readlines()[0]
-                with open('Sia_Wallet/Sia_Settings.txt', 'r') as f:
-                    account2 = f.readlines()[0]
-                with open('Santas_helpers\ETH-SIA_Start.bat', 'w')as batman:
-                    batman.write('setx GPU_FORCE_64BIT_PTR 0\n')
-                    batman.write('setx GPU_MAX_HEAP_SIZE 100\n')
-                    batman.write('setx GPU_USE_SYNC_OBJECTS 1\n')
-                    batman.write('setx GPU_SINGLE_ALLOC_PERCENT 100\n')
-                    batman.write('setx GPU_MAX_ALLOC_PERCENT 100\n')
-                    if account[0:2] == '0x':
-                        batman.write('Santas_helpers\Claymore_dual\EthDcrMiner64.exe -epool eth-eu1.nanopool.org:9999 -ewal ' + account.replace("\n", "") + "/" + rig_name.replace("\n", "") + "/" + email.replace("\n", "") +
-                                 ' -epsw x -dpool stratum+tcp://sia-eu1.nanopool.org:7777 -dwal ' + account2.replace("\n", "") + "/" + rig_name.replace("\n", "") + "/" + email.replace("\n", "") + ' -dpsw x -dcoin sia -ftime 10')
-                    else:
-                        batman.write(
-                            'Santas_helpers\Claymore_dual\EthDcrMiner64.exe -epool eth-eu1.nanopool.org:9999 -ewal 0x' + account.replace("\n", "") + "/" + rig_name.replace("\n", "") + "/" + email.replace("\n", "") +
-                            ' -epsw x -dpool stratum+tcp://sia-eu1.nanopool.org:7777 -dwal ' + account2.replace("\n","") + "/" + rig_name.replace("\n", "") + "/" + email.replace("\n", "") + ' -dpsw x -dcoin sia -ftime 10')
-                subprocess.Popen("Santas_helpers\ETH-SIA_Start.bat", shell=True)
+            self.eth_sia_mine()
+        elif currency_caller == 'ETH-Pascal-monero':
+            self.eth_pascal_mine()
+            self.monero_mine()
+        elif currency_caller == 'monero_zcash':
+            self.zcash_mine()
+            self.monero_mine()
+        elif currency_caller == 'ETH-SIA-monero':
+            self.eth_sia_mine()
+            self.monero_mine()
+
+
     def Establish_Connections(self):
         global currency_caller
         global num_threads
@@ -734,6 +792,18 @@ class NowMining(QDialog, Ui_NowMining):
             os.system("taskkill /f /im EthDcrMiner64.exe")
         elif currency_caller == 'Monero':
             os.system("taskkill /f /im  xmrig.exe")
+        elif currency_caller == 'ETH-Pascal-monero':
+            os.system("taskkill /f /im  xmrig.exe")
+            os.system("taskkill /f /im EthDcrMiner64.exe")
+        elif currency_caller == 'monero_zcash':
+            if graphic_card == 'nvidia\n' or 'nvidia' in graphic_card:
+                os.system("taskkill /f /im  nheqminer.exe")
+            elif graphic_card == 'amd\n' or 'amd' in graphic_card:
+                os.system("taskkill /f /im  genoil.exe")
+            os.system("taskkill /f /im  xmrig.exe")
+        elif currency_caller == 'ETH-SIA-monero':
+            os.system("taskkill /f /im  xmrig.exe")
+            os.system("taskkill /f /im EthDcrMiner64.exe")
         global choosecurrency
         choosecurrency = ChooseCurrency()
         choosecurrency.show()
@@ -763,7 +833,6 @@ class NowMining(QDialog, Ui_NowMining):
                     batman.write(
                         "Santas_helpers\ethminer.exe -P -F http://eth-eu1.nanopool.org:8888/0x" + account.replace("\n", "") + "/" + rig_name.replace("\n", "") + "/" + email.replace("\n", ""))
             subprocess.Popen("Santas_helpers\etherum_Start.bat", shell=True)
-
         elif currency_caller == 'Ethereum_Classic':
             os.system("taskkill /f /im  ethminer.exe")
             if os.path.exists('EthereumClassic_Wallet/EthereumClassic_Settings.txt'):
@@ -787,53 +856,37 @@ class NowMining(QDialog, Ui_NowMining):
                 os.system("taskkill /f /im  nheqminer.exe")
             elif graphic_card == 'amd\n' or 'amd' in graphic_card:
                 os.system("taskkill /f /im  genoil.exe")
-            if os.path.exists('Zcash_Wallet/Zcash_Settings.txt'):
-                with open('Zcash_Wallet/Zcash_Settings.txt') as f:
-                    account = f.readlines()[0]
-            cpu_t = num_threads - 1  # adding thread count
-            with open('Santas_helpers\Zcash_Start.bat', 'w')as batman:
-                if graphic_card == 'nvidia\n' or 'nvidia' in graphic_card:
-                    shit_call = r"Santas_helpers\nheqminer -l zec-eu1.nanopool.org:6666 -u " + account.replace("\n", "") + "/" + rig_name.replace("\n", "") + " -t " + str(
-                        cpu_t) + " -cd"
-                    for ig in range(int(num_gpus)):
-                        shit_call = shit_call + " " + str(ig)
-                    shit_call = shit_call + '\n'
-                    batman.write(shit_call)
-                elif graphic_card == 'amd\n' or 'amd' in graphic_card:
-                    shit_call = "Santas_helpers\genoil.exe -c zec-eu1.nanopool.org:6666 -u " + account.replace("\n", "") + "/" + rig_name.replace("\n", "") + "/" + email.replace("\n", "") + " -p x -g"
-                    for ig in range(int(num_gpus)):
-                        shit_call = shit_call + " " + str(ig)
-                    shit_call = shit_call + " -i 20 -w 64 -P 0\n"
-                    batman.write(shit_call)
-            subprocess.Popen("Santas_helpers\Zcash_Start.bat", shell=True)
+            self.zcash_mine()
         elif currency_caller == 'Sia':
             if graphic_card == 'nvidia\n':
                 os.system("taskkill /f /im  ccminer.exe")
             elif graphic_card == 'amd\n':
                 os.system("taskkill /f /im  ominer.exe")
-            if os.path.exists('Sia_Wallet/Sia_Settings.txt'):
-                with open('Sia_Wallet/Sia_Settings.txt') as f:
-                    account = f.readlines()[0]
-            with open('Santas_helpers\Sia_Start.bat', 'w')as batman:
-                if graphic_card == 'nvidia\n':
-                    shit_call = "Santas_helpers\ccminer -a sia -e --url=stratum+tcp://us-east.siamining.com:3333 -u " + account + "." + rig_name + " -i 28 \n"
-                    batman.write(shit_call)
-                elif graphic_card == 'amd\n ':
-                    shit_call = 'Santas_helpers\gominer.exe -I 28 -H sia-eu1.nanopool.org:9980 -Q "address=' + account + '&worker='+ rig_name +'&email=' + email +'" \n'
-                    batman.write(shit_call)
-            subprocess.Popen("Santas_helpers\Sia_Start.bat", shell=True)
-        elif currency_caller == 'ETH-SIA':
-            os.system("taskkill /f /im EthDcrMiner64.exe")
+            self.sia_mine()
         elif currency_caller == 'Monero':
             os.system("taskkill /f /im  xmrig.exe")
-            with open('Monero_Wallet/Monero_Settings.txt') as f:
-                account = f.readlines()[0]
-            with open('Santas_helpers\Monero_Start.bat', 'w')as batman:
-                shit_call = r"Santas_helpers\xmrig.exe -o xmr-eu.dwarfpool.com:8005 -u " + account.replace("\n",
-                                                                                                           "") + " -p x -k"
-                batman.write(shit_call)
-                subprocess.Popen("Santas_helpers\Monero_Start.bat", shell=True)
-
+            self.monero_mine()
+        elif currency_caller == 'ETH-SIA':
+            os.system("taskkill /f /im EthDcrMiner64.exe")
+            self.eth_sia_mine()
+        elif currency_caller == 'ETH-Pascal-monero':
+            os.system("taskkill /f /im  xmrig.exe")
+            os.system("taskkill /f /im EthDcrMiner64.exe")
+            self.eth_pascal_mine()
+            self.monero_mine()
+        elif currency_caller == 'monero_zcash':
+            if graphic_card == 'nvidia\n' or 'nvidia' in graphic_card:
+                os.system("taskkill /f /im  nheqminer.exe")
+            elif graphic_card == 'amd\n' or 'amd' in graphic_card:
+                os.system("taskkill /f /im  genoil.exe")
+            os.system("taskkill /f /im  xmrig.exe")
+            self.zcash_mine()
+            self.monero_mine()
+        elif currency_caller == 'ETH-SIA-monero':
+            os.system("taskkill /f /im  xmrig.exe")
+            os.system("taskkill /f /im EthDcrMiner64.exe")
+            self.eth_sia_mine()
+            self.monero_mine()
 
     def back_pressed(self):
         global setuppage
