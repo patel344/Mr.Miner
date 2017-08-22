@@ -5,11 +5,14 @@ from PyQt5.QtWidgets import *
 
 import json
 import sys, os
-import time
+import logging
+from time import sleep
+from urllib.request import Request, urlopen
 import re
 import subprocess
 import pexpect
 from pexpect import popen_spawn
+from subprocess import Popen as popen
 
 from MainPage import Ui_MainPage
 from SetupPage import Ui_SetupPage
@@ -210,6 +213,44 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
         ##add update
         subprocess.Popen(r"Santas_helpers\update_miner.bat", shell=True)
 
+    def get_balance(self, url):
+        while True:
+            req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+            info = json.loads(urlopen(req).read().decode('utf-8'))
+            if info['status']:
+                # print("working")
+                # print(int(info['data']))
+                return int(info['data'])
+            else:
+                # print('error')
+                logging.error('Nanopool API:' + info['error'] + ', trying again in 30 seconds')
+                sleep(30)
+
+    def check_balance(self, url):
+        count = 0
+        while True:
+            if self.get_balance(url) == 0:
+                count += 1
+                logging.warning('Nanopool API: Balance seems to be zero')
+            else:
+                count = 0
+
+            if count == 2:
+                popen('taskkill /f /im {}'.format('ethminer.exe'))
+                sleep(10)
+                self.start_mining()
+
+                # print("hashrate is 0")
+                # Restarts the miner
+                # popen('ethminer.exe' + ' )
+
+            sleep(5)
+
+    def scrape_nanopool(self, coin_label):
+        #print(coin_label)
+        #print(account)
+        self.check_hashrate('https://api.nanopool.org/v1/' + coin_label + '/balance/' + account)
+
     def Establish_Connections(self):
         self.ethereum.clicked.connect(self.handle_currency)
         self.ethereum_classic.clicked.connect(self.handle_currency)
@@ -221,6 +262,43 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
         self.monero_pasc_monero.clicked.connect(self.handle_currency)
         self.monero_zcash.clicked.connect(self.handle_currency)
         self.Mining_back.clicked.connect(self.handle_back)
+
+        if os.path.isfile('Ethereum_Wallet/Ethereum_Settings.txt'):
+            with open('Ethereum_Wallet/Ethereum_Settings.txt', 'r') as f:
+                account = f.readlines()[0]
+            balance_eth = self.scrape_nanopool('eth')
+            self.eth_coin.setText(balance_eth + 'eth')
+
+        if os.path.isfile('EthereumClassic_Wallet/EthereumClassic_Settings.txt'):
+            with open('EthereumClassic_Wallet/EthereumClassic_Settings.txt', 'r') as f:
+                account = f.readlines()[0]
+            balance_etc = self.scrape_nanopool('etc')
+            self.eth_coin.setText(balance_etc + 'etc')
+
+        if os.path.isfile('Zcash_Wallet/Zcash_Settings.txt'):
+            with open('Zcash_Wallet/Zcash_Settings.txt', 'r') as f:
+                account = f.readlines()[0]
+            balance_zec = self.scrape_nanopool('zec')
+            self.eth_coin.setText(balance_zec + 'zec')
+
+        if os.path.isfile('Sia_Wallet/Sia_Settings.txt'):
+            with open('Sia_Wallet/Sia_Settings.txt', 'r') as f:
+                account = f.readlines()[0]
+            balance_sia = self.scrape_nanopool('sia')
+            self.eth_coin.setText(balance_sia + 'sia')
+
+        if os.path.isfile('Monero_Wallet/Monero_Settings.txt'):
+            with open('Monero_Wallet/Monero_Settings.txt', 'r') as f:
+                account = f.readlines()[0]
+            balance_xmr = self.scrape_nanopool('xmr')
+            self.eth_coin.setText(balance_xmr + 'xmr')
+
+        if os.path.isfile('Pascal_Wallet/Pascal_Settings.txt'):
+            with open('Pascal_Wallet/Pascal_Settings.txt', 'r') as f:
+                account = f.readlines()[0]
+            balance_pasc = self.scrape_nanopool('pasc')
+            self.eth_coin.setText(balance_pasc + 'pasc')
+
     def handle_back(self):
         global setuppage
         setuppage = SetupPage()
@@ -518,6 +596,45 @@ class NowMining(QDialog, Ui_NowMining):
         self.setupUi(self)
         self.start_mining()
         self.Establish_Connections()
+        self.scrape_nanopool()
+
+    def get_hashrate(self, url):
+        while True:
+            req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+            info = json.loads(urlopen(req).read().decode('utf-8'))
+            if info['status']:
+                #print("working")
+                #print(int(info['data']))
+                return int(info['data'])
+            else:
+                #print('error')
+                logging.error('Nanopool API:' + info['error'] + ', trying again in 30 seconds')
+                sleep(30)
+
+    def check_hashrate(self, url):
+        count = 0
+        while True:
+            if self.get_hashrate(url) == 0:
+                count += 1
+                logging.warning('Nanopool API: Hashrate seems to be zero')
+            else:
+                count = 0
+
+            if count == 2:
+                popen('taskkill /f /im {}'.format('ethminer.exe'))
+                sleep(10)
+                self.start_mining()
+
+                #print("hashrate is 0")
+                # Restarts the miner
+                # popen('ethminer.exe' + ' )
+
+            sleep(5)
+
+    def scrape_nanopool(self, coin_label):
+        print(coin_label)
+        print(account)
+        self.check_hashrate('https://api.nanopool.org/v1/' + coin_label + '/hashrate/' + account)
 
     def configure_monero_AMD(self):
         global num_gpus
@@ -710,6 +827,9 @@ class NowMining(QDialog, Ui_NowMining):
                 elif graphic_card == 'amd\n'  or 'amd' in graphic_card:
                     batman.write("Santas_helpers\ethminer.exe -P -F http://eth-eu1.nanopool.org:8888/0x" + account.replace("\n", "") + "/" + rig_name.replace("\n", "") + "/" + email.replace("\n", ""))
             subprocess.Popen("Santas_helpers\etherum_Start.bat", shell=True)
+            hashrate = self.scrape_nanopool('eth')
+            self.hashrate_label.setText(hashrate + 'Mh/s')
+
         elif currency_caller == 'Ethereum_Classic':
             if os.path.exists('EthereumClassic_Wallet/EthereumClassic_Settings.txt'):
                 with open('EthereumClassic_Wallet/EthereumClassic_Settings.txt') as f:
@@ -727,23 +847,60 @@ class NowMining(QDialog, Ui_NowMining):
                     batman.write(
                         "Santas_helpers\ethminer.exe -P -F http://etc-eu1.nanopool.org:18888/0x" + account.replace("\n", "") + "/" + rig_name.replace("\n", "") + "/" + email.replace("\n", ""))
             subprocess.Popen("Santas_helpers\etherumClassic_Start.bat", shell=True)
+
+            hashrate = self.scrape_nanopool('etc')
+            self.hashrate_label.setText(hashrate + 'Mh/s')
+
         elif currency_caller == 'Zcash':
             self.zcash_mine()
+            hashrate = self.scrape_nanopool('zec')
+            self.hashrate_label.setText(hashrate + 'Mh/s')
+
         elif currency_caller == 'Sia':
             self.sia_mine()
+            hashrate = self.scrape_nanopool('zec')
+            self.hashrate_label.setText(hashrate + 'Mh/s')
+
         elif currency_caller == 'Monero':
             self.monero_mine()
+            hashrate = self.scrape_nanopool('xmr')
+            self.hashrate_label.setText(hashrate + 'Mh/s')
+
         elif currency_caller == 'ETH-SIA':
             self.eth_sia_mine()
+
+            hashrate_sia = self.scrape_nanopool('sia')
+            hashrate_eth = self.scrape_nanopool('eth')
+            self.hashrate_label.setText(hashrate_eth + 'Mh/s' + '\n' + hashrate_sia + 'Mh/s')
+
         elif currency_caller == 'ETH-Pascal-monero':
             self.eth_pascal_mine()
             self.monero_mine()
+
+            hashrate_pasc = self.scrape_nanopool('pasc')
+            hashrate_eth = self.scrape_nanopool('eth')
+            hashrate_xmr = self.scrape_nanopool('xmr')
+            self.hashrate_label.setText(hashrate_eth + 'Mh/s' + '\n' + hashrate_pasc + 'Mh/s' + '\n' +
+                                        hashrate_xmr + 'Mh/s')
+
         elif currency_caller == 'monero_zcash':
             self.zcash_mine()
             self.monero_mine()
+
+            hashrate_zec = self.scrape_nanopool('zec')
+            hashrate_xmr = self.scrape_nanopool('xmr')
+            self.hashrate_label.setText(hashrate_xmr + 'Mh/s' + '\n' + hashrate_zec + 'Mh/s')
+
         elif currency_caller == 'ETH-SIA-monero':
             self.eth_sia_mine()
             self.monero_mine()
+
+            hashrate_sia = self.scrape_nanopool('sia')
+            hashrate_eth = self.scrape_nanopool('eth')
+            hashrate_xmr = self.scrape_nanopool('xmr')
+            self.hashrate_label.setText(hashrate_eth + 'Mh/s' + '\n' + hashrate_sia + 'Mh/s' + '\n' +
+                                        hashrate_xmr + 'Mh/s')
+
 
 
     def Establish_Connections(self):
@@ -757,7 +914,17 @@ class NowMining(QDialog, Ui_NowMining):
         num_threads = re.search(r"[0-9]+", num_threads).group(0).strip()
 
         self.coinName_label.setText(currency_caller)
-        self.address_label.setText('0x'+account)
+
+        if currency_caller == 'ETH-SIA' or currency_caller == 'monero_zcash':
+            self.address_label.setText('0x' + account + '\n' +
+                                       '0x' + account2)
+        elif currency_caller == 'ETH-SIA-monero' or currency_caller == 'ETH-Pascal-monero':
+            self.address_label.setText('0x' + account + '\n' +
+                                       '0x' + account2 + '\n' +
+                                       '0x' + account3)
+        else:
+            self.address_label.setText('0x'+ account)
+
         self.stop_pb.clicked.connect(self.stop)
         self.startOver_pb.clicked.connect(self.startOver)
         self.Mining_back.clicked.connect(self.back_pressed)

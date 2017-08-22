@@ -98,3 +98,13 @@ See /usr/include/servers/bootstrap_defs.h for the error codes.
 2017-07-04 22:49:57.866 plugin-container[10909:303] Failed to allocate communication port for com.apple.CFPasteboardClient; this is likely due to sandbox restrictions
 JavaScript warning: https://eth.nanopool.org/js/libs/flipclock.min.js, line 1: unreachable code after return statement
 JavaScript warning: https://eth.nanopool.org/js/libs/flipclock.min.js, line 1: unreachable code after return statement
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+JavaScript error: resource:///modules/URLBarZoom.jsm, line 24: TypeError: win is null
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x2C0048,name=PBrowser::Msg___delete__) Channel closing: too late to send/recv, messages will be lost
+
