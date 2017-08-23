@@ -249,7 +249,7 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
     def scrape_nanopool(self, coin_label):
         #print(coin_label)
         #print(account)
-        self.check_hashrate('https://api.nanopool.org/v1/' + coin_label + '/balance/' + account)
+        self.check_balance('https://api.nanopool.org/v1/' + coin_label + '/balance/' + account)
 
     def Establish_Connections(self):
         self.ethereum.clicked.connect(self.handle_currency)
