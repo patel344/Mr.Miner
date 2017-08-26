@@ -718,6 +718,21 @@ class NowMining(QDialog, Ui_NowMining):
                 shit_call = r"Santas_helpers\xmrig.exe -o xmr-eu.dwarfpool.com:8005 -u " + account.replace("\n","") + " -p x -k"
                 batman.write(shit_call)
                 subprocess.Popen("Santas_helpers\Monero_Start.bat", shell=True)
+    def monero_GPU_mine(self):
+        if os.path.exists('Monero_Wallet/Monero_Settings.txt'):
+            with open('Monero_Wallet/Monero_Settings.txt') as f:
+                account = f.readlines()[0]
+            with open('Santas_helpers\Sia_Start.bat', 'w')as batman:
+                if graphic_card == 'nvidia\n' or 'nvidia' in graphic_card:
+                    shit_call = r"Santas_helpers\xmrMiner_0.2.1.exe --url=stratum+tcp://xmr-eu.dwarfpool.com:8050 -u " + account.replace(
+                        "\n", "") + " -p x  --bfactor=6 --bsleep=25"
+                    batman.write(shit_call)
+                    subprocess.Popen("Santas_helpers\Sia_Start.bat", shell=True)
+                elif graphic_card == 'amd\n ' or 'amd' in graphic_card:
+                    shit_call = r'Santas_helpers\NsGpuCNMiner.exe -o stratum+tcp://xmr-eu.dwarfpool.com:8050 -u ' + account.replace(
+                        "\n", "") +' -p x'
+                    batman.write(shit_call)
+                    subprocess.Popen("Santas_helpers\Sia_Start.bat", shell=True)
     def eth_sia_mine(self):
         if os.path.isfile('Ethereum_Wallet/Ethereum_Settings.txt') and os.path.isfile('Sia_Wallet/Sia_Settings.txt'):
             with open('Ethereum_Wallet/Ethereum_Settings.txt', 'r') as f:
