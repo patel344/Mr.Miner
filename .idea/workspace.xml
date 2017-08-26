@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9348fe21-c5ff-4c65-b722-3d13dca6cfed" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Mr.Mining/MikeTheMiner/main.py" afterPath="$PROJECT_DIR$/Mr.Mining/MikeTheMiner/main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Mr.Mining/MikeTheMiner/web_scraping_test.py" afterPath="$PROJECT_DIR$/Mr.Mining/MikeTheMiner/web_scraping_test.py" />
-    </list>
+    <list default="true" id="9348fe21-c5ff-4c65-b722-3d13dca6cfed" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,14 +14,14 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Mr.Mining/MikeTheMiner/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="218" column="31" lean-forward="false" selection-start-line="218" selection-start-column="31" selection-end-line="218" selection-end-column="31" />
+            <state relative-caret-position="357">
+              <caret line="241" column="40" lean-forward="false" selection-start-line="241" selection-start-column="40" selection-end-line="241" selection-end-column="40" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
                 <element signature="e#798#1139#0" expanded="false" />
                 <element signature="e#1185#4517#0" expanded="false" />
                 <element signature="e#4575#8383#0" expanded="false" />
-                <element signature="e#23078#26090#0" expanded="false" />
+                <element signature="e#23685#26697#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -197,16 +194,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="246" y="68" width="1363" height="911" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26495078" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32965687" sideWeight="0.5029455" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24142157" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24142157" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32965687" sideWeight="0.4970545" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32965687" sideWeight="0.4970545" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -236,7 +232,7 @@
             <element signature="e#798#1139#0" expanded="false" />
             <element signature="e#1185#4517#0" expanded="false" />
             <element signature="e#4575#8383#0" expanded="false" />
-            <element signature="e#23078#26090#0" expanded="false" />
+            <element signature="e#23685#26697#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -261,14 +257,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Mr.Mining/MikeTheMiner/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="218" column="31" lean-forward="false" selection-start-line="218" selection-start-column="31" selection-end-line="218" selection-end-column="31" />
+        <state relative-caret-position="357">
+          <caret line="241" column="40" lean-forward="false" selection-start-line="241" selection-start-column="40" selection-end-line="241" selection-end-column="40" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
             <element signature="e#798#1139#0" expanded="false" />
             <element signature="e#1185#4517#0" expanded="false" />
             <element signature="e#4575#8383#0" expanded="false" />
-            <element signature="e#23078#26090#0" expanded="false" />
+            <element signature="e#23685#26697#0" expanded="false" />
           </folding>
         </state>
       </provider>
