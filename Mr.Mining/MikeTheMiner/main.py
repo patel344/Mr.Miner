@@ -214,7 +214,7 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
         self.setupUi(self)
         self.Establish_Connections()
         ##add update
-        subprocess.Popen(r"Santas_helpers\update_miner.bat", shell=True)
+        #subprocess.Popen(r"Santas_helpers\update_miner.bat", shell=True)
 
     def get_balance(self, url, coin_label):
         if coin_label == 'not_xmr':
@@ -224,11 +224,14 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
             if info['status']:
                 # print("working")
                 # print(int(info['data']))
+                #print(round(float(info['data']), 4))
+                #print(coin_label)
                 return round(float(info['data']), 4)
             else:
                 # print('error')
+               # print(coin_label)
                 logging.error('Nanopool API:' + info['error'])
-                return 0
+                return int(0)
                 #sleep(30)
         else:
             req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
@@ -263,13 +266,16 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
 
            # sleep(5)
 
-    def scrape_nanopool(self, coin_label):
+    def scrape_nanopool(self, coin_label, account):
         #print(coin_label)
         #print(account)
         if coin_label == 'xmr':
-            self.get_balance('http://dwarfpool.com/xmr/api?wallet=' + account + '&email=xmr@example.com', 'xmr')
+            return self.get_balance('http://dwarfpool.com/xmr/api?wallet=' + account + '&email=xmr@example.com', 'xmr')
         else:
-            self.get_balance('https://api.nanopool.org/v1/' + coin_label + '/balance/' + account, 'not_xmr')
+            #print(coin_label)
+            #self.get_balance('https://api.nanopool.org/v1/eth/balance/0x2fc7723d8623eb414abb4fa6d81395d81b87a8f9', 'not_xmr')
+            return self.get_balance('https://api.nanopool.org/v1/' + coin_label + '/balance/' + account, 'not_xmr')
+
 
     def Establish_Connections(self):
         self.ethereum.clicked.connect(self.handle_currency)
@@ -287,37 +293,38 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
             with open('Ethereum_Wallet/Ethereum_Settings.txt', 'r') as f:
                 account = f.readlines()[0]
             balance_eth = self.scrape_nanopool('eth', account)
-            self.eth_coin.setText(str(balance_eth) + 'eth')
+            print(balance_eth)
+            self.eth_coin.setText(str(balance_eth) + ' eth')
 
         if os.path.isfile('EthereumClassic_Wallet/EthereumClassic_Settings.txt'):
             with open('EthereumClassic_Wallet/EthereumClassic_Settings.txt', 'r') as f:
                 account = f.readlines()[0]
             balance_etc = self.scrape_nanopool('etc', account)
-            self.eth_coin.setText(str(balance_etc) + 'etc')
+            self.etc_coin.setText(str(balance_etc) + ' etc')
 
         if os.path.isfile('Zcash_Wallet/Zcash_Settings.txt'):
             with open('Zcash_Wallet/Zcash_Settings.txt', 'r') as f:
                 account = f.readlines()[0]
             balance_zec = self.scrape_nanopool('zec', account)
-            self.eth_coin.setText(str(balance_zec) + 'zec')
+            self.zec_coin.setText(str(balance_zec) + ' zec')
 
         if os.path.isfile('Sia_Wallet/Sia_Settings.txt'):
             with open('Sia_Wallet/Sia_Settings.txt', 'r') as f:
                 account = f.readlines()[0]
             balance_sia = self.scrape_nanopool('sia', account)
-            self.eth_coin.setText(str(balance_sia) + 'sia')
+            self.sia_coin.setText(str(balance_sia) + ' sia')
 
         if os.path.isfile('Monero_Wallet/Monero_Settings.txt'):
             with open('Monero_Wallet/Monero_Settings.txt', 'r') as f:
                 account = f.readlines()[0]
             balance_xmr = self.scrape_nanopool('xmr', account)
-            self.eth_coin.setText(str(balance_xmr) + 'xmr')
+            self.xmr_coin.setText(str(balance_xmr) + ' xmr')
 
         if os.path.isfile('Pascal_Wallet/Pascal_Settings.txt'):
             with open('Pascal_Wallet/Pascal_Settings.txt', 'r') as f:
                 account = f.readlines()[0]
             balance_pasc = self.scrape_nanopool('pasc', account)
-            self.eth_coin.setText(str(balance_pasc) + 'pasc')
+            self.pasc_coin.setText(str(balance_pasc) + ' pasc')
 
     def handle_back(self):
         global setuppage
@@ -655,7 +662,7 @@ class NowMining(QDialog, Ui_NowMining):
     def scrape_nanopool(self, coin_label):
         #print(coin_label)
         #print(account)
-        self.check_hashrate('https://api.nanopool.org/v1/' + coin_label + '/hashrate/' + account)
+        return self.check_hashrate('https://api.nanopool.org/v1/' + coin_label + '/hashrate/' + account)
 
     def configure_monero_AMD(self):
         global num_gpus

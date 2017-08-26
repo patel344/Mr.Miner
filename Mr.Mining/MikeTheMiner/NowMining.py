@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'NowMining.ui'
 #
-# Created by: PyQt5 UI code generator 5.6
+# Created by: PyQt5 UI code generator 5.9
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -43,32 +43,6 @@ class Ui_NowMining(object):
         self.label.setFont(font)
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
-        self.estCoin_label = QtWidgets.QLabel(NowMining)
-        self.estCoin_label.setGeometry(QtCore.QRect(320, 320, 221, 24))
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.estCoin_label.sizePolicy().hasHeightForWidth())
-        self.estCoin_label.setSizePolicy(sizePolicy)
-        self.estCoin_label.setStyleSheet("\n"
-"color:rgb(255, 255, 255)\n"
-"")
-        self.estCoin_label.setObjectName("estCoin_label")
-        self.label_5 = QtWidgets.QLabel(NowMining)
-        self.label_5.setGeometry(QtCore.QRect(60, 310, 241, 41))
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.label_5.sizePolicy().hasHeightForWidth())
-        self.label_5.setSizePolicy(sizePolicy)
-        font = QtGui.QFont()
-        font.setPointSize(20)
-        font.setBold(True)
-        font.setWeight(75)
-        font.setKerning(True)
-        self.label_5.setFont(font)
-        self.label_5.setScaledContents(False)
-        self.label_5.setObjectName("label_5")
         self.coinName_cb_2 = QtWidgets.QLabel(NowMining)
         self.coinName_cb_2.setGeometry(QtCore.QRect(280, 528, 191, 16))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
@@ -99,7 +73,7 @@ class Ui_NowMining(object):
 "")
         self.auto_cb.setObjectName("auto_cb")
         self.address_label = QtWidgets.QLabel(NowMining)
-        self.address_label.setGeometry(QtCore.QRect(180, 190, 371, 25))
+        self.address_label.setGeometry(QtCore.QRect(180, 150, 371, 81))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -139,7 +113,7 @@ class Ui_NowMining(object):
 "color:rgb(255, 255, 255)")
         self.stop_pb.setObjectName("stop_pb")
         self.hashrate_label = QtWidgets.QLabel(NowMining)
-        self.hashrate_label.setGeometry(QtCore.QRect(320, 260, 221, 24))
+        self.hashrate_label.setGeometry(QtCore.QRect(320, 250, 221, 141))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -173,7 +147,7 @@ class Ui_NowMining(object):
         self.label_4.setFont(font)
         self.label_4.setObjectName("label_4")
         self.label_3 = QtWidgets.QLabel(NowMining)
-        self.label_3.setGeometry(QtCore.QRect(60, 180, 91, 41))
+        self.label_3.setGeometry(QtCore.QRect(60, 150, 91, 41))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -286,8 +260,6 @@ class Ui_NowMining(object):
         _translate = QtCore.QCoreApplication.translate
         NowMining.setWindowTitle(_translate("NowMining", "Mr.Miner"))
         self.label.setText(_translate("NowMining", "<html><head/><body><p><span style=\" color:#ffffff;\">Mining</span></p></body></html>"))
-        self.estCoin_label.setText(_translate("NowMining", "Sorry feature coming soon :("))
-        self.label_5.setText(_translate("NowMining", "<html><head/><body><p><span style=\" color:#ffffff;\">Estimated Coin:</span></p></body></html>"))
         self.coinName_cb_2.setText(_translate("NowMining", "<html><head/><body><p><span style=\" color:#ffffff;\">next time Mr. Miner starts</span></p></body></html>"))
         self.Mining_back.setText(_translate("NowMining", "Settings"))
         self.auto_cb.setText(_translate("NowMining", "Automatically mine "))
