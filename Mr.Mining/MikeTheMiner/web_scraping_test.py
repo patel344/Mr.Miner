@@ -35,10 +35,10 @@ def get_hashrate(url):
     while True:
         req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
         info = json.loads(urlopen(req).read().decode('utf-8'))
-        if info['status']:
+        if not info['error']:
             print("working")
-            print(int(info['data']))
-            return int(info['data'])
+            print(float(info['wallet_balance']))
+            return float(info['wallet_balance'])
         else:
             print('error')
             logging.error('Nanopool API:'+ info['error'] + ', trying again in 30 seconds')
@@ -62,5 +62,7 @@ def check_hashrate(url):
 
         sleep(5)
 
-check_hashrate('https://api.nanopool.org/v1/eth/hashrate/0xb9e33a4a1dba378925b7f20d21b5ab2d78ad58f0')
+#check_hashrate('https://api.nanopool.org/v1/eth/hashrate/0xb9e33a4a1dba378925b7f20d21b5ab2d78ad58f0')
 
+account = '4BKQQ7FPdpAFVne2icuXW53VdaepFWfPNLhv9bwHFD6xdGrPLMpXLYDSuDvTx8z8hQWM6k5r4PTAuFPXW1MKKBRhB45G15Z'
+get_hashrate('http://dwarfpool.com/xmr/api?wallet=' + account + '&email=xmr@example.com')
