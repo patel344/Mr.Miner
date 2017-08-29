@@ -354,6 +354,7 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
                 miningwallet = MiningWallet()
                 miningwallet.show()
                 self.close()
+
         elif self.sender() == self.ethereum_classic:
             if os.path.isfile('EthereumClassic_Wallet/EthereumClassic_Settings.txt'):
                 with open('EthereumClassic_Wallet/EthereumClassic_Settings.txt', 'r') as f:
@@ -370,6 +371,7 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
                 miningwallet = MiningWallet()
                 miningwallet.show()
                 self.close()
+
         elif self.sender() == self.zcash:
             if os.path.isfile('Zcash_Wallet/Zcash_Settings.txt'):
                 with open('Zcash_Wallet/Zcash_Settings.txt', 'r') as f:
@@ -386,6 +388,7 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
                 miningwallet = MiningWallet()
                 miningwallet.show()
                 self.close()
+
         elif self.sender() == self.pascal:
             if os.path.isfile('Ethereum_Wallet/Ethereum_Settings.txt') and os.path.isfile('Sia_Wallet/Sia_Settings.txt'):
                 with open('Ethereum_Wallet/Ethereum_Settings.txt', 'r') as f:
@@ -405,6 +408,7 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
                 msg.setWindowTitle("Mr.Miner Incorrect Information")
                 msg.setStandardButtons(QMessageBox.Ok)
                 msg.exec()
+
         elif self.sender() == self.sia:
             if os.path.isfile('Sia_Wallet/Sia_Settings.txt'):
                 with open('Sia_Wallet/Sia_Settings.txt', 'r') as f:
@@ -421,6 +425,7 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
                 miningwallet = MiningWallet()
                 miningwallet.show()
                 self.close()
+
         elif self.sender() == self.monero:
             if os.path.isfile('Monero_Wallet/Monero_Settings.txt'):
                 with open('Monero_Wallet/Monero_Settings.txt', 'r') as f:
@@ -437,6 +442,41 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
                 miningwallet = MiningWallet()
                 miningwallet.show()
                 self.close()
+
+        elif self.sender() == self.monero_gpu:
+                if os.path.isfile('Monero_Wallet/Monero_Settings.txt'):
+                    with open('Monero_Wallet/Monero_Settings.txt', 'r') as f:
+                        account = f.readlines()[0]
+                    # global nowmining
+                    currency_caller = 'monero_gpu'
+                    nowmining = NowMining()
+                    nowmining.show()
+                    self.close()
+                else:
+                    # global currency_caller
+                    # global miningwallet
+                    currency_caller = 'monero_gpu'
+                    miningwallet = MiningWallet()
+                    miningwallet.show()
+                    self.close()
+
+        elif self.sender() == self.monero_gpu_cpu:
+            if os.path.isfile('Monero_Wallet/Monero_Settings.txt'):
+                with open('Monero_Wallet/Monero_Settings.txt', 'r') as f:
+                    account = f.readlines()[0]
+                #global nowmining
+                currency_caller = 'monero_gpu_cpu'
+                nowmining = NowMining()
+                nowmining.show()
+                self.close()
+            else:
+                #global currency_caller
+                #global miningwallet
+                currency_caller = 'monero_gpu_cpu'
+                miningwallet = MiningWallet()
+                miningwallet.show()
+                self.close()
+
         elif self.sender() == self.monero_zcash:
             if os.path.isfile('Monero_Wallet/Monero_Settings.txt') and os.path.isfile('Zcash_Wallet/Zcash_Settings.txt'):
                 with open('Monero_Wallet/Monero_Settings.txt', 'r') as f:
@@ -451,11 +491,12 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
             else:
                 msg = QMessageBox()
                 msg.setIcon(QMessageBox.Critical)
-                msg.setText("Oh no! we couldin't your wallets. please make sure you have a monero wallet and zcash wallet with us by clicking on the curency and"
+                msg.setText("Oh no! we couldin't find your wallets. please make sure you have a monero wallet and zcash wallet with us by clicking on the curency and"
                             "creating a wallet or adding you previously owned wallet")
                 msg.setWindowTitle("Mr.Miner Incorrect Information")
                 msg.setStandardButtons(QMessageBox.Ok)
                 msg.exec()
+
         elif self.sender() == self.monero_eth_sia:
             if os.path.isfile('Ethereum_Wallet/Ethereum_Settings.txt') and os.path.isfile('Monero_Wallet/Monero_Settings.txt') and os.path.isfile('Sia_Wallet/Sia_Settings.txt'):
                 with open('Ethereum_Wallet/Ethereum_Settings.txt', 'r') as f:
@@ -472,11 +513,12 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
             else:
                 msg = QMessageBox()
                 msg.setIcon(QMessageBox.Critical)
-                msg.setText("Oh no! we couldin't your wallets. please make sure you have a ethereum wallet, a Monero wallet and SIA wallet with us by clicking on the curency and"
+                msg.setText("Oh no! we couldn't find your wallets. please make sure you have a ethereum wallet, a Monero wallet and SIA wallet with us by clicking on the curency and"
                             "creating a wallet or adding you previously owned wallet")
                 msg.setWindowTitle("Mr.Miner Incorrect Information")
                 msg.setStandardButtons(QMessageBox.Ok)
                 msg.exec()
+
         elif self.sender() == self.monero_pasc_monero:
             if os.path.isfile('Ethereum_Wallet/Ethereum_Settings.txt') and os.path.isfile('Monero_Wallet/Monero_Settings.txt') and os.path.isfile('Pascal_Wallet/Pascal_Settings.txt'):
                 with open('Ethereum_Wallet/Ethereum_Settings.txt', 'r') as f:
@@ -502,11 +544,12 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
             else:
                 msg = QMessageBox()
                 msg.setIcon(QMessageBox.Critical)
-                msg.setText("Oh no! we couldin't your wallets. please make sure you have a ethereum wallet, and Monero wallet with us by clicking on the curency and"
+                msg.setText("Oh no! we couldn't find your wallets. please make sure you have a ethereum wallet, and Monero wallet with us by clicking on the curency and"
                             "creating a wallet or adding you previously owned wallet")
                 msg.setWindowTitle("Mr.Miner Incorrect Information")
                 msg.setStandardButtons(QMessageBox.Ok)
                 msg.exec()
+
 class AccountInfo(QDialog, Ui_AccountInfo):
     def __init__(self):
         super(self.__class__, self).__init__()
@@ -844,6 +887,7 @@ class NowMining(QDialog, Ui_NowMining):
                 batman.write(shit_call)
                 print(shit_call)
         subprocess.Popen("Santas_helpers\Zcash_Start.bat", shell=True)
+
     def start_mining(self):
         global account
         global account2
@@ -943,8 +987,16 @@ class NowMining(QDialog, Ui_NowMining):
             hashrate_xmr = self.scrape_nanopool('xmr')
             self.hashrate_label.setText(hashrate_eth + 'Mh/s' + '\n' + hashrate_sia + 'Mh/s' + '\n' +
                                         hashrate_xmr + 'Mh/s')
+        elif currency_caller == 'monero_gpu':
+            self.monero_GPU_mine()
 
+            # HASHRATE FOR MONERO GOES HERE
 
+        elif currency_caller == 'monero_gpu_cpu':
+            self.monero_mine()
+            self.monero_GPU_mine()
+
+            # HASHRATE FOR MONERO GPU AND CPU GOES HERE
 
     def Establish_Connections(self):
         global currency_caller
@@ -1002,6 +1054,11 @@ class NowMining(QDialog, Ui_NowMining):
             os.system("taskkill /f /im EthDcrMiner64.exe")
         elif currency_caller == 'Monero':
             os.system("taskkill /f /im  xmrig.exe")
+        elif currency_caller == 'monero_gpu':
+            os.system("taskkill /f /im  xmrMiner_0.2.1.exe")
+        elif currency_caller == 'monero_gpu_cpu':
+            os.system("taskkill /f /im  xmrig.exe")
+            os.system("taskkill /f /im  xmrMiner_0.2.1.exe")
         elif currency_caller == 'ETH-Pascal-monero':
             os.system("taskkill /f /im  xmrig.exe")
             os.system("taskkill /f /im EthDcrMiner64.exe")
@@ -1075,6 +1132,14 @@ class NowMining(QDialog, Ui_NowMining):
             self.sia_mine()
         elif currency_caller == 'Monero':
             os.system("taskkill /f /im  xmrig.exe")
+            self.monero_mine()
+        elif currency_caller == 'monero_gpu':
+            os.system("taskkill /f /im  xmrMiner_0.2.1.exe")
+            self.monero_GPU_mine()
+        elif currency_caller == 'monero_gpu_cpu':
+            os.system("taskkill /f /im  xmrig.exe")
+            os.system("taskkill /f /im  xmrMiner_0.2.1.exe")
+            self.monero_GPU_mine()
             self.monero_mine()
         elif currency_caller == 'ETH-SIA':
             os.system("taskkill /f /im EthDcrMiner64.exe")
