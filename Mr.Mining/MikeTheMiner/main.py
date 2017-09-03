@@ -636,7 +636,8 @@ class NowMining(QDialog, Ui_NowMining):
             else:
                 #print('error')
                 logging.error('Nanopool API:' + info['error'] + ', trying again in 30 seconds')
-                sleep(30)
+
+                return 0
 
     def check_hashrate(self, url):
         count = 0
