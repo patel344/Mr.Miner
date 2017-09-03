@@ -285,6 +285,8 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
         self.monero.clicked.connect(self.handle_currency)
         self.pascal.clicked.connect(self.handle_currency)
         self.monero_eth_sia.clicked.connect(self.handle_currency)
+        self.monero_gpu.clicked.connect(self.handle_currency)
+        self.monero_gpu_cpu.clicked.connect(self.handle_currency)
         self.monero_pasc_monero.clicked.connect(self.handle_currency)
         self.monero_zcash.clicked.connect(self.handle_currency)
         self.Mining_back.clicked.connect(self.handle_back)
@@ -683,14 +685,14 @@ class NowMining(QDialog, Ui_NowMining):
                 return 0
 
     def check_hashrate(self, url):
-        count = 0
-        while True:
-            if self.get_hashrate(url) == 0:
-                count += 1
-                logging.warning('Nanopool API: Hashrate seems to be zero')
-            else:
-                count = 0
-            return self.get_hashrate()
+        #count = 0
+        #while True:
+         #   if self.get_hashrate(url) == 0:
+         #       count += 1
+         #       logging.warning('Nanopool API: Hashrate seems to be zero')
+         #   else:
+         #       count = 0
+        return self.get_hashrate()
             # Not going to worry about resetting if hashrate is 0
             #if count == 2:
             #    popen('taskkill /f /im {}'.format('ethminer.exe'))
