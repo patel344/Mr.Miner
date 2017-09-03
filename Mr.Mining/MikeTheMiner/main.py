@@ -214,7 +214,7 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
         self.setupUi(self)
         self.Establish_Connections()
         ##add update
-        #subprocess.Popen(r"Santas_helpers\update_miner.bat", shell=True)
+        subprocess.Popen(r"Santas_helpers\update_miner.bat", shell=True)
 
     def get_balance(self, url, coin_label):
         if coin_label == 'not_xmr':
@@ -672,17 +672,20 @@ class NowMining(QDialog, Ui_NowMining):
 
     def get_hashrate(self, url):
         while True:
-            req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-            info = json.loads(urlopen(req).read().decode('utf-8'))
-            if info['status']:
-                #print("working")
-                #print(int(info['data']))
-                return int(info['data'])
-            else:
-                #print('error')
-                logging.error('Nanopool API:' + info['error'] + ', trying again in 30 seconds')
+            try:
+                req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+                info = json.loads(urlopen(req).read().decode('utf-8'))
+                if info['status']:
+                    print("working")
+                    print(info['data'])
+                    return str(round(float(info['data']), 4))
+                else:
+                    print('error')
+                    logging.error('Nanopool API:' + info['error'] + ', trying again in 30 seconds')
 
-                return 0
+                    return str(0)
+            except:
+                return '0'
 
     def check_hashrate(self, url):
         #count = 0
@@ -692,7 +695,7 @@ class NowMining(QDialog, Ui_NowMining):
          #       logging.warning('Nanopool API: Hashrate seems to be zero')
          #   else:
          #       count = 0
-        return self.get_hashrate()
+        return self.get_hashrate(url)
             # Not going to worry about resetting if hashrate is 0
             #if count == 2:
             #    popen('taskkill /f /im {}'.format('ethminer.exe'))
@@ -710,8 +713,8 @@ class NowMining(QDialog, Ui_NowMining):
         #print(account)
 
         # DISABLING FOR NOW
-        #return self.check_hashrate('https://api.nanopool.org/v1/' + coin_label + '/hashrate/' + account)
-        return "Coming Soon"
+        return self.check_hashrate('https://api.nanopool.org/v1/' + coin_label + '/hashrate/' + account)
+        #return "Coming Soon"
 
     def configure_monero_AMD(self):
         global num_gpus
@@ -773,6 +776,7 @@ class NowMining(QDialog, Ui_NowMining):
 
         with open(r'Santas_helpers\xmr-cpu.conf', 'w') as f:
             json.dump(config, f, indent=4, sort_keys=True)
+
     def sia_mine(self):
         if os.path.exists('Sia_Wallet/Sia_Settings.txt'):
             with open('Sia_Wallet/Sia_Settings.txt') as f:
@@ -921,7 +925,7 @@ class NowMining(QDialog, Ui_NowMining):
                     batman.write("Santas_helpers\ethminer.exe -P -F http://eth-eu1.nanopool.org:8888/0x" + account.replace("\n", "") + "/" + rig_name.replace("\n", "") + "/" + email.replace("\n", ""))
             subprocess.Popen("Santas_helpers\etherum_Start.bat", shell=True)
             hashrate = self.scrape_nanopool('eth')
-            self.hashrate_label.setText(hashrate + 'Mh/s')
+            self.hashrate_label.setText(hashrate + ' Mh/s')
 
         elif currency_caller == 'Ethereum_Classic':
             if os.path.exists('EthereumClassic_Wallet/EthereumClassic_Settings.txt'):
