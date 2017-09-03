@@ -706,7 +706,10 @@ class NowMining(QDialog, Ui_NowMining):
     def scrape_nanopool(self, coin_label):
         #print(coin_label)
         #print(account)
-        return self.check_hashrate('https://api.nanopool.org/v1/' + coin_label + '/hashrate/' + account)
+
+        # DISABLING FOR NOW
+        #return self.check_hashrate('https://api.nanopool.org/v1/' + coin_label + '/hashrate/' + account)
+        return "Coming Soon"
 
     def configure_monero_AMD(self):
         global num_gpus
