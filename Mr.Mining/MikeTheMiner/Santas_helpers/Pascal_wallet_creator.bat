@@ -1,1 +1,0 @@
-start shell:AppsFolder\Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge http://www.pascalcoin.org/#wallets

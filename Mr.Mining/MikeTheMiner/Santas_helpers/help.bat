@@ -1,2 +1,0 @@
-genoil.exe -h
-pause

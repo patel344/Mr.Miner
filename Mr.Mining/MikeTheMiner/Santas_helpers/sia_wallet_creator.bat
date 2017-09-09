@@ -1,1 +1,0 @@
-Santas_helpers\Sia_wallet\Sia-UI.exe
