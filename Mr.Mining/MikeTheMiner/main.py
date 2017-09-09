@@ -2,7 +2,7 @@ from PyQt5.QtWidgets import *
 #from PyQt5.QtCore import *
 #from PyQt5.QtGui import *
 
-
+import ssl
 import json
 import sys, os
 import logging
@@ -28,6 +28,10 @@ global num_gpus
 global graphic_card
 global settings_exist
 global currency_caller # Used to see which currency led to the mining wallet page
+global MINEWITHUS      # Used to switch users to our monero pool
+global THRESHOLD
+
+THRESHOLD = .9
 
 class MainPage(QWidget, Ui_MainPage):
     def __init__(self):
@@ -89,7 +93,6 @@ class SetupPage(QDialog, Ui_SetupPage):
         email = self.lineEdit_email.text()
         rig_name = self.lineEdit_rigName.text()
         num_gpus = self.lineEdit_no_gpus.text()
-        print(num_gpus)
         if self.nvidia_rb.isChecked() or self.amd_rb.isChecked():
             try:
                 num_gpus = int(num_gpus)
@@ -109,6 +112,8 @@ class SetupPage(QDialog, Ui_SetupPage):
                 f.write(email)
                 f.write('\n')
                 f.write(rig_name)
+                f.write('\n')
+                f.write('False') # Default monero pool setting
 
             # Going To Next Stage
             choosecurrency = ChooseCurrency()
@@ -143,6 +148,7 @@ class CreateNewWallet(QDialog, Ui_CreateNewWallet):
         global accountinfo
         global account
         global currency_caller
+        global MINEWITHUS
         if len(self.lineEdit_password.text()) >= 8:
             if self.lineEdit_password.text() == self.lineEdit_passwordconfirm.text():
                 password = self.lineEdit_password.text()
@@ -182,6 +188,15 @@ class CreateNewWallet(QDialog, Ui_CreateNewWallet):
                     with open('Sia_Settings.txt', 'w') as f:
                         f.write('Write generated address here.')
                 elif currency_caller == 'Monero':
+                    MINEWITHUS = True
+                    with open('Mining_Settings.txt', 'r') as f:
+                        settings = f.readlines()
+
+                    settings[4] = 'True'
+
+                    with open('Mining_Settings.txt', 'w') as f:
+                        f.writelines(settings)
+
                     with open('Monero_Settings.txt', 'w') as f:
                         f.write('Write generated address here.')
                 elif currency_caller == 'Pascal':
@@ -217,34 +232,26 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
         subprocess.Popen(r"Santas_helpers\update_miner.bat", shell=True)
 
     def get_balance(self, url, coin_label):
+        # Bypassing cert (maybe not great idea)
+        context = ssl._create_unverified_context()
         if coin_label == 'not_xmr':
             #while True:
             req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-            info = json.loads(urlopen(req).read().decode('utf-8'))
+            info = json.loads(urlopen(req, context=context).read().decode('utf-8'))
             if info['status']:
-                # print("working")
-                # print(int(info['data']))
-                #print(round(float(info['data']), 4))
-                #print(coin_label)
                 return round(float(info['data']), 4)
             else:
-                # print('error')
-               # print(coin_label)
                 logging.error('Nanopool API:' + info['error'])
                 return int(0)
-                #sleep(30)
+
         else:
             req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-            info = json.loads(urlopen(req).read().decode('utf-8'))
+            info = json.loads(urlopen(req, context=context).read().decode('utf-8'))
             if not info['error']:
-                # print("working")
-                # print(int(info['data']))
                 return round(float(info['wallet_balance']), 4)
             else:
-                # print('error')
                 logging.error('Dwarfpool API:' + info['error'])
                 return 0
-                # sleep(30)
 
     def check_balance(self, url):
         count = 0
@@ -267,13 +274,9 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
            # sleep(5)
 
     def scrape_nanopool(self, coin_label, account):
-        #print(coin_label)
-        #print(account)
         if coin_label == 'xmr':
             return self.get_balance('http://dwarfpool.com/xmr/api?wallet=' + account + '&email=xmr@example.com', 'xmr')
         else:
-            #print(coin_label)
-            #self.get_balance('https://api.nanopool.org/v1/eth/balance/0x2fc7723d8623eb414abb4fa6d81395d81b87a8f9', 'not_xmr')
             return self.get_balance('https://api.nanopool.org/v1/' + coin_label + '/balance/' + account, 'not_xmr')
 
 
@@ -295,7 +298,6 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
             with open('Ethereum_Wallet/Ethereum_Settings.txt', 'r') as f:
                 account = f.readlines()[0]
             balance_eth = self.scrape_nanopool('eth', account)
-            print(balance_eth)
             self.eth_coin.setText(str(balance_eth) + ' eth')
 
         if os.path.isfile('EthereumClassic_Wallet/EthereumClassic_Settings.txt'):
@@ -341,6 +343,9 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
         global account
         global account2
         global account3
+        global MINEWITHUS
+        global THRESHOLD
+
         if self.sender() == self.ethereum:
             if os.path.isfile('Ethereum_Wallet/Ethereum_Settings.txt'):
                 with open('Ethereum_Wallet/Ethereum_Settings.txt', 'r') as f:
@@ -429,6 +434,20 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
                 self.close()
 
         elif self.sender() == self.monero:
+            if MINEWITHUS is False and float(self.xmr_coin.text().split()[0]) <= THRESHOLD:
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Question)
+                msg.setText("Would you like to switch to TheMinersPool?")
+                msg.setInformativeText("This Monero pool has 0% commission!\n\n"
+                                       "You have a minute amount of coin untransferred so you won't be losing on earnings!\n\n"
+                                       "Although it is a young pool, the top 10 percent of miners will get a lifetime 0% commission which will attract miners with large hash rates!\n\n "
+                                       "Check it out at theminerspool.com")
+                msg.setWindowTitle("Switch to a 0% Monero Pool!")
+                msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+                msg.setDefaultButton(QMessageBox.Yes)
+                msg.buttonClicked.connect(self.msgbtn)
+                msg.exec()
+
             if os.path.isfile('Monero_Wallet/Monero_Settings.txt'):
                 with open('Monero_Wallet/Monero_Settings.txt', 'r') as f:
                     account = f.readlines()[0]
@@ -446,6 +465,20 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
                 self.close()
 
         elif self.sender() == self.monero_gpu:
+                if MINEWITHUS is False and float(self.xmr_coin.text().split()[0]) <= THRESHOLD:
+                    msg = QMessageBox()
+                    msg.setIcon(QMessageBox.Question)
+                    msg.setText("Would you like to switch to TheMinersPool?")
+                    msg.setInformativeText("This Monero pool has 0% commission!\n\n"
+                                           "You have a minute amount of coin untransferred so you won't be losing on earnings!\n\n"
+                                           "Although it is a young pool, the top 10 percent of miners will get a lifetime 0% commission which will attract miners with large hash rates!\n\n "
+                                           "Check it out at theminerspool.com")
+                    msg.setWindowTitle("Switch to a 0% Monero Pool!")
+                    msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+                    msg.setDefaultButton(QMessageBox.Yes)
+                    msg.buttonClicked.connect(self.msgbtn)
+                    msg.exec()
+
                 if os.path.isfile('Monero_Wallet/Monero_Settings.txt'):
                     with open('Monero_Wallet/Monero_Settings.txt', 'r') as f:
                         account = f.readlines()[0]
@@ -454,6 +487,7 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
                     nowmining = NowMining()
                     nowmining.show()
                     self.close()
+
                 else:
                     # global currency_caller
                     # global miningwallet
@@ -463,6 +497,20 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
                     self.close()
 
         elif self.sender() == self.monero_gpu_cpu:
+            if MINEWITHUS is False and (float(self.xmr_coin.text().split()[0]) <= THRESHOLD):
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Question)
+                msg.setText("Would you like to switch to TheMinersPool?")
+                msg.setInformativeText("This Monero pool has 0% commission!\n\n"
+                                       "You have a minute amount of coin untransferred so you won't be losing on earnings!\n\n"
+                                       "Although it is a young pool, the top 10 percent of miners will get a lifetime 0% commission which will attract miners with large hash rates!\n\n "
+                                       "Check it out at theminerspool.com")
+                msg.setWindowTitle("Switch to a 0% Monero Pool!")
+                msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+                msg.setDefaultButton(QMessageBox.Yes)
+                msg.buttonClicked.connect(self.msgbtn)
+                msg.exec()
+
             if os.path.isfile('Monero_Wallet/Monero_Settings.txt'):
                 with open('Monero_Wallet/Monero_Settings.txt', 'r') as f:
                     account = f.readlines()[0]
@@ -480,6 +528,20 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
                 self.close()
 
         elif self.sender() == self.monero_zcash:
+            if MINEWITHUS is False and (float(self.xmr_coin.text().split()[0]) <= THRESHOLD):
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Question)
+                msg.setText("Would you like to switch to TheMinersPool?")
+                msg.setInformativeText("This Monero pool has 0% commission!\n\n"
+                                       "You have a minute amount of coin untransferred so you won't be losing on earnings!\n\n"
+                                       "Although it is a young pool, the top 10 percent of miners will get a lifetime 0% commission which will attract miners with large hash rates!\n\n "
+                                       "Check it out at theminerspool.com")
+                msg.setWindowTitle("Switch to a 0% Monero Pool!")
+                msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+                msg.setDefaultButton(QMessageBox.Yes)
+                msg.buttonClicked.connect(self.msgbtn)
+                msg.exec()
+
             if os.path.isfile('Monero_Wallet/Monero_Settings.txt') and os.path.isfile('Zcash_Wallet/Zcash_Settings.txt'):
                 with open('Monero_Wallet/Monero_Settings.txt', 'r') as f:
                     account = f.readlines()[0]
@@ -500,6 +562,20 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
                 msg.exec()
 
         elif self.sender() == self.monero_eth_sia:
+            if MINEWITHUS is False and (float(self.xmr_coin.text().split()[0]) <= THRESHOLD):
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Question)
+                msg.setText("Would you like to switch to TheMinersPool?")
+                msg.setInformativeText("This Monero pool has 0% commission!\n\n"
+                                       "You have a minute amount of coin untransferred so you won't be losing on earnings!\n\n"
+                                       "Although it is a young pool, the top 10 percent of miners will get a lifetime 0% commission which will attract miners with large hash rates!\n\n "
+                                       "Check it out at theminerspool.com")
+                msg.setWindowTitle("Switch to a 0% Monero Pool!")
+                msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+                msg.setDefaultButton(QMessageBox.Yes)
+                msg.buttonClicked.connect(self.msgbtn)
+                msg.exec()
+
             if os.path.isfile('Ethereum_Wallet/Ethereum_Settings.txt') and os.path.isfile('Monero_Wallet/Monero_Settings.txt') and os.path.isfile('Sia_Wallet/Sia_Settings.txt'):
                 with open('Ethereum_Wallet/Ethereum_Settings.txt', 'r') as f:
                     account = f.readlines()[0]
@@ -522,6 +598,19 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
                 msg.exec()
 
         elif self.sender() == self.monero_pasc_monero:
+            if MINEWITHUS is False and (float(self.xmr_coin.text().split()[0]) <= THRESHOLD):
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Question)
+                msg.setText("Would you like to switch to TheMinersPool?")
+                msg.setInformativeText("This Monero pool has 0% commission!\n\n"
+                                       "You have a minute amount of coin untransferred so you won't be losing on earnings!\n\n"
+                                       "Although it is a young pool, the top 10 percent of miners will get a lifetime 0% commission which will attract miners with large hash rates!\n\n "
+                                       "Check it out at theminerspool.com")
+                msg.setWindowTitle("Switch to a 0% Monero Pool!")
+                msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+                msg.setDefaultButton(QMessageBox.Yes)
+                msg.buttonClicked.connect(self.msgbtn)
+                msg.exec()
             if os.path.isfile('Ethereum_Wallet/Ethereum_Settings.txt') and os.path.isfile('Monero_Wallet/Monero_Settings.txt') and os.path.isfile('Pascal_Wallet/Pascal_Settings.txt'):
                 with open('Ethereum_Wallet/Ethereum_Settings.txt', 'r') as f:
                     account = f.readlines()[0]
@@ -551,6 +640,26 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
                 msg.setWindowTitle("Mr.Miner Incorrect Information")
                 msg.setStandardButtons(QMessageBox.Ok)
                 msg.exec()
+
+    def msgbtn(self, answer):
+        if answer.text() == '&Yes':
+            MINEWITHUS = True
+
+            with open('Mining_Settings.txt', 'r') as f:
+                settings = f.readlines()
+
+            settings[4] = 'True'
+
+            with open('Mining_Settings.txt', 'w') as f:
+                f.writelines(settings)
+
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setText("Awesome! We will switch you over! Welcome to The Miners Pool!")
+            msg.setStandardButtons(QMessageBox.Ok)
+            msg.exec()
+        else:
+            MINEWITHUS = False
 
 class AccountInfo(QDialog, Ui_AccountInfo):
     def __init__(self):
@@ -671,16 +780,15 @@ class NowMining(QDialog, Ui_NowMining):
         #self.scrape_nanopool()
 
     def get_hashrate(self, url):
+        # Bypassing cert (maybe not great idea)
+        context = ssl._create_unverified_context()
         while True:
             try:
                 req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-                info = json.loads(urlopen(req).read().decode('utf-8'))
+                info = json.loads(urlopen(req, context=context).read().decode('utf-8'))
                 if info['status']:
-                    print("working")
-                    print(info['data'])
                     return str(round(float(info['data']), 4))
                 else:
-                    print('error')
                     logging.error('Nanopool API:' + info['error'] + ', trying again in 30 seconds')
 
                     return str(0)
@@ -709,12 +817,7 @@ class NowMining(QDialog, Ui_NowMining):
             #sleep(5)
 
     def scrape_nanopool(self, coin_label):
-        #print(coin_label)
-        #print(account)
-
-        # DISABLING FOR NOW
         return self.check_hashrate('https://api.nanopool.org/v1/' + coin_label + '/hashrate/' + account)
-        #return "Coming Soon"
 
     def configure_monero_AMD(self):
         global num_gpus
@@ -895,7 +998,6 @@ class NowMining(QDialog, Ui_NowMining):
                     shit_call = shit_call + " " + str(ig)
                 shit_call = shit_call + " -i 20 -w 64 -P 0\n"
                 batman.write(shit_call)
-                print(shit_call)
         subprocess.Popen("Santas_helpers\Zcash_Start.bat", shell=True)
 
     def start_mining(self):
@@ -917,7 +1019,6 @@ class NowMining(QDialog, Ui_NowMining):
                 batman.write('setx GPU_SINGLE_ALLOC_PERCENT 100\n')
                 batman.write('setx GPU_MAX_ALLOC_PERCENT 100\n')
                 #NVIDIA
-                print(graphic_card)
                 if graphic_card == 'nvidia\n' or graphic_card == 'nvidia':
                     batman.write(
                         "Santas_helpers\ethminer.exe -I -F http://eth-eu1.nanopool.org:8888/0x" + account.replace("\n", "") + "/" + rig_name.replace("\n", "") + "/" + email.replace("\n", ""))
@@ -1186,6 +1287,7 @@ def load_info():
     global settings_exist
     global currency_caller
     global automine_bool
+    global MINEWITHUS
 
     automine_bool = False
     settings_exist = False
@@ -1218,12 +1320,18 @@ def load_info():
                 Line 1: Number of GPUs
                 Line 2: Email
                 Line 3: Mining Rig Name
+                Line 4: Monero Pool  --> MINEWITHUS is True or False
         """
-        if len(settings) == 4:
+        if len(settings) == 5:
             settings_exist = True
             graphic_card, num_gpus, email, rig_name = settings[0], settings[1], settings[2], settings[3]
 
-            return True
+        if settings[4] == 'True':
+            MINEWITHUS = True
+        else:
+            MINEWITHUS = False
+
+        return True
     return False
 
 def main():
