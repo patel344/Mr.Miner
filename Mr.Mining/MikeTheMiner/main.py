@@ -291,6 +291,7 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
         self.monero_zcash.clicked.connect(self.handle_currency)
         self.Mining_back.clicked.connect(self.handle_back)
 
+
         if os.path.isfile('Ethereum_Wallet/Ethereum_Settings.txt'):
             with open('Ethereum_Wallet/Ethereum_Settings.txt', 'r') as f:
                 account = f.readlines()[0]
