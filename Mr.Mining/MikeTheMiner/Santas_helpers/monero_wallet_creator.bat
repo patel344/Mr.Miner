@@ -1,0 +1,1 @@
+Santas_helpers\monero-gui\monero-wallet-gui.exe
