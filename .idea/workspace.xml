@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9348fe21-c5ff-4c65-b722-3d13dca6cfed" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Mr.Miner.iml" afterPath="$PROJECT_DIR$/.idea/Mr.Miner.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Mr.Mining/MikeTheMiner/Mining_Settings.txt" afterPath="$PROJECT_DIR$/Mr.Mining/MikeTheMiner/Mining_Settings.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Mr.Mining/MikeTheMiner/main.py" afterPath="$PROJECT_DIR$/Mr.Mining/MikeTheMiner/main.py" />
-    </list>
+    <list default="true" id="9348fe21-c5ff-4c65-b722-3d13dca6cfed" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,37 +14,20 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Mr.Mining/MikeTheMiner/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="269" column="23" lean-forward="false" selection-start-line="269" selection-start-column="18" selection-end-line="269" selection-end-column="23" />
+            <state relative-caret-position="208">
+              <caret line="440" column="61" lean-forward="false" selection-start-line="440" selection-start-column="57" selection-end-line="440" selection-end-column="61" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
-                <element signature="e#906#1247#0" expanded="false" />
-                <element signature="e#11032#13611#0" expanded="false" />
-                <element signature="e#13648#13742#0" expanded="false" />
-                <element signature="e#14037#14619#0" expanded="false" />
-                <element signature="e#14686#15346#0" expanded="false" />
-                <element signature="e#15402#16000#0" expanded="false" />
-                <element signature="e#16057#17091#0" expanded="false" />
-                <element signature="e#17145#17731#0" expanded="false" />
-                <element signature="e#30803#32282#0" expanded="false" />
-                <element signature="e#32334#35346#0" expanded="false" />
+                <element signature="e#37141#38355#0" expanded="false" />
+                <element signature="e#38417#39421#0" expanded="false" />
+                <marker date="1504988773540" expanded="true" signature="64493:64512" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Mining_Settings.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Mr.Mining/MikeTheMiner/Mining_Settings.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="xmr-gpu.conf" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Mr.Mining/MikeTheMiner/Santas_helpers/xmr-gpu.conf">
+      <file leaf-file-name="MainPage.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Mr.Mining/MikeTheMiner/MainPage.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -59,14 +36,54 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="update_miner.bat" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Mr.Mining/MikeTheMiner/Santas_helpers/update_miner.bat">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Update.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Mr.Mining/MikeTheMiner/Update.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Ethereum_Settings.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Mr.Mining/MikeTheMiner/Ethereum_Wallet/Ethereum_Settings.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="40" lean-forward="false" selection-start-line="0" selection-start-column="40" selection-end-line="0" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="web_scraping_test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Mr.Mining/MikeTheMiner/web_scraping_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="552">
-              <caret line="46" column="5" lean-forward="false" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+            <state relative-caret-position="1003">
+              <caret line="64" column="100" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="100" />
               <folding>
                 <element signature="e#910#953#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Monero_Settings.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Mr.Mining/MikeTheMiner/Monero_Wallet/Monero_Settings.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="95" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -80,6 +97,10 @@
       <find>update_m</find>
       <find>scrape_nanopool</find>
       <find>print</find>
+      <find>minew</find>
+      <find>txt</find>
+      <find>THRESHOLD</find>
+      <find>them</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -95,11 +116,11 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="368" />
-    <option name="y" value="26" />
-    <option name="width" value="1103" />
-    <option name="height" value="923" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="407" />
+    <option name="y" value="-13" />
+    <option name="width" value="1363" />
+    <option name="height" value="911" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -117,54 +138,27 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Mr.Miner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Mr.Miner" type="462c0819:PsiDirectoryNode" />
+              <item name="Python" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Mr.Miner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Mr.Miner" type="462c0819:PsiDirectoryNode" />
-              <item name="Mr.Mining" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Mr.Miner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Mr.Miner" type="462c0819:PsiDirectoryNode" />
-              <item name="Mr.Mining" type="462c0819:PsiDirectoryNode" />
-              <item name="MikeTheMiner" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Mr.Miner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Mr.Miner" type="462c0819:PsiDirectoryNode" />
-              <item name="Mr.Mining" type="462c0819:PsiDirectoryNode" />
-              <item name="MikeTheMiner" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Mr.Miner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Mr.Miner" type="462c0819:PsiDirectoryNode" />
-              <item name="Mr.Mining" type="462c0819:PsiDirectoryNode" />
-              <item name="MikeTheMiner" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Mr.Miner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Mr.Miner" type="462c0819:PsiDirectoryNode" />
-              <item name="Mr.Mining" type="462c0819:PsiDirectoryNode" />
-              <item name="MikeTheMiner" type="462c0819:PsiDirectoryNode" />
-              <item name="Monero_Wallet" type="462c0819:PsiDirectoryNode" />
+              <item name="Python" type="462c0819:PsiDirectoryNode" />
+              <item name="Python36" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/Programs/Python/Python36/python.exe" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -180,17 +174,17 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.main">
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="/Library/Frameworks/Python.framework/Versions/3.6/bin/python3.6" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Mr.Mining/MikeTheMiner" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="false" />
+      <option name="ADD_SOURCE_ROOTS" value="false" />
       <module name="Mr.Miner" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Mr.Mining/MikeTheMiner/main.py" />
       <option name="PARAMETERS" value="" />
@@ -219,9 +213,8 @@
       <item index="1" class="java.lang.String" itemvalue="Python.web_scraping_test" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Python.main" />
-        <item index="1" class="java.lang.String" itemvalue="Python.web_scraping_test" />
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Python.web_scraping_test" />
       </list>
     </recent_temporary>
   </component>
@@ -241,27 +234,36 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="368" y="26" width="1103" height="923" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23845428" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17217484" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32965687" sideWeight="0.5029455" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23671497" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32904884" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23586957" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.109068625" sideWeight="0.4970545" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -275,34 +277,41 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Mr.Mining/MikeTheMiner/Santas_helpers/update_miner.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mr.Mining/MikeTheMiner/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#37141#38355#0" expanded="false" />
+            <element signature="e#38417#39421#0" expanded="false" />
+            <marker date="1504988773540" expanded="true" signature="64493:64512" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Mr.Mining/MikeTheMiner/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
-            <element signature="e#906#1247#0" expanded="false" />
-            <element signature="e#11032#13611#0" expanded="false" />
-            <element signature="e#13648#13742#0" expanded="false" />
-            <element signature="e#14037#14619#0" expanded="false" />
-            <element signature="e#14686#15346#0" expanded="false" />
-            <element signature="e#15402#16000#0" expanded="false" />
-            <element signature="e#16057#17091#0" expanded="false" />
-            <element signature="e#17145#17731#0" expanded="false" />
-            <element signature="e#30803#32282#0" expanded="false" />
-            <element signature="e#32334#35346#0" expanded="false" />
+            <element signature="e#37141#38355#0" expanded="false" />
+            <element signature="e#38417#39421#0" expanded="false" />
+            <marker date="1504988773540" expanded="true" signature="64493:64512" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/urllib/request.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19410">
-          <caret line="1319" column="0" lean-forward="false" selection-start-line="1319" selection-start-column="0" selection-end-line="1319" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/urllib/request.py" />
     <entry file="file://$PROJECT_DIR$/Mr.Mining/MikeTheMiner/web_scraping_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
@@ -317,7 +326,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -335,16 +343,9 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
-            <element signature="e#906#1247#0" expanded="false" />
-            <element signature="e#11032#13611#0" expanded="false" />
-            <element signature="e#13648#13742#0" expanded="false" />
-            <element signature="e#14037#14619#0" expanded="false" />
-            <element signature="e#14686#15346#0" expanded="false" />
-            <element signature="e#15402#16000#0" expanded="false" />
-            <element signature="e#16057#17091#0" expanded="false" />
-            <element signature="e#17145#17731#0" expanded="false" />
-            <element signature="e#30803#32282#0" expanded="false" />
-            <element signature="e#32334#35346#0" expanded="false" />
+            <element signature="e#37141#38355#0" expanded="false" />
+            <element signature="e#38417#39421#0" expanded="false" />
+            <marker date="1504988773540" expanded="true" signature="64493:64512" ph="..." />
           </folding>
         </state>
       </provider>
@@ -353,7 +354,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -381,16 +381,9 @@
           <caret line="325" column="64" lean-forward="true" selection-start-line="325" selection-start-column="64" selection-end-line="325" selection-end-column="64" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
-            <element signature="e#906#1247#0" expanded="false" />
-            <element signature="e#11032#13611#0" expanded="false" />
-            <element signature="e#13648#13742#0" expanded="false" />
-            <element signature="e#14037#14619#0" expanded="false" />
-            <element signature="e#14686#15346#0" expanded="false" />
-            <element signature="e#15402#16000#0" expanded="false" />
-            <element signature="e#16057#17091#0" expanded="false" />
-            <element signature="e#17145#17731#0" expanded="false" />
-            <element signature="e#30803#32282#0" expanded="false" />
-            <element signature="e#32334#35346#0" expanded="false" />
+            <element signature="e#37141#38355#0" expanded="false" />
+            <element signature="e#38417#39421#0" expanded="false" />
+            <marker date="1504988773540" expanded="true" signature="64493:64512" ph="..." />
           </folding>
         </state>
       </provider>
@@ -419,16 +412,9 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
-            <element signature="e#906#1247#0" expanded="false" />
-            <element signature="e#11032#13611#0" expanded="false" />
-            <element signature="e#13648#13742#0" expanded="false" />
-            <element signature="e#14037#14619#0" expanded="false" />
-            <element signature="e#14686#15346#0" expanded="false" />
-            <element signature="e#15402#16000#0" expanded="false" />
-            <element signature="e#16057#17091#0" expanded="false" />
-            <element signature="e#17145#17731#0" expanded="false" />
-            <element signature="e#30803#32282#0" expanded="false" />
-            <element signature="e#32334#35346#0" expanded="false" />
+            <element signature="e#37141#38355#0" expanded="false" />
+            <element signature="e#38417#39421#0" expanded="false" />
+            <marker date="1504988773540" expanded="true" signature="64493:64512" ph="..." />
           </folding>
         </state>
       </provider>
@@ -457,16 +443,9 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
-            <element signature="e#906#1247#0" expanded="false" />
-            <element signature="e#11032#13611#0" expanded="false" />
-            <element signature="e#13648#13742#0" expanded="false" />
-            <element signature="e#14037#14619#0" expanded="false" />
-            <element signature="e#14686#15346#0" expanded="false" />
-            <element signature="e#15402#16000#0" expanded="false" />
-            <element signature="e#16057#17091#0" expanded="false" />
-            <element signature="e#17145#17731#0" expanded="false" />
-            <element signature="e#30803#32282#0" expanded="false" />
-            <element signature="e#32334#35346#0" expanded="false" />
+            <element signature="e#37141#38355#0" expanded="false" />
+            <element signature="e#38417#39421#0" expanded="false" />
+            <marker date="1504988773540" expanded="true" signature="64493:64512" ph="..." />
           </folding>
         </state>
       </provider>
@@ -495,16 +474,9 @@
           <caret line="325" column="64" lean-forward="true" selection-start-line="325" selection-start-column="64" selection-end-line="325" selection-end-column="64" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
-            <element signature="e#906#1247#0" expanded="false" />
-            <element signature="e#11032#13611#0" expanded="false" />
-            <element signature="e#13648#13742#0" expanded="false" />
-            <element signature="e#14037#14619#0" expanded="false" />
-            <element signature="e#14686#15346#0" expanded="false" />
-            <element signature="e#15402#16000#0" expanded="false" />
-            <element signature="e#16057#17091#0" expanded="false" />
-            <element signature="e#17145#17731#0" expanded="false" />
-            <element signature="e#30803#32282#0" expanded="false" />
-            <element signature="e#32334#35346#0" expanded="false" />
+            <element signature="e#37141#38355#0" expanded="false" />
+            <element signature="e#38417#39421#0" expanded="false" />
+            <marker date="1504988773540" expanded="true" signature="64493:64512" ph="..." />
           </folding>
         </state>
       </provider>
@@ -515,16 +487,9 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
-            <element signature="e#906#1247#0" expanded="false" />
-            <element signature="e#11032#13611#0" expanded="false" />
-            <element signature="e#13648#13742#0" expanded="false" />
-            <element signature="e#14037#14619#0" expanded="false" />
-            <element signature="e#14686#15346#0" expanded="false" />
-            <element signature="e#15402#16000#0" expanded="false" />
-            <element signature="e#16057#17091#0" expanded="false" />
-            <element signature="e#17145#17731#0" expanded="false" />
-            <element signature="e#30803#32282#0" expanded="false" />
-            <element signature="e#32334#35346#0" expanded="false" />
+            <element signature="e#37141#38355#0" expanded="false" />
+            <element signature="e#38417#39421#0" expanded="false" />
+            <marker date="1504988773540" expanded="true" signature="64493:64512" ph="..." />
           </folding>
         </state>
       </provider>
@@ -553,16 +518,9 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
-            <element signature="e#906#1247#0" expanded="false" />
-            <element signature="e#11032#13611#0" expanded="false" />
-            <element signature="e#13648#13742#0" expanded="false" />
-            <element signature="e#14037#14619#0" expanded="false" />
-            <element signature="e#14686#15346#0" expanded="false" />
-            <element signature="e#15402#16000#0" expanded="false" />
-            <element signature="e#16057#17091#0" expanded="false" />
-            <element signature="e#17145#17731#0" expanded="false" />
-            <element signature="e#30803#32282#0" expanded="false" />
-            <element signature="e#32334#35346#0" expanded="false" />
+            <element signature="e#37141#38355#0" expanded="false" />
+            <element signature="e#38417#39421#0" expanded="false" />
+            <marker date="1504988773540" expanded="true" signature="64493:64512" ph="..." />
           </folding>
         </state>
       </provider>
@@ -610,7 +568,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -620,16 +577,9 @@
           <caret line="277" column="0" lean-forward="true" selection-start-line="277" selection-start-column="0" selection-end-line="277" selection-end-column="0" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
-            <element signature="e#906#1247#0" expanded="false" />
-            <element signature="e#11032#13611#0" expanded="false" />
-            <element signature="e#13648#13742#0" expanded="false" />
-            <element signature="e#14037#14619#0" expanded="false" />
-            <element signature="e#14686#15346#0" expanded="false" />
-            <element signature="e#15402#16000#0" expanded="false" />
-            <element signature="e#16057#17091#0" expanded="false" />
-            <element signature="e#17145#17731#0" expanded="false" />
-            <element signature="e#30803#32282#0" expanded="false" />
-            <element signature="e#32334#35346#0" expanded="false" />
+            <element signature="e#37141#38355#0" expanded="false" />
+            <element signature="e#38417#39421#0" expanded="false" />
+            <marker date="1504988773540" expanded="true" signature="64493:64512" ph="..." />
           </folding>
         </state>
       </provider>
@@ -640,16 +590,9 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
-            <element signature="e#906#1247#0" expanded="false" />
-            <element signature="e#11032#13611#0" expanded="false" />
-            <element signature="e#13648#13742#0" expanded="false" />
-            <element signature="e#14037#14619#0" expanded="false" />
-            <element signature="e#14686#15346#0" expanded="false" />
-            <element signature="e#15402#16000#0" expanded="false" />
-            <element signature="e#16057#17091#0" expanded="false" />
-            <element signature="e#17145#17731#0" expanded="false" />
-            <element signature="e#30803#32282#0" expanded="false" />
-            <element signature="e#32334#35346#0" expanded="false" />
+            <element signature="e#37141#38355#0" expanded="false" />
+            <element signature="e#38417#39421#0" expanded="false" />
+            <marker date="1504988773540" expanded="true" signature="64493:64512" ph="..." />
           </folding>
         </state>
       </provider>
@@ -699,16 +642,9 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
-            <element signature="e#906#1247#0" expanded="false" />
-            <element signature="e#11032#13611#0" expanded="false" />
-            <element signature="e#13648#13742#0" expanded="false" />
-            <element signature="e#14037#14619#0" expanded="false" />
-            <element signature="e#14686#15346#0" expanded="false" />
-            <element signature="e#15402#16000#0" expanded="false" />
-            <element signature="e#16057#17091#0" expanded="false" />
-            <element signature="e#17145#17731#0" expanded="false" />
-            <element signature="e#30803#32282#0" expanded="false" />
-            <element signature="e#32334#35346#0" expanded="false" />
+            <element signature="e#37141#38355#0" expanded="false" />
+            <element signature="e#38417#39421#0" expanded="false" />
+            <marker date="1504988773540" expanded="true" signature="64493:64512" ph="..." />
           </folding>
         </state>
       </provider>
@@ -737,16 +673,9 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
-            <element signature="e#906#1247#0" expanded="false" />
-            <element signature="e#11032#13611#0" expanded="false" />
-            <element signature="e#13648#13742#0" expanded="false" />
-            <element signature="e#14037#14619#0" expanded="false" />
-            <element signature="e#14686#15346#0" expanded="false" />
-            <element signature="e#15402#16000#0" expanded="false" />
-            <element signature="e#16057#17091#0" expanded="false" />
-            <element signature="e#17145#17731#0" expanded="false" />
-            <element signature="e#30803#32282#0" expanded="false" />
-            <element signature="e#32334#35346#0" expanded="false" />
+            <element signature="e#37141#38355#0" expanded="false" />
+            <element signature="e#38417#39421#0" expanded="false" />
+            <marker date="1504988773540" expanded="true" signature="64493:64512" ph="..." />
           </folding>
         </state>
       </provider>
@@ -755,6 +684,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="40" lean-forward="false" selection-start-line="0" selection-start-column="40" selection-end-line="0" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -762,6 +692,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -769,29 +700,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/urllib/request.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="1319" column="0" lean-forward="false" selection-start-line="1319" selection-start-column="0" selection-end-line="1319" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/urllib/request.py" />
     <entry file="file://$PROJECT_DIR$/Mr.Mining/MikeTheMiner/Monero_Wallet/Monero_Settings.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="95" lean-forward="false" selection-start-line="0" selection-start-column="95" selection-end-line="0" selection-end-column="95" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="95" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Mr.Mining/MikeTheMiner/web_scraping_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="46" column="5" lean-forward="false" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+        <state relative-caret-position="1003">
+          <caret line="64" column="100" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="100" />
           <folding>
             <element signature="e#910#953#0" expanded="true" />
           </folding>
@@ -802,26 +727,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mr.Mining/MikeTheMiner/MainPage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Mr.Mining/MikeTheMiner/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="269" column="23" lean-forward="false" selection-start-line="269" selection-start-column="18" selection-end-line="269" selection-end-column="23" />
+        <state relative-caret-position="208">
+          <caret line="440" column="61" lean-forward="false" selection-start-line="440" selection-start-column="57" selection-end-line="440" selection-end-column="61" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
-            <element signature="e#906#1247#0" expanded="false" />
-            <element signature="e#11032#13611#0" expanded="false" />
-            <element signature="e#13648#13742#0" expanded="false" />
-            <element signature="e#14037#14619#0" expanded="false" />
-            <element signature="e#14686#15346#0" expanded="false" />
-            <element signature="e#15402#16000#0" expanded="false" />
-            <element signature="e#16057#17091#0" expanded="false" />
-            <element signature="e#17145#17731#0" expanded="false" />
-            <element signature="e#30803#32282#0" expanded="false" />
-            <element signature="e#32334#35346#0" expanded="false" />
+            <element signature="e#37141#38355#0" expanded="false" />
+            <element signature="e#38417#39421#0" expanded="false" />
+            <marker date="1504988773540" expanded="true" signature="64493:64512" ph="..." />
           </folding>
         </state>
       </provider>

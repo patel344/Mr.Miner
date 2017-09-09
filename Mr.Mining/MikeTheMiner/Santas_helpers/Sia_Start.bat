@@ -1,1 +1,1 @@
-Santas_helpers\xmrMiner_0.2.1.exe --url=stratum+tcp://xmr-eu.dwarfpool.com:8050 -u 48edfHu7V9Z84YzzMa6fUueoELZ9ZRXq9VetWzYGzKt52XU5xvqgzYnDK9URnRoJMk1j8nLwEVsaSWJ4fhdUyZijBGUicoD -p x  --bfactor=6 --bsleep=25
+Santas_helpers\ccminer -a sia -e --url=stratum+tcp://us-east.siamining.com:3333 -u 12.1 -i 28 

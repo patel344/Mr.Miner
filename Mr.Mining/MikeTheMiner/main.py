@@ -31,7 +31,7 @@ global currency_caller # Used to see which currency led to the mining wallet pag
 global MINEWITHUS      # Used to switch users to our monero pool
 global THRESHOLD
 
-THRESHOLD = .9
+THRESHOLD = .05
 
 class MainPage(QWidget, Ui_MainPage):
     def __init__(self):
@@ -442,7 +442,7 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
                 msg.setInformativeText("This Monero pool has 0% commission!\n\n"
                                        "You have a minute amount of coin untransferred so you won't be losing on earnings!\n\n"
                                        "Although it is a young pool, the top 10 percent of miners will get a lifetime 0% commission which will attract miners with large hash rates!\n\n "
-                                       "Check it out at theminerspool.com")
+                                       "Check it out at http://theminerpool.com/#")
                 msg.setWindowTitle("Switch to a 0% Monero Pool!")
                 msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
                 msg.setDefaultButton(QMessageBox.Yes)
@@ -473,7 +473,7 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
                     msg.setInformativeText("This Monero pool has 0% commission!\n\n"
                                            "You have a minute amount of coin untransferred so you won't be losing on earnings!\n\n"
                                            "Although it is a young pool, the top 10 percent of miners will get a lifetime 0% commission which will attract miners with large hash rates!\n\n "
-                                           "Check it out at theminerspool.com")
+                                           "Check it out at http://theminerpool.com/#")
                     msg.setWindowTitle("Switch to a 0% Monero Pool!")
                     msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
                     msg.setDefaultButton(QMessageBox.Yes)
@@ -505,7 +505,7 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
                 msg.setInformativeText("This Monero pool has 0% commission!\n\n"
                                        "You have a minute amount of coin untransferred so you won't be losing on earnings!\n\n"
                                        "Although it is a young pool, the top 10 percent of miners will get a lifetime 0% commission which will attract miners with large hash rates!\n\n "
-                                       "Check it out at theminerspool.com")
+                                       "Check it out at http://theminerpool.com/#")
                 msg.setWindowTitle("Switch to a 0% Monero Pool!")
                 msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
                 msg.setDefaultButton(QMessageBox.Yes)
@@ -536,7 +536,7 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
                 msg.setInformativeText("This Monero pool has 0% commission!\n\n"
                                        "You have a minute amount of coin untransferred so you won't be losing on earnings!\n\n"
                                        "Although it is a young pool, the top 10 percent of miners will get a lifetime 0% commission which will attract miners with large hash rates!\n\n "
-                                       "Check it out at theminerspool.com")
+                                       "Check it out at http://theminerpool.com/#")
                 msg.setWindowTitle("Switch to a 0% Monero Pool!")
                 msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
                 msg.setDefaultButton(QMessageBox.Yes)
@@ -570,7 +570,7 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
                 msg.setInformativeText("This Monero pool has 0% commission!\n\n"
                                        "You have a minute amount of coin untransferred so you won't be losing on earnings!\n\n"
                                        "Although it is a young pool, the top 10 percent of miners will get a lifetime 0% commission which will attract miners with large hash rates!\n\n "
-                                       "Check it out at theminerspool.com")
+                                       "Check it out at http://theminerpool.com/#")
                 msg.setWindowTitle("Switch to a 0% Monero Pool!")
                 msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
                 msg.setDefaultButton(QMessageBox.Yes)
@@ -606,7 +606,7 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
                 msg.setInformativeText("This Monero pool has 0% commission!\n\n"
                                        "You have a minute amount of coin untransferred so you won't be losing on earnings!\n\n"
                                        "Although it is a young pool, the top 10 percent of miners will get a lifetime 0% commission which will attract miners with large hash rates!\n\n "
-                                       "Check it out at theminerspool.com")
+                                       "Check it out at http://theminerpool.com/#")
                 msg.setWindowTitle("Switch to a 0% Monero Pool!")
                 msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
                 msg.setDefaultButton(QMessageBox.Yes)
@@ -900,7 +900,11 @@ class NowMining(QDialog, Ui_NowMining):
             with open('Monero_Wallet/Monero_Settings.txt') as f:
                 account = f.readlines()[0]
             with open('Santas_helpers\Monero_Start.bat', 'w')as batman:
-                shit_call = r"Santas_helpers\xmrig.exe -o xmr-eu.dwarfpool.com:8005 -u " + account.replace("\n","") + " -p x -k"
+                if MINEWITHUS == True:
+                    shit_call = r"Santas_helpers\xmrig.exe -o stratum+tcp://theminerspool.com:3333 -u " + account.replace("\n","") + " -p x -k"
+                else:
+                    shit_call = r"Santas_helpers\xmrig.exe -o stratum+tcp://xmr-eu.dwarfpool.com:8005 -u " + account.replace("\n",
+                                                                                                               "") + " -p x -k"
                 batman.write(shit_call)
                 subprocess.Popen("Santas_helpers\Monero_Start.bat", shell=True)
     def monero_GPU_mine(self):
@@ -909,8 +913,12 @@ class NowMining(QDialog, Ui_NowMining):
                 account = f.readlines()[0]
             with open('Santas_helpers\Sia_Start.bat', 'w')as batman:
                 if graphic_card == 'nvidia\n' or 'nvidia' in graphic_card:
-                    shit_call = r"Santas_helpers\xmrMiner_0.2.1.exe --url=stratum+tcp://xmr-eu.dwarfpool.com:8050 -u " + account.replace(
+                    if MINEWITHUS == True:
+                        shit_call = r"Santas_helpers\xmrMiner_0.2.1.exe --url=stratum+tcp://xmr-eu.theminerspool.com:5555 -u " + account.replace(
                         "\n", "") + " -p x  --bfactor=6 --bsleep=25"
+                    else:
+                        shit_call = r"Santas_helpers\xmrMiner_0.2.1.exe --url=stratum+tcp://xmr-eu.dwarfpool.com:8050 -u " + account.replace(
+                            "\n", "") + " -p x  --bfactor=6 --bsleep=25"
                     batman.write(shit_call)
                     subprocess.Popen("Santas_helpers\Sia_Start.bat", shell=True)
                 elif graphic_card == 'amd\n ' or 'amd' in graphic_card:

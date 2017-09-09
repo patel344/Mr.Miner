@@ -5,6 +5,6 @@ pyuic5 CreateNewWallet.ui -o CreateNewWallet.py
 pyuic5 MiningWallet.ui -o MiningWallet.py
 pyuic5 NowMining.ui -o NowMining.py
 pyuic5 SetupPage.ui -o SetupPage.py
-
+C:\Users\igal\AppData\Local\Programs\Python\Python36\Scripts\pyuic5.exe NowMining.ui -o NowMining.py
 pyrcc5 MainPageMining.qrc -o MainPageMining_rc.py
 pyrcc5 ChooseCurrency.qrc -o ChooseCurrency_rc.py
