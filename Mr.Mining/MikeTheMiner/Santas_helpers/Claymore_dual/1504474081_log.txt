@@ -1,0 +1,43 @@
+14:28:01:296	119c8	args: -epool eth-eu1.nanopool.org:9999 -ewal 0x2fc7723d8623eb414abb4fa6d81395d81b87a8f9/1/1 -epsw x -dpool stratum+tcp://sia-eu1.nanopool.org:7777 -dwal 12/1/1 -dpsw x -dcoin sia -ftime 10 
+14:28:01:303	119c8	
+14:28:01:308	119c8	ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+14:28:01:311	119c8	บ      Claymore's Dual ETH + DCR/SC/LBC/PASC GPU Miner v9.6      บ
+14:28:01:316	119c8	ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+14:28:01:320	119c8	
+14:28:01:525	119c8	This pool (eth-eu2.nanopool.org) does not support Ethereum addresses as login (or requires worker name in "Login.Worker" format) and cannot be used for devfee mining, therefore it is not supported.
+14:28:01:530	119c8	However, you can mine on this pool if you specify "-allpools 1" option, default pools (different from this pool) will be used for devfee.
+14:28:01:534	119c8	Please read "Readme" file for details
+14:28:01:538	119c8	This pool (eth-eu2.nanopool.org) does not support Ethereum addresses as login (or requires worker name in "Login.Worker" format) and cannot be used for devfee mining, therefore it is not supported.
+14:28:01:542	119c8	However, you can mine on this pool if you specify "-allpools 1" option, default pools (different from this pool) will be used for devfee.
+14:28:01:546	119c8	Please read "Readme" file for details
+14:28:01:551	119c8	Pool eth-eu2.nanopool.org removed from the list
+14:28:01:555	119c8	This pool (eth-us-east1.nanopool.org) does not support Ethereum addresses as login (or requires worker name in "Login.Worker" format) and cannot be used for devfee mining, therefore it is not supported.
+14:28:01:559	119c8	However, you can mine on this pool if you specify "-allpools 1" option, default pools (different from this pool) will be used for devfee.
+14:28:01:564	119c8	Please read "Readme" file for details
+14:28:01:568	119c8	This pool (eth-us-east1.nanopool.org) does not support Ethereum addresses as login (or requires worker name in "Login.Worker" format) and cannot be used for devfee mining, therefore it is not supported.
+14:28:01:573	119c8	However, you can mine on this pool if you specify "-allpools 1" option, default pools (different from this pool) will be used for devfee.
+14:28:01:578	119c8	Please read "Readme" file for details
+14:28:01:583	119c8	Pool eth-us-east1.nanopool.org removed from the list
+14:28:01:589	119c8	This pool (eth-us-west1.nanopool.org) does not support Ethereum addresses as login (or requires worker name in "Login.Worker" format) and cannot be used for devfee mining, therefore it is not supported.
+14:28:01:594	119c8	However, you can mine on this pool if you specify "-allpools 1" option, default pools (different from this pool) will be used for devfee.
+14:28:01:601	119c8	Please read "Readme" file for details
+14:28:01:605	119c8	This pool (eth-us-west1.nanopool.org) does not support Ethereum addresses as login (or requires worker name in "Login.Worker" format) and cannot be used for devfee mining, therefore it is not supported.
+14:28:01:611	119c8	However, you can mine on this pool if you specify "-allpools 1" option, default pools (different from this pool) will be used for devfee.
+14:28:01:616	119c8	Please read "Readme" file for details
+14:28:01:622	119c8	Pool eth-us-west1.nanopool.org removed from the list
+14:28:01:627	119c8	This pool (eth-asia1.nanopool.org) does not support Ethereum addresses as login (or requires worker name in "Login.Worker" format) and cannot be used for devfee mining, therefore it is not supported.
+14:28:01:634	119c8	However, you can mine on this pool if you specify "-allpools 1" option, default pools (different from this pool) will be used for devfee.
+14:28:01:639	119c8	Please read "Readme" file for details
+14:28:01:645	119c8	This pool (eth-asia1.nanopool.org) does not support Ethereum addresses as login (or requires worker name in "Login.Worker" format) and cannot be used for devfee mining, therefore it is not supported.
+14:28:01:651	119c8	However, you can mine on this pool if you specify "-allpools 1" option, default pools (different from this pool) will be used for devfee.
+14:28:01:657	119c8	Please read "Readme" file for details
+14:28:01:664	119c8	Pool eth-asia1.nanopool.org removed from the list
+14:28:01:670	119c8	ETH: 1 pool is specified
+14:28:01:676	119c8	Main Ethereum pool is eth-eu1.nanopool.org:9999
+14:28:01:682	119c8	SC: 5 pools are specified
+14:28:01:689	119c8	Main Siacoin pool is sia-eu1.nanopool.org:7777
+14:28:01:709	119c8	OpenCL platform: Intel(R) OpenCL
+14:28:01:716	119c8	AMD OpenCL platform not found 
+14:28:01:723	119c8	cudaGetDeviceCount failed (35, CUDA driver version is insufficient for CUDA runtime version), probably no CUDA devices
+14:28:01:729	119c8	No NVIDIA CUDA GPUs detected.
+14:28:01:735	119c8	No AMD OPENCL or NVIDIA CUDA GPUs found, exit

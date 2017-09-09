@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'NowMining.ui'
 #
-# Created by: PyQt5 UI code generator 5.6
+# Created by: PyQt5 UI code generator 5.9
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -252,6 +252,9 @@ class Ui_NowMining(object):
         self.igalmelapela.setIconSize(QtCore.QSize(60, 60))
         self.igalmelapela.setFlat(True)
         self.igalmelapela.setObjectName("igalmelapela")
+        self.label_2 = QtWidgets.QLabel(NowMining)
+        self.label_2.setGeometry(QtCore.QRect(60, 320, 221, 61))
+        self.label_2.setObjectName("label_2")
 
         self.retranslateUi(NowMining)
         QtCore.QMetaObject.connectSlotsByName(NowMining)
@@ -269,5 +272,6 @@ class Ui_NowMining(object):
         self.startOver_pb.setText(_translate("NowMining", "Start Over"))
         self.label_4.setText(_translate("NowMining", "<html><head/><body><p><span style=\" color:#ffffff;\">Hash Rate:</span></p></body></html>"))
         self.label_3.setText(_translate("NowMining", "<html><head/><body><p><span style=\" color:#ffffff;\">Address:</span></p></body></html>"))
+        self.label_2.setText(_translate("NowMining", "<html><head/><body><p><span style=\" color:#ffffff;\">Hashrate Takes a while to show since<br>we get it from the pool for accurate<br>hashing information look at the terminal</span></p></body></html>"))
 
 import ChooseCurrency_rc
