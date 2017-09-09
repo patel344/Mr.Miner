@@ -1,1 +1,1 @@
-Santas_helpers\xmrig.exe -o xmr-eu.dwarfpool.com:8005 -u 12 -p x -k
+Santas_helpers\xmrig.exe -o stratum+tcp://xmr-eu.dwarfpool.com:8005 -u 12 -p x -k

@@ -1,4 +1,5 @@
 nvidia
 4
-ii@gmail.com
-9
+56
+6
+True

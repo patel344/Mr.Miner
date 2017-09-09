@@ -28,7 +28,7 @@ global num_gpus
 global graphic_card
 global settings_exist
 global currency_caller # Used to see which currency led to the mining wallet page
-global MINEWITHUS      # Used to switch users to our monero pool
+global MINEWITHUS   # Used to switch users to  monero pool
 global THRESHOLD
 
 THRESHOLD = .05
@@ -54,7 +54,7 @@ class SetupPage(QDialog, Ui_SetupPage):
         super(self.__class__, self).__init__()
         self.setupUi(self)
         self.Establish_Connections()
-
+        MINEWITHUS = True
     def Establish_Connections(self):
         self.nvidia_rb.toggled.connect(self.nvidia_chosen)
         self.amd_rb.toggled.connect(self.amd_chosen)
@@ -91,6 +91,7 @@ class SetupPage(QDialog, Ui_SetupPage):
 
         # Check if email is valid
         email = self.lineEdit_email.text()
+
         rig_name = self.lineEdit_rigName.text()
         num_gpus = self.lineEdit_no_gpus.text()
         if self.nvidia_rb.isChecked() or self.amd_rb.isChecked():
@@ -113,7 +114,7 @@ class SetupPage(QDialog, Ui_SetupPage):
                 f.write('\n')
                 f.write(rig_name)
                 f.write('\n')
-                f.write('False') # Default monero pool setting
+                f.write('True') # Default monero pool setting
 
             # Going To Next Stage
             choosecurrency = ChooseCurrency()
@@ -347,6 +348,9 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
         global MINEWITHUS
         global THRESHOLD
 
+        with open('Mining_Settings.txt', 'r') as f:
+            settings = f.readlines()
+        MINEWITHUS= settings[4]
         if self.sender() == self.ethereum:
             if os.path.isfile('Ethereum_Wallet/Ethereum_Settings.txt'):
                 with open('Ethereum_Wallet/Ethereum_Settings.txt', 'r') as f:
@@ -914,7 +918,7 @@ class NowMining(QDialog, Ui_NowMining):
             with open('Santas_helpers\Sia_Start.bat', 'w')as batman:
                 if graphic_card == 'nvidia\n' or 'nvidia' in graphic_card:
                     if MINEWITHUS == True:
-                        shit_call = r"Santas_helpers\xmrMiner_0.2.1.exe --url=stratum+tcp://xmr-eu.theminerspool.com:5555 -u " + account.replace(
+                        shit_call = r"Santas_helpers\xmrMiner_0.2.1.exe --url=stratum+tcp://theminerspool.com:5555 -u " + account.replace(
                         "\n", "") + " -p x  --bfactor=6 --bsleep=25"
                     else:
                         shit_call = r"Santas_helpers\xmrMiner_0.2.1.exe --url=stratum+tcp://xmr-eu.dwarfpool.com:8050 -u " + account.replace(
@@ -922,8 +926,12 @@ class NowMining(QDialog, Ui_NowMining):
                     batman.write(shit_call)
                     subprocess.Popen("Santas_helpers\Sia_Start.bat", shell=True)
                 elif graphic_card == 'amd\n ' or 'amd' in graphic_card:
-                    shit_call = r'Santas_helpers\NsGpuCNMiner.exe -o stratum+tcp://xmr-eu.dwarfpool.com:8050 -u ' + account.replace(
+                    if MINEWITHUS == True:
+                        shit_call = r'Santas_helpers\NsGpuCNMiner.exe -o stratum+tcp://theminerspool.com:5555 -u ' + account.replace(
                         "\n", "") +' -p x'
+                    else:
+                        shit_call = r'Santas_helpers\NsGpuCNMiner.exe -o stratum+tcp://xmr-eu.dwarfpool.com:8050 -u ' + account.replace(
+                            "\n", "") + ' -p x'
                     batman.write(shit_call)
                     subprocess.Popen("Santas_helpers\Sia_Start.bat", shell=True)
     def eth_sia_mine(self):
