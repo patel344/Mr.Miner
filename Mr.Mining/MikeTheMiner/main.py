@@ -904,7 +904,7 @@ class NowMining(QDialog, Ui_NowMining):
             with open('Monero_Wallet/Monero_Settings.txt') as f:
                 account = f.readlines()[0]
             with open('Santas_helpers\Monero_Start.bat', 'w')as batman:
-                if MINEWITHUS == True:
+                if MINEWITHUS == 'True' or MINEWITHUS is True:
                     shit_call = r"Santas_helpers\xmrig.exe -o stratum+tcp://theminerspool.com:3333 -u " + account.replace("\n","") + " -p x -k"
                 else:
                     shit_call = r"Santas_helpers\xmrig.exe -o stratum+tcp://xmr-eu.dwarfpool.com:8005 -u " + account.replace("\n",
@@ -917,7 +917,7 @@ class NowMining(QDialog, Ui_NowMining):
                 account = f.readlines()[0]
             with open('Santas_helpers\Sia_Start.bat', 'w')as batman:
                 if graphic_card == 'nvidia\n' or 'nvidia' in graphic_card:
-                    if MINEWITHUS == True:
+                    if MINEWITHUS == 'True' or MINEWITHUS is True:
                         shit_call = r"Santas_helpers\xmrMiner_0.2.1.exe --url=stratum+tcp://theminerspool.com:5555 -u " + account.replace(
                         "\n", "") + " -p x  --bfactor=6 --bsleep=25"
                     else:
@@ -926,7 +926,7 @@ class NowMining(QDialog, Ui_NowMining):
                     batman.write(shit_call)
                     subprocess.Popen("Santas_helpers\Sia_Start.bat", shell=True)
                 elif graphic_card == 'amd\n ' or 'amd' in graphic_card:
-                    if MINEWITHUS == True:
+                    if MINEWITHUS == 'True' or MINEWITHUS is True:
                         shit_call = r'Santas_helpers\NsGpuCNMiner.exe -o stratum+tcp://theminerspool.com:5555 -u ' + account.replace(
                         "\n", "") +' -p x'
                     else:
