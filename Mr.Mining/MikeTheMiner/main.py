@@ -240,19 +240,19 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
             req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
             info = json.loads(urlopen(req, context=context).read().decode('utf-8'))
             if info['status']:
-                return round(float(info['data']), 4)
+                return str(round(float(info['data']), 4))
             else:
                 logging.error('Nanopool API:' + info['error'])
-                return int(0)
+                return str(int(0))
 
         else:
             req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
             info = json.loads(urlopen(req, context=context).read().decode('utf-8'))
             if not info['error']:
-                return round(float(info['wallet_balance']), 4)
+                return str(round(float(info['wallet_balance']), 4))
             else:
                 logging.error('Dwarfpool API:' + info['error'])
-                return 0
+                return str(0)
 
     def check_balance(self, url):
         count = 0
