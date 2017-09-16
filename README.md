@@ -13,6 +13,14 @@ We connect you to mining pools which take a 1% comission and in Ethereum we also
 
 If you like our work or wanna buy a beer for this college students feel free to send us a donation ;) <br>
 
+For the miners we use:<br>
+https://github.com/xmrig/xmrig<br>
+https://github.com/ethereum-mining/ethminer<br>
+https://github.com/tpruvot/ccminer<br>
+https://github.com/nanopool/Claymore-Dual-Miner/releases<br>
+https://github.com/Genoil/cpp-ethereum<br>
+https://github.com/nicehash/nheqminer<br>
+
 if you prefere video tutorials check out our videos: <br>
 https://www.youtube.com/watch?v=KLZ4QDfG5Nw& <br>
 https://www.youtube.com/watch?v=8yykW61YddM& <br><br>
