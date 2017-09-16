@@ -485,3 +485,437 @@
 2017-08-19 19:07:10.139	736	INFO 	global	contrib/epee/src/mlog.cpp:153	New log categories: *:WARNING,net:FATAL,net.p2p:FATAL,net.cn:FATAL,global:INFO,verify:FATAL,stacktrace:INFO
 2017-08-19 19:13:27.249	7256	ERROR	net.http	contrib/epee/include/net/http_client.h:441	Unexpected recv fail
 2017-08-19 19:13:27.707	7256	ERROR	WalletAPI	src/wallet/api/wallet.cpp:721	daemonBlockChainTargetHeight: possibly lost connection to daemon
+2017-09-16 08:50:35.290	30112	INFO 	global	contrib/epee/src/mlog.cpp:145	New log categories: *:WARNING,net:FATAL,net.p2p:FATAL,net.cn:FATAL,global:INFO,verify:FATAL,stacktrace:INFO
+2017-09-16 08:50:36.552	30112	INFO 	global	contrib/epee/src/mlog.cpp:153	New log categories: *:WARNING,net:FATAL,net.p2p:FATAL,net.cn:FATAL,global:INFO,verify:FATAL,stacktrace:INFO
+2017-09-16 08:51:26.817	30112	WARN 	default	src/mnemonics/language_base.h:101	Spanish word 'asa' is shorter than its prefix length, 4
+2017-09-16 08:51:26.817	30112	WARN 	default	src/mnemonics/language_base.h:101	Spanish word 'ave' is shorter than its prefix length, 4
+2017-09-16 08:51:26.817	30112	WARN 	default	src/mnemonics/language_base.h:101	Spanish word 'boa' is shorter than its prefix length, 4
+2017-09-16 08:51:26.817	30112	WARN 	default	src/mnemonics/language_base.h:101	Spanish word 'cal' is shorter than its prefix length, 4
+2017-09-16 08:51:26.817	30112	WARN 	default	src/mnemonics/language_base.h:101	Spanish word 'dar' is shorter than its prefix length, 4
+2017-09-16 08:51:26.817	30112	WARN 	default	src/mnemonics/language_base.h:101	Spanish word 'don' is shorter than its prefix length, 4
+2017-09-16 08:51:26.817	30112	WARN 	default	src/mnemonics/language_base.h:101	Spanish word 'dos' is shorter than its prefix length, 4
+2017-09-16 08:51:26.817	30112	WARN 	default	src/mnemonics/language_base.h:101	Spanish word 'eco' is shorter than its prefix length, 4
+2017-09-16 08:51:26.817	30112	WARN 	default	src/mnemonics/language_base.h:101	Spanish word 'eje' is shorter than its prefix length, 4
+2017-09-16 08:51:26.817	30112	WARN 	default	src/mnemonics/language_base.h:101	Spanish word 'fax' is shorter than its prefix length, 4
+2017-09-16 08:51:26.817	30112	WARN 	default	src/mnemonics/language_base.h:101	Spanish word 'feo' is shorter than its prefix length, 4
+2017-09-16 08:51:26.817	30112	WARN 	default	src/mnemonics/language_base.h:101	Spanish word 'fin' is shorter than its prefix length, 4
+2017-09-16 08:51:26.817	30112	WARN 	default	src/mnemonics/language_base.h:101	Spanish word 'gen' is shorter than its prefix length, 4
+2017-09-16 08:51:26.817	30112	WARN 	default	src/mnemonics/language_base.h:101	Spanish word 'gol' is shorter than its prefix length, 4
+2017-09-16 08:51:26.817	30112	WARN 	default	src/mnemonics/language_base.h:101	Spanish word 'haz' is shorter than its prefix length, 4
+2017-09-16 08:51:26.817	30112	WARN 	default	src/mnemonics/language_base.h:101	Spanish word 'ira' is shorter than its prefix length, 4
+2017-09-16 08:51:26.817	30112	WARN 	default	src/mnemonics/language_base.h:101	Spanish word 'luz' is shorter than its prefix length, 4
+2017-09-16 08:51:26.817	30112	WARN 	default	src/mnemonics/language_base.h:101	Spanish word 'mar' is shorter than its prefix length, 4
+2017-09-16 08:51:26.817	30112	WARN 	default	src/mnemonics/language_base.h:101	Spanish word 'mes' is shorter than its prefix length, 4
+2017-09-16 08:51:26.817	30112	WARN 	default	src/mnemonics/language_base.h:101	Spanish word 'mil' is shorter than its prefix length, 4
+2017-09-16 08:51:26.817	30112	WARN 	default	src/mnemonics/language_base.h:101	Spanish word 'oca' is shorter than its prefix length, 4
+2017-09-16 08:51:26.817	30112	WARN 	default	src/mnemonics/language_base.h:101	Spanish word 'ojo' is shorter than its prefix length, 4
+2017-09-16 08:51:26.817	30112	WARN 	default	src/mnemonics/language_base.h:101	Spanish word 'ola' is shorter than its prefix length, 4
+2017-09-16 08:51:26.817	30112	WARN 	default	src/mnemonics/language_base.h:101	Spanish word 'oro' is shorter than its prefix length, 4
+2017-09-16 08:51:26.817	30112	WARN 	default	src/mnemonics/language_base.h:101	Spanish word 'oso' is shorter than its prefix length, 4
+2017-09-16 08:51:26.817	30112	WARN 	default	src/mnemonics/language_base.h:101	Spanish word 'pan' is shorter than its prefix length, 4
+2017-09-16 08:51:26.817	30112	WARN 	default	src/mnemonics/language_base.h:101	Spanish word 'pez' is shorter than its prefix length, 4
+2017-09-16 08:51:26.817	30112	WARN 	default	src/mnemonics/language_base.h:101	Spanish word 'pie' is shorter than its prefix length, 4
+2017-09-16 08:51:26.817	30112	WARN 	default	src/mnemonics/language_base.h:101	Spanish word 'red' is shorter than its prefix length, 4
+2017-09-16 08:51:26.817	30112	WARN 	default	src/mnemonics/language_base.h:101	Spanish word 'res' is shorter than its prefix length, 4
+2017-09-16 08:51:26.817	30112	WARN 	default	src/mnemonics/language_base.h:101	Spanish word 'rey' is shorter than its prefix length, 4
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'out' is shorter than its prefix length, 4
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'eye' is shorter than its prefix length, 4
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: thin
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'too' is shorter than its prefix length, 4
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'try' is shorter than its prefix length, 4
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'cry' is shorter than its prefix length, 4
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'end' is shorter than its prefix length, 4
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'off' is shorter than its prefix length, 4
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: some
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'ask' is shorter than its prefix length, 4
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: ever
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'got' is shorter than its prefix length, 4
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'yet' is shorter than its prefix length, 4
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'run' is shorter than its prefix length, 4
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'own' is shorter than its prefix length, 4
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'god' is shorter than its prefix length, 4
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'new' is shorter than its prefix length, 4
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'two' is shorter than its prefix length, 4
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'use' is shorter than its prefix length, 4
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: some
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'any' is shorter than its prefix length, 4
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'sky' is shorter than its prefix length, 4
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'put' is shorter than its prefix length, 4
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: happ
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: star
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'red' is shorter than its prefix length, 4
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: ever
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'air' is shorter than its prefix length, 4
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'lip' is shorter than its prefix length, 4
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'hit' is shorter than its prefix length, 4
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: real
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: brea
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: agai
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'fly' is shorter than its prefix length, 4
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: unde
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: some
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: real
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'guy' is shorter than its prefix length, 4
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'eat' is shorter than its prefix length, 4
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: brea
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: dark
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: alon
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: beau
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: hear
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'kid' is shorter than its prefix length, 4
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'dad' is shorter than its prefix length, 4
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'war' is shorter than its prefix length, 4
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'act' is shorter than its prefix length, 4
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: chan
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: chil
+2017-09-16 08:51:26.821	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'sea' is shorter than its prefix length, 4
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'lot' is shorter than its prefix length, 4
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'sad' is shorter than its prefix length, 4
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'mom' is shorter than its prefix length, 4
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'few' is shorter than its prefix length, 4
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: mean
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: real
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'bit' is shorter than its prefix length, 4
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: happ
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'men' is shorter than its prefix length, 4
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'age' is shorter than its prefix length, 4
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'ice' is shorter than its prefix length, 4
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: thro
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'leg' is shorter than its prefix length, 4
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: good
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: know
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: shou
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: pret
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'joy' is shorter than its prefix length, 4
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'dry' is shorter than its prefix length, 4
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: clea
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'son' is shorter than its prefix length, 4
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: sorr
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'hug' is shorter than its prefix length, 4
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'sat' is shorter than its prefix length, 4
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: fina
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: sile
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: ange
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: cont
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'dog' is shorter than its prefix length, 4
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: give
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: your
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'hey' is shorter than its prefix length, 4
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'pay' is shorter than its prefix length, 4
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: take
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: some
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: crea
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: forg
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'rip' is shorter than its prefix length, 4
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'job' is shorter than its prefix length, 4
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: laug
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: some
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: stor
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'beg' is shorter than its prefix length, 4
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: simp
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'win' is shorter than its prefix length, 4
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: flow
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: stre
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'gun' is shorter than its prefix length, 4
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: heav
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: ever
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: shou
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: stra
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: thro
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'ash' is shorter than its prefix length, 4
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: imag
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: warm
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: yell
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: frie
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: prob
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'six' is shorter than its prefix length, 4
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: nigh
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: thou
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: wors
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: bare
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: crea
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'art' is shorter than its prefix length, 4
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: pass
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: quic
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: brok
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'box' is shorter than its prefix length, 4
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: chil
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'tie' is shorter than its prefix length, 4
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: fore
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'pen' is shorter than its prefix length, 4
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: stre
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: comp
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: coun
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'wet' is shorter than its prefix length, 4
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: stre
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: forg
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: plan
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: both
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: bott
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'fix' is shorter than its prefix length, 4
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: forg
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: sure
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: teac
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: gent
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: writ
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: chai
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: them
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'cup' is shorter than its prefix length, 4
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: expe
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: free
+2017-09-16 08:51:26.822	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'pop' is shorter than its prefix length, 4
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: soft
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: stra
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'bar' is shorter than its prefix length, 4
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: love
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: clos
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: hand
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'key' is shorter than its prefix length, 4
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'won' is shorter than its prefix length, 4
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: dirt
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: pres
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: swea
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: ever
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: grow
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: know
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: numb
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: pres
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'buy' is shorter than its prefix length, 4
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'add' is shorter than its prefix length, 4
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: cont
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: dist
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: purp
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: thre
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: gras
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: inno
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: shad
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: some
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'toe' is shorter than its prefix length, 4
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: visi
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: cons
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'ink' is shorter than its prefix length, 4
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: sile
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: stre
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'bus' is shorter than its prefix length, 4
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'mix' is shorter than its prefix length, 4
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: pray
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: pres
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: trai
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'bag' is shorter than its prefix length, 4
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: expl
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: fami
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: refl
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: scen
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: self
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: wond
+2017-09-16 08:51:26.823	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: atte
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: birt
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: perf
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: cons
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'egg' is shorter than its prefix length, 4
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: eter
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: floo
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: scre
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: buil
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: desp
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: mess
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: stri
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: clea
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: imag
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: less
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: stro
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: bloo
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: foot
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'mud' is shorter than its prefix length, 4
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'nod' is shorter than its prefix length, 4
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: rela
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: sudd
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: admi
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: blin
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: brea
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: cons
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: cree
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: diff
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: empt
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: plan
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'rub' is shorter than its prefix length, 4
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: some
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: tigh
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: brea
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: dese
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: gran
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: plea
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: powe
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: thre
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'bee' is shorter than its prefix length, 4
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: blan
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: butt
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: care
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: comp
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: deep
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: drea
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: gott
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: gree
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: repl
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: spin
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: chil
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: coll
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: depr
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: even
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: grou
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: hone
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: nerv
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: pain
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: poet
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: prin
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: show
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: stai
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: stea
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: trea
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: chee
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: crim
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: exis
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'fog' is shorter than its prefix length, 4
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: foot
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'gay' is shorter than its prefix length, 4
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: illu
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: stud
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: supp
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: appr
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: coll
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: conf
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: crea
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: girl
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'hop' is shorter than its prefix length, 4
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: moon
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: peac
+2017-09-16 08:51:26.824	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'pig' is shorter than its prefix length, 4
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: scre
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: thro
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: thro
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'wow' is shorter than its prefix length, 4
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: cour
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'dim' is shorter than its prefix length, 4
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'hum' is shorter than its prefix length, 4
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'led' is shorter than its prefix length, 4
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: natu
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: near
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: need
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: peac
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: perf
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: shin
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: shoo
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'sob' is shorter than its prefix length, 4
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: stol
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'tap' is shorter than its prefix length, 4
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: boun
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: deci
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: desp
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'dig' is shorter than its prefix length, 4
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'dot' is shorter than its prefix length, 4
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: hear
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'odd' is shorter than its prefix length, 4
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: quie
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: sent
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: stra
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: unde
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: whis
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: anyw
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'bid' is shorter than its prefix length, 4
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: bloo
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: care
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: comp
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: desc
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: doub
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: drea
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: driv
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: even
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: gran
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: hung
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: show
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'shy' is shorter than its prefix length, 4
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: weak
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: wors
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: wort
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: afte
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: conc
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: draw
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'due' is shorter than its prefix length, 4
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: free
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: harm
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: hope
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: quit
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: resp
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: salt
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: shee
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: soci
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'aim' is shorter than its prefix length, 4
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: awak
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: beli
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: bran
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: chee
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: conf
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: conn
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: ever
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: expr
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'fan' is shorter than its prefix length, 4
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'fur' is shorter than its prefix length, 4
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: glor
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: igno
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'law' is shorter than its prefix length, 4
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: migh
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: pati
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: poss
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: stri
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: stri
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: suff
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'cap' is shorter than its prefix length, 4
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: cert
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: comp
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: crea
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: deli
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: drag
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: ever
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: fore
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: form
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: frig
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'gas' is shorter than its prefix length, 4
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: invi
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: poss
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'raw' is shorter than its prefix length, 4
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: scar
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: seve
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: slig
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'tea' is shorter than its prefix length, 4
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: terr
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: thre
+2017-09-16 08:51:26.825	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: tric
+2017-09-16 08:51:26.826	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'awe' is shorter than its prefix length, 4
+2017-09-16 08:51:26.826	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: char
+2017-09-16 08:51:26.826	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: chea
+2017-09-16 08:51:26.826	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: comm
+2017-09-16 08:51:26.826	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: comp
+2017-09-16 08:51:26.826	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: crea
+2017-09-16 08:51:26.826	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: defe
+2017-09-16 08:51:26.826	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: desp
+2017-09-16 08:51:26.826	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: dest
+2017-09-16 08:51:26.826	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'dew' is shorter than its prefix length, 4
+2017-09-16 08:51:26.826	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: dust
+2017-09-16 08:51:26.826	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: expl
+2017-09-16 08:51:26.826	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'foe' is shorter than its prefix length, 4
+2017-09-16 08:51:26.826	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: free
+2017-09-16 08:51:26.826	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: guil
+2017-09-16 08:51:26.826	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: heal
+2017-09-16 08:51:26.826	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: impo
+2017-09-16 08:51:26.826	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'jaw' is shorter than its prefix length, 4
+2017-09-16 08:51:26.826	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: king
+2017-09-16 08:51:26.826	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: mist
+2017-09-16 08:51:26.826	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'ode' is shorter than its prefix length, 4
+2017-09-16 08:51:26.826	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: path
+2017-09-16 08:51:26.826	30112	WARN 	default	src/mnemonics/language_base.h:101	OldEnglish word 'pie' is shorter than its prefix length, 4
+2017-09-16 08:51:26.826	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: reve
+2017-09-16 08:51:26.826	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: scra
+2017-09-16 08:51:26.826	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: spir
+2017-09-16 08:51:26.826	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: stra
+2017-09-16 08:51:26.826	30112	WARN 	default	src/mnemonics/language_base.h:117	Duplicate prefix in OldEnglish word list: thro
+2017-09-16 08:51:37.622	30112	INFO 	global	contrib/epee/src/mlog.cpp:153	New log categories: *:WARNING,net:FATAL,net.p2p:FATAL,net.cn:FATAL,global:INFO,verify:FATAL,stacktrace:INFO

@@ -1,0 +1,149 @@
+08:26:12:501	42b8	args: -epool eth-eu1.nanopool.org:9999 -ewal 0x2fc7723d8623eb414abb4fa6d81395d81b87a8f9/1/1 -epsw x -dpool stratum+tcp://sia-eu1.nanopool.org:7777 -dwal 12/1/1 -dpsw x -dcoin sia -ftime 10 
+08:26:12:505	42b8	
+08:26:12:509	42b8	ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+08:26:12:512	42b8	บ      Claymore's Dual ETH + DCR/SC/LBC/PASC GPU Miner v9.6      บ
+08:26:12:516	42b8	ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+08:26:12:519	42b8	
+08:26:12:731	42b8	This pool (eth-eu2.nanopool.org) does not support Ethereum addresses as login (or requires worker name in "Login.Worker" format) and cannot be used for devfee mining, therefore it is not supported.
+08:26:12:735	42b8	However, you can mine on this pool if you specify "-allpools 1" option, default pools (different from this pool) will be used for devfee.
+08:26:12:739	42b8	Please read "Readme" file for details
+08:26:12:743	42b8	This pool (eth-eu2.nanopool.org) does not support Ethereum addresses as login (or requires worker name in "Login.Worker" format) and cannot be used for devfee mining, therefore it is not supported.
+08:26:12:747	42b8	However, you can mine on this pool if you specify "-allpools 1" option, default pools (different from this pool) will be used for devfee.
+08:26:12:751	42b8	Please read "Readme" file for details
+08:26:12:755	42b8	Pool eth-eu2.nanopool.org removed from the list
+08:26:12:759	42b8	This pool (eth-us-east1.nanopool.org) does not support Ethereum addresses as login (or requires worker name in "Login.Worker" format) and cannot be used for devfee mining, therefore it is not supported.
+08:26:12:763	42b8	However, you can mine on this pool if you specify "-allpools 1" option, default pools (different from this pool) will be used for devfee.
+08:26:12:767	42b8	Please read "Readme" file for details
+08:26:12:771	42b8	This pool (eth-us-east1.nanopool.org) does not support Ethereum addresses as login (or requires worker name in "Login.Worker" format) and cannot be used for devfee mining, therefore it is not supported.
+08:26:12:776	42b8	However, you can mine on this pool if you specify "-allpools 1" option, default pools (different from this pool) will be used for devfee.
+08:26:12:780	42b8	Please read "Readme" file for details
+08:26:12:785	42b8	Pool eth-us-east1.nanopool.org removed from the list
+08:26:12:790	42b8	This pool (eth-us-west1.nanopool.org) does not support Ethereum addresses as login (or requires worker name in "Login.Worker" format) and cannot be used for devfee mining, therefore it is not supported.
+08:26:12:795	42b8	However, you can mine on this pool if you specify "-allpools 1" option, default pools (different from this pool) will be used for devfee.
+08:26:12:800	42b8	Please read "Readme" file for details
+08:26:12:805	42b8	This pool (eth-us-west1.nanopool.org) does not support Ethereum addresses as login (or requires worker name in "Login.Worker" format) and cannot be used for devfee mining, therefore it is not supported.
+08:26:12:810	42b8	However, you can mine on this pool if you specify "-allpools 1" option, default pools (different from this pool) will be used for devfee.
+08:26:12:815	42b8	Please read "Readme" file for details
+08:26:12:820	42b8	Pool eth-us-west1.nanopool.org removed from the list
+08:26:12:826	42b8	This pool (eth-asia1.nanopool.org) does not support Ethereum addresses as login (or requires worker name in "Login.Worker" format) and cannot be used for devfee mining, therefore it is not supported.
+08:26:12:831	42b8	However, you can mine on this pool if you specify "-allpools 1" option, default pools (different from this pool) will be used for devfee.
+08:26:12:837	42b8	Please read "Readme" file for details
+08:26:12:842	42b8	This pool (eth-asia1.nanopool.org) does not support Ethereum addresses as login (or requires worker name in "Login.Worker" format) and cannot be used for devfee mining, therefore it is not supported.
+08:26:12:848	42b8	However, you can mine on this pool if you specify "-allpools 1" option, default pools (different from this pool) will be used for devfee.
+08:26:12:854	42b8	Please read "Readme" file for details
+08:26:12:860	42b8	Pool eth-asia1.nanopool.org removed from the list
+08:26:12:866	42b8	ETH: 1 pool is specified
+08:26:12:872	42b8	Main Ethereum pool is eth-eu1.nanopool.org:9999
+08:26:12:878	42b8	SC: 5 pools are specified
+08:26:12:884	42b8	Main Siacoin pool is sia-eu1.nanopool.org:7777
+08:26:13:049	42b8	OpenCL platform: Intel(R) OpenCL
+08:26:13:055	42b8	OpenCL platform: NVIDIA CUDA
+08:26:13:061	42b8	AMD OpenCL platform not found 
+08:26:13:282	42b8	CUDA initializing...
+
+08:26:13:288	42b8	NVIDIA Cards available: 1 
+08:26:13:294	42b8	CUDA Driver Version/Runtime Version: 9.0/8.0
+08:26:13:301	42b8	GPU #0: GeForce GTX 1080, 8192 MB available, 20 compute units, capability: 6.1
+
+08:26:13:307	42b8	Total cards: 1 
+08:26:22:799	42b8	No AMD cards in the list, ADL library will not be used.
+08:26:22:843	42b8	NVML version: 9.384.94
+08:26:23:382	42b8	DUAL MINING MODE ENABLED: ETHEREUM+SIACOIN
+08:26:23:382	48d4	ETH: Stratum - connecting to 'eth-eu1.nanopool.org' <164.132.109.110> port 9999
+08:26:23:388	48dc	 SC: Stratum - connecting to 'sia-eu1.nanopool.org' <213.32.29.168> port 7777
+08:26:23:388	42b8	ETH: eth-proxy stratum mode
+08:26:23:406	42b8	Watchdog enabled
+08:26:23:412	42b8	Remote management (READ-ONLY MODE) is enabled on port 3333
+08:26:23:417	42b8	
+08:26:23:578	48dc	send: {"id": 1, "method": "mining.subscribe", "params": []}
+
+08:26:23:584	48dc	send: {"id": 5, "method": "mining.extranonce.subscribe", "params": []}
+
+08:26:23:590	48dc	send: {"id": 2, "method": "mining.authorize", "params": ["12/1/1","x"]}
+
+08:26:23:596	48dc	 SC: Stratum - Connected (sia-eu1.nanopool.org:7777)
+08:26:23:627	48d4	send: {"worker": "eth1.0", "jsonrpc": "2.0", "params": ["0x2fc7723d8623eb414abb4fa6d81395d81b87a8f9/1/1", "x"], "id": 2, "method": "eth_submitLogin"}
+
+08:26:23:633	48d4	ETH: Stratum - Connected (eth-eu1.nanopool.org:9999)
+08:26:23:781	48dc	got 338 bytes
+08:26:23:786	48dc	buf: {"jsonrpc":"2.0","id":1,"result":true}
+{"id":6,"jsonrpc":"2.0","params":["0","0x000000000000002eeb18a2833e3a14142706687800651d8b98004262dfacf49500000000000000008b42bd5900000000c5093219f2689d54f3aad7d837ebea56266822714626a48fd84cbcc324093861","0x0000000007547ff5d321871ff4fb4f118b8d13a30a1ff7b317f3c5b20629578a"],"method":"mining.notify"}
+
+08:26:23:793	48dc	parse packet: 38
+08:26:23:798	48dc	remove first packet 299
+08:26:23:804	48dc	new buf size: 299
+08:26:23:809	48dc	parse packet: 298
+08:26:23:815	48dc	sc: job changed
+08:26:23:817	48d4	got 282 bytes
+08:26:23:820	48dc	new buf size: 0
+08:26:23:826	48d4	buf: {"jsonrpc":"2.0","id":2,"result":true}
+{"jsonrpc":"2.0","id":0,"result":["0xf4724b5176ba01ff9c30e0ce9011de0cfb31f09aea424319b05d7298f9d10f66","0xa91b532dbccf95bab5809616107474f25559efebc2974e2b22acae346634b49a","0x00000000dbe6fecebdedd5beb573440e5a884d1b2fbf06fcce912adcb8d8422e"]}
+
+08:26:23:839	48d4	parse packet: 38
+08:26:23:845	48d4	ETH: Authorized
+08:26:23:850	48d4	send: {"worker": "", "jsonrpc": "2.0", "params": [], "id": 3, "method": "eth_getWork"}
+
+08:26:23:855	48d4	remove first packet 243
+08:26:23:861	48d4	new buf size: 243
+08:26:23:866	48d4	parse packet: 242
+08:26:23:871	48d4	ETH: job changed
+08:26:23:877	48d4	new buf size: 0
+08:26:23:884	4158	Setting DAG epoch #142...
+08:26:23:942	48dc	got 338 bytes
+08:26:23:947	48dc	buf: {"jsonrpc":"2.0","id":2,"result":true}
+{"id":6,"jsonrpc":"2.0","params":["1","0x000000000000002eeb18a2833e3a14142706687800651d8b98004262dfacf49500000000000000008b42bd59000000006ad4808d2145ba78787aa397bef4af3be7c76e417b5e4da6e52fd31d298ef849","0x0000000007547ff5d321871ff4fb4f118b8d13a30a1ff7b317f3c5b20629578a"],"method":"mining.notify"}
+
+08:26:23:952	48dc	parse packet: 38
+08:26:23:957	48dc	 SC: Authorized
+08:26:23:962	48dc	remove first packet 299
+08:26:23:967	48dc	new buf size: 299
+08:26:23:972	48dc	parse packet: 298
+08:26:23:977	48dc	sc: job changed(2)
+08:26:23:982	48dc	new buf size: 0
+08:26:23:988	48dc	 SC: 09/16/17-08:26:23 - New job from sia-eu1.nanopool.org:7777
+08:26:23:993	48dc	target: 0x0000000007547ff5 (diff: 150GH)
+08:26:24:022	48d4	got 243 bytes
+08:26:24:027	48d4	buf: {"jsonrpc":"2.0","id":0,"result":["0xf4724b5176ba01ff9c30e0ce9011de0cfb31f09aea424319b05d7298f9d10f66","0xa91b532dbccf95bab5809616107474f25559efebc2974e2b22acae346634b49a","0x00000000dbe6fecebdedd5beb573440e5a884d1b2fbf06fcce912adcb8d8422e"]}
+
+08:26:24:032	48d4	parse packet: 242
+08:26:24:037	48d4	ETH: job is the same
+08:26:24:042	48d4	new buf size: 0
+08:26:27:119	4158	Setting DAG epoch #142 for GPU0
+08:26:27:126	4158	Create GPU buffer for GPU0
+08:26:33:894	48d4	ETH: checking pool connection...
+08:26:33:899	48d4	send: {"worker": "", "jsonrpc": "2.0", "params": [], "id": 3, "method": "eth_getWork"}
+
+08:26:34:072	48d4	got 243 bytes
+08:26:34:077	48d4	buf: {"jsonrpc":"2.0","id":0,"result":["0xf4724b5176ba01ff9c30e0ce9011de0cfb31f09aea424319b05d7298f9d10f66","0xa91b532dbccf95bab5809616107474f25559efebc2974e2b22acae346634b49a","0x00000000dbe6fecebdedd5beb573440e5a884d1b2fbf06fcce912adcb8d8422e"]}
+
+08:26:34:082	48d4	parse packet: 242
+08:26:34:087	48d4	ETH: job is the same
+08:26:34:092	48d4	new buf size: 0
+08:26:35:640	4158	GPU0 DAG creation time - 8407 ms
+08:26:35:646	4158	Setting DAG epoch #142 for GPU0 done
+08:26:37:290	48d4	got 243 bytes
+08:26:37:295	48d4	buf: {"jsonrpc":"2.0","id":0,"result":["0xf4724b5176ba01ff9c30e0ce9011de0cfb31f09aea424319b05d7298f9d10f66","0xa91b532dbccf95bab5809616107474f25559efebc2974e2b22acae346634b49a","0x00000000dbe6fecebdedd5beb573440e5a884d1b2fbf06fcce912adcb8d8422e"]}
+
+08:26:37:300	48d4	parse packet: 242
+08:26:37:306	48d4	ETH: job is the same
+08:26:37:311	48d4	new buf size: 0
+08:26:40:449	48dc	got 299 bytes
+08:26:40:454	48dc	buf: {"id":6,"jsonrpc":"2.0","params":["2","0x0000000000000045388f750489b423f9563a1ea5a39b1f5becc6ecfb0bb0dad00000000000000000ae42bd590000000004d9bf37b756e8db376d4bd0aedd4bf8563238b3f02f0031ff492a15d1c372b0","0x0000000007547ff5d321871ff4fb4f118b8d13a30a1ff7b317f3c5b20629578a"],"method":"mining.notify"}
+
+08:26:40:459	48dc	parse packet: 298
+08:26:40:466	48dc	sc: job changed
+08:26:40:473	48dc	new buf size: 0
+08:26:40:478	48dc	 SC: 09/16/17-08:26:40 - New job from sia-eu1.nanopool.org:7777
+08:26:40:484	48dc	target: 0x0000000007547ff5 (diff: 150GH)
+08:26:40:939	48dc	got 299 bytes
+08:26:40:944	48dc	buf: {"id":6,"jsonrpc":"2.0","params":["3","0x0000000000000048432da64a1a57254062d70da790c76d2a43d3bbdd31c665580000000000000000af42bd59000000008bb0b665f912a58573968cb7adee465ebae76a60433089e085e4094547f2573f","0x0000000007547ff5d321871ff4fb4f118b8d13a30a1ff7b317f3c5b20629578a"],"method":"mining.notify"}
+
+08:26:40:950	48dc	parse packet: 298
+08:26:40:955	48dc	sc: job changed
+08:26:40:963	48dc	new buf size: 0
+08:26:40:969	48dc	 SC: 09/16/17-08:26:40 - New job from sia-eu1.nanopool.org:7777
+08:26:40:975	48dc	target: 0x0000000007547ff5 (diff: 150GH)
+08:26:43:206	76b8	GPU0 t=44C fan=24%
+08:26:43:212	76b8	em hbt: 0, dm hbt: 0, fm hbt: 0, 
+08:26:43:217	76b8	watchdog - thread 0 (gpu0), hb time 31
+08:26:43:223	76b8	watchdog - thread 1 (gpu0), hb time 141
