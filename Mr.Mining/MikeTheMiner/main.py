@@ -728,7 +728,7 @@ class MiningWallet(QDialog, Ui_MiningWallet):
         elif currency_caller == 'Sia':
             subprocess.Popen("Santas_helpers\sia_wallet_creator.bat", shell=True)
         #add monoero wallet t
-        elif currency_caller == 'Monero' or currency_caller == 'monero_gpu' or orcurrency_caller == 'monero_gpu_cpu':
+        elif currency_caller == 'Monero' or currency_caller == 'monero_cpu' or orcurrency_caller == 'monero_gpu_cpu':
             subprocess.Popen("Santas_helpers\monero_wallet_creator.bat", shell=True)
         elif currency_caller == 'ETH-Pascal-monero':
             subprocess.Popen("Santas_helpers\Pascal_wallet_creator.bat", shell=True)
@@ -758,7 +758,7 @@ class MiningWallet(QDialog, Ui_MiningWallet):
         elif currency_caller == 'Sia':
             with open('Sia_Wallet/Sia_Settings.txt', 'w') as f:
                 f.write(self.entered_wallet_no)
-        elif currency_caller == 'Monero' or currency_caller == 'monero_gpu' or orcurrency_caller == 'monero_gpu_cpu':
+        elif currency_caller == 'Monero' or currency_caller == 'monero_cpu' or orcurrency_caller == 'monero_gpu_cpu':
             with open('Monero_Wallet/Monero_Settings.txt', 'w') as f:
                 f.write(self.entered_wallet_no)
         elif currency_caller == 'ETH-Pascal-monero':
