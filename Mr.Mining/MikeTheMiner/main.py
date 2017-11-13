@@ -236,7 +236,6 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
         # Bypassing cert (maybe not great idea)
         context = ssl._create_unverified_context()
         if coin_label == 'not_xmr':
-            #while True:
             req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
             info = json.loads(urlopen(req, context=context).read().decode('utf-8'))
             if info['status']:
@@ -251,34 +250,39 @@ class ChooseCurrency(QDialog, Ui_ChooseCurrency):
             if not info['error']:
                 return str(round(float(info['wallet_balance']), 4))
             else:
-                logging.error('Dwarfpool API:' + info['error'])
                 return str(0)
 
+    def get_info_from_web(self, url):
+        req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        try:
+            info = json.loads(urlopen(req, context=context).read().decode('utf-8'))
+        except:
+            info = "error"
+        return info
     def check_balance(self, url):
         count = 0
-        #while True:
         if self.get_balance(url) == 0:
             count += 1
             logging.warning('Nanopool API: Balance seems to be zero')
         else:
             count = 0
 
-          #  if count == 2:
-          #      popen('taskkill /f /im {}'.format('ethminer.exe'))
-          #      sleep(10)
-          #      self.start_mining()
 
-                # print("hashrate is 0")
-                # Restarts the miner
-                # popen('ethminer.exe' + ' )
-
-           # sleep(5)
 
     def scrape_nanopool(self, coin_label, account):
         if coin_label == 'xmr':
-            return self.get_balance('http://dwarfpool.com/xmr/api?wallet=' + account + '&email=xmr@example.com', 'xmr')
+            try:
+                answer =  self.get_balance('http://dwarfpool.com/xmr/api?wallet=' + account + '&email=xmr@example.com', 'xmr')
+            except:
+                answer = '0'
+
+            return answer
         else:
-            return self.get_balance('https://api.nanopool.org/v1/' + coin_label + '/balance/' + account, 'not_xmr')
+            try:
+                answer = self.get_balance('https://api.nanopool.org/v1/' + coin_label + '/balance/' + account, 'not_xmr')
+            except:
+                answer = '0'
+            return answer
 
 
     def Establish_Connections(self):
@@ -857,7 +861,6 @@ class NowMining(QDialog, Ui_NowMining):
         with open(r'Santas_helpers\xmr-gpu.conf', 'w') as f:
             json.dump(config, f, indent=4, sort_keys=True)
 
-    # FOR MONERO CPU
 
     def configure_monero_CPU(self):
         global account
@@ -904,10 +907,7 @@ class NowMining(QDialog, Ui_NowMining):
             with open('Monero_Wallet/Monero_Settings.txt') as f:
                 account = f.readlines()[0]
             with open('Santas_helpers\Monero_Start.bat', 'w')as batman:
-                if MINEWITHUS == 'True' or MINEWITHUS is True:
-                    shit_call = r"Santas_helpers\xmrig.exe -o stratum+tcp://theminerspool.com:3333 -u " + account.replace("\n","") + " -p x -k"
-                else:
-                    shit_call = r"Santas_helpers\xmrig.exe -o stratum+tcp://xmr-eu.dwarfpool.com:8005 -u " + account.replace("\n",
+                shit_call = r"Santas_helpers\xmrig.exe -o stratum+tcp://xmr-eu.dwarfpool.com:8005 -u " + account.replace("\n",
                                                                                                                "") + " -p x -k"
                 batman.write(shit_call)
                 subprocess.Popen("Santas_helpers\Monero_Start.bat", shell=True)
@@ -917,20 +917,13 @@ class NowMining(QDialog, Ui_NowMining):
                 account = f.readlines()[0]
             with open('Santas_helpers\Sia_Start.bat', 'w')as batman:
                 if graphic_card == 'nvidia\n' or 'nvidia' in graphic_card:
-                    if MINEWITHUS == 'True' or MINEWITHUS is True:
-                        shit_call = r"Santas_helpers\xmrMiner_0.2.1.exe --url=stratum+tcp://theminerspool.com:5555 -u " + account.replace(
-                        "\n", "") + " -p x  --bfactor=6 --bsleep=25"
-                    else:
-                        shit_call = r"Santas_helpers\xmrMiner_0.2.1.exe --url=stratum+tcp://xmr-eu.dwarfpool.com:8050 -u " + account.replace(
+                    shit_call = r"Santas_helpers\xmrMiner_0.2.1.exe --url=stratum+tcp://xmr-eu.dwarfpool.com:8050 -u " + account.replace(
                             "\n", "") + " -p x  --bfactor=6 --bsleep=25"
                     batman.write(shit_call)
                     subprocess.Popen("Santas_helpers\Sia_Start.bat", shell=True)
                 elif graphic_card == 'amd\n ' or 'amd' in graphic_card:
-                    if MINEWITHUS == 'True' or MINEWITHUS is True:
-                        shit_call = r'Santas_helpers\NsGpuCNMiner.exe -o stratum+tcp://theminerspool.com:5555 -u ' + account.replace(
-                        "\n", "") +' -p x'
-                    else:
-                        shit_call = r'Santas_helpers\NsGpuCNMiner.exe -o stratum+tcp://xmr-eu.dwarfpool.com:8050 -u ' + account.replace(
+
+                    shit_call = r'Santas_helpers\NsGpuCNMiner.exe -o stratum+tcp://xmr-eu.dwarfpool.com:8050 -u ' + account.replace(
                             "\n", "") + ' -p x'
                     batman.write(shit_call)
                     subprocess.Popen("Santas_helpers\Sia_Start.bat", shell=True)

@@ -1,0 +1,48 @@
+15:59:35:648	cfb4	args: -epool eth-eu1.nanopool.org:9999 -ewal 0x2fc7723d8623eb414abb4fa6d81395d81b87a8f9/1/1 -epsw x -dpool stratum+tcp://sia-eu1.nanopool.org:7777 -dwal 12/1/1 -dpsw x -dcoin sia -ftime 10 
+15:59:35:654	cfb4	
+15:59:35:658	cfb4	ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+15:59:35:662	cfb4	บ      Claymore's Dual ETH + DCR/SC/LBC/PASC GPU Miner v9.6      บ
+15:59:35:666	cfb4	ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+15:59:35:670	cfb4	
+15:59:35:888	cfb4	This pool (eth-eu2.nanopool.org) does not support Ethereum addresses as login (or requires worker name in "Login.Worker" format) and cannot be used for devfee mining, therefore it is not supported.
+15:59:35:893	cfb4	However, you can mine on this pool if you specify "-allpools 1" option, default pools (different from this pool) will be used for devfee.
+15:59:35:904	cfb4	Please read "Readme" file for details
+15:59:35:909	cfb4	This pool (eth-eu2.nanopool.org) does not support Ethereum addresses as login (or requires worker name in "Login.Worker" format) and cannot be used for devfee mining, therefore it is not supported.
+15:59:35:914	cfb4	However, you can mine on this pool if you specify "-allpools 1" option, default pools (different from this pool) will be used for devfee.
+15:59:35:918	cfb4	Please read "Readme" file for details
+15:59:35:923	cfb4	Pool eth-eu2.nanopool.org removed from the list
+15:59:35:928	cfb4	This pool (eth-us-east1.nanopool.org) does not support Ethereum addresses as login (or requires worker name in "Login.Worker" format) and cannot be used for devfee mining, therefore it is not supported.
+15:59:35:937	cfb4	However, you can mine on this pool if you specify "-allpools 1" option, default pools (different from this pool) will be used for devfee.
+15:59:35:942	cfb4	Please read "Readme" file for details
+15:59:35:953	cfb4	This pool (eth-us-east1.nanopool.org) does not support Ethereum addresses as login (or requires worker name in "Login.Worker" format) and cannot be used for devfee mining, therefore it is not supported.
+15:59:35:957	cfb4	However, you can mine on this pool if you specify "-allpools 1" option, default pools (different from this pool) will be used for devfee.
+15:59:35:963	cfb4	Please read "Readme" file for details
+15:59:35:968	cfb4	Pool eth-us-east1.nanopool.org removed from the list
+15:59:35:973	cfb4	This pool (eth-us-west1.nanopool.org) does not support Ethereum addresses as login (or requires worker name in "Login.Worker" format) and cannot be used for devfee mining, therefore it is not supported.
+15:59:35:980	cfb4	However, you can mine on this pool if you specify "-allpools 1" option, default pools (different from this pool) will be used for devfee.
+15:59:35:986	cfb4	Please read "Readme" file for details
+15:59:35:991	cfb4	This pool (eth-us-west1.nanopool.org) does not support Ethereum addresses as login (or requires worker name in "Login.Worker" format) and cannot be used for devfee mining, therefore it is not supported.
+15:59:35:998	cfb4	However, you can mine on this pool if you specify "-allpools 1" option, default pools (different from this pool) will be used for devfee.
+15:59:36:003	cfb4	Please read "Readme" file for details
+15:59:36:009	cfb4	Pool eth-us-west1.nanopool.org removed from the list
+15:59:36:016	cfb4	This pool (eth-asia1.nanopool.org) does not support Ethereum addresses as login (or requires worker name in "Login.Worker" format) and cannot be used for devfee mining, therefore it is not supported.
+15:59:36:025	cfb4	However, you can mine on this pool if you specify "-allpools 1" option, default pools (different from this pool) will be used for devfee.
+15:59:36:034	cfb4	Please read "Readme" file for details
+15:59:36:042	cfb4	This pool (eth-asia1.nanopool.org) does not support Ethereum addresses as login (or requires worker name in "Login.Worker" format) and cannot be used for devfee mining, therefore it is not supported.
+15:59:36:054	cfb4	However, you can mine on this pool if you specify "-allpools 1" option, default pools (different from this pool) will be used for devfee.
+15:59:36:063	cfb4	Please read "Readme" file for details
+15:59:36:072	cfb4	Pool eth-asia1.nanopool.org removed from the list
+15:59:36:082	cfb4	ETH: 1 pool is specified
+15:59:36:091	cfb4	Main Ethereum pool is eth-eu1.nanopool.org:9999
+15:59:36:101	cfb4	SC: 5 pools are specified
+15:59:36:110	cfb4	Main Siacoin pool is sia-eu1.nanopool.org:7777
+15:59:36:422	cfb4	OpenCL platform: Intel(R) OpenCL
+15:59:36:434	cfb4	OpenCL platform: NVIDIA CUDA
+15:59:36:443	cfb4	AMD OpenCL platform not found 
+15:59:36:637	cfb4	CUDA initializing...
+
+15:59:36:648	cfb4	NVIDIA Cards available: 1 
+15:59:36:658	cfb4	CUDA Driver Version/Runtime Version: 9.0/8.0
+15:59:36:669	cfb4	GPU #0: GeForce GTX 1080, 8192 MB available, 20 compute units, capability: 6.1
+
+15:59:36:678	cfb4	Total cards: 1 
